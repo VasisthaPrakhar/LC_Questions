@@ -1,26 +1,29 @@
 class RLEIterator {
 public:
     long long k=0;
-    map<long long,long long>s;
+    vector<long long>s;
+    vector<long long>s1;
     RLEIterator(vector<int>& e) {
-        s[e[0]]=e[1];
+        s.push_back(e[0]);
+        s1.push_back(e[1]);
         long long sum=e[0];
         for(int i=2;i<e.size();i=i+2){
             if(e[i]>0){
                 sum=sum+e[i];
-                s[sum]=e[i+1];   
+                s.push_back(sum);
+                s1.push_back(e[i+1]);
             }
         }
     }
     
     int next(int n) {
         k+=n;
-        auto it = s.lower_bound(k);
-        if(it==s.end()){
+        auto it = lower_bound(s.begin(),s.end(),k)-s.begin();
+        if(it==s.size()){
             return -1;
         }
         else{
-            return it->second;
+            return s1[it];
         }
     }
 };
