@@ -1,3 +1,7 @@
+static const auto Initialize = []{
+    ios::sync_with_stdio(false); cin.tie(nullptr);
+    return nullptr;
+}();
 class Solution {
 public:
     int parent[10000];
@@ -32,7 +36,7 @@ public:
         makeSet(n);
         vector<bool>vis(n,false);
         vis[0]=true;
-      for(int k=0;k<8;k++){
+      for(int k=0;k<7;k++){
           for(int i=0;i<n;i++){
             if(vis[i])
             for(int j=0;j<rooms[i].size();j++){
