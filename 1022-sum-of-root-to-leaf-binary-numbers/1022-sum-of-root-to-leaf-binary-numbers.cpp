@@ -26,9 +26,9 @@ public:
             fun1(s+to_string(root->val));
             return;
         }
-        if(root->left)
+        if(root->left!=nullptr)
         fun(root->left,s+to_string(root->val));
-        if(root->right)
+        if(root->right!=nullptr)
         fun(root->right,s+to_string(root->val));
     }
     int sumRootToLeaf(TreeNode* root) {
