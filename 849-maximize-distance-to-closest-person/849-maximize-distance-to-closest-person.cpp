@@ -1,8 +1,9 @@
 class Solution {
 public:
     int maxDistToClosest(vector<int>& seats) {
+        ios_base::sync_with_stdio(0) , cin.tie(NULL);
         int n=seats.size();
-        vector<int>beg(n,INT_MAX),end(n,INT_MAX),ans(n);
+        vector<int>beg(n,INT_MAX),end(n,INT_MAX);
         int j=-1;
         for(int i=0;i<n;i++){
             if(seats[i]==1){
