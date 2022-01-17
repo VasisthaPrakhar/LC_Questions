@@ -41,3 +41,9 @@ public:
         return ans;
     }
 };
+static int x = []() {
+    std::ios::sync_with_stdio(false);
+    std::cin.tie(nullptr);
+    cout.tie(NULL);
+    return 0;
+}();
