@@ -5,38 +5,28 @@ public:
         stack<int>s;
         s.push(a[0]);
         for(int i=1;i<n;i++){
-            if(!s.empty() && (a[i]<0 && s.top()>0)){
-                int k,f=1,f1=1;
-                while(!s.empty() && abs(s.top())<=abs(a[i])){
-                    k=s.top();
-                    if(k*a[i]>=0){
-                        s.push(a[i]);
-                        f1=0;
-                        break;
-                    }
-                    else if(abs(k)==abs(a[i])){
-                        s.pop();
+            int f=1;
+            while(!s.empty() && (a[i]<0 && s.top()>0)){
+                if(s.top()>=-a[i]){
+                    if(s.top()==-a[i]){
                         f=0;
+                        s.pop();
                         break;
                     }
-                    s.pop();
+                    f=0;
+                    break;
                 }
-                if(s.empty() && abs(k)<abs(a[i])) {
-                    s.push(a[i]);
-                }
-                else if(!s.empty() && f1 && f && a[i]*s.top()>=0){
-                    s.push(a[i]);
-                }
-            }else{
+                s.pop();
+            }
+            if(f){
                 s.push(a[i]);
             }
         }
-        vector<int>ans;
-        while(!s.empty()){
-            ans.push_back(s.top());
+        vector<int>ans(s.size());
+        for(int i=s.size()-1;i>=0;i--){
+            ans[i]=s.top();
             s.pop();
         }
-        reverse(ans.begin(),ans.end());
         return ans;
     }
 };
