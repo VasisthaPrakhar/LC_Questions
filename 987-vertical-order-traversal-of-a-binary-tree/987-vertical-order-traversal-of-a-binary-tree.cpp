@@ -9,9 +9,12 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-static const auto Initialize = []{
-    ios::sync_with_stdio(false); cin.tie(nullptr);
-    return nullptr;
+static auto fast_io = []
+{
+	ios::sync_with_stdio(false);
+	cout.tie(nullptr);
+	cin.tie(nullptr);
+	return 0;
 }();
 class Solution {
 public:
