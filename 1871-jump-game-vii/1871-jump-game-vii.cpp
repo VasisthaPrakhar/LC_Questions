@@ -12,8 +12,17 @@ public:
         if(s[n-1]!='0'){
             return false;
         }
+        vector<int>a;
+        for(int i=0;i<n;i++){
+            if(s[i]=='0'){
+                a.push_back(i);
+            }
+        }
+        int n1=a.size();
+        vector<int>vis(n1,0);
         queue<int>q;
         q.push(0);
+        vis[0]=1;
         int k=0;
         while(!q.empty()){
             int node=q.front();
@@ -21,9 +30,15 @@ public:
             if(node==n-1){
                 return true;
             }
-            for(int i=max(node+mi,k);i<=min(node+ma,n-1);i++){
-                if(s[i]=='0'){
-                    q.push(i);
+            int f=node+mi;
+            if(f<k){
+                f=k;
+            }
+            auto low=lower_bound(a.begin(),a.end(),f)-a.begin();
+            for(int i=low;i<n1 && a[i]<=min(node+ma,n-1);i++){
+                if(!vis[i]){
+                    q.push(a[i]);
+                    vis[i]=1;
                 }
             }
             k=min(node+ma+1,n-1);
