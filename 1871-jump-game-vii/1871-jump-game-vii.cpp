@@ -12,10 +12,8 @@ public:
         if(s[n-1]!='0'){
             return false;
         }
-        vector<int>vis(n,0);
         queue<int>q;
         q.push(0);
-        vis[0]=1;
         int k=0;
         while(!q.empty()){
             int node=q.front();
@@ -24,9 +22,8 @@ public:
                 return true;
             }
             for(int i=max(node+mi,k);i<=min(node+ma,n-1);i++){
-                if(!vis[i] && s[i]=='0'){
+                if(s[i]=='0'){
                     q.push(i);
-                    vis[i]=1;
                 }
             }
             k=min(node+ma+1,n-1);
