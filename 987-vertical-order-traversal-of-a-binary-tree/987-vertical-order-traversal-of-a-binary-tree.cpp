@@ -9,6 +9,10 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
+static const auto Initialize = []{
+    ios::sync_with_stdio(false); cin.tie(nullptr);
+    return nullptr;
+}();
 class Solution {
 public:
     vector<vector<int>> verticalTraversal(TreeNode* root) {
@@ -39,9 +43,7 @@ public:
         for(auto x:m){
             vector<int>ans;
             for(auto y:x.second){
-                for(auto z:y.second){
-                    ans.push_back(z);
-                }
+                ans.insert(ans.end(),y.second.begin(),y.second.end());
             }
             res.push_back(ans);
         }
