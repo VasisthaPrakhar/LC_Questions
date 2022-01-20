@@ -28,3 +28,10 @@ public:
         return fun(pr,in,0,n-1,0,n-1,m);
     }
 };
+static auto fast_io = []
+{
+	ios::sync_with_stdio(false);
+	cout.tie(nullptr);
+	cin.tie(nullptr);
+	return 0;
+}();
