@@ -81,6 +81,13 @@ public:
         return t;
     }
 };
+static auto fast_io = []
+{
+	ios::sync_with_stdio(false);
+	cout.tie(nullptr);
+	cin.tie(nullptr);
+	return 0;
+}();
 
 // Your Codec object will be instantiated and called as such:
 // Codec ser, deser;
