@@ -15,13 +15,13 @@ public:
         if(root!=nullptr && root->val==val){
             return root;
         }else if(root!=nullptr){
-            if(val>root->val){
+            if(val>root->val && root->right){
                 return searchBST(root->right,val);
-            }else{
+            }
+            if(val<root->val && root->left){
                 return searchBST(root->left,val);
             }
-        }else{
-            return nullptr;
         }
+        return nullptr;
     }
 };
