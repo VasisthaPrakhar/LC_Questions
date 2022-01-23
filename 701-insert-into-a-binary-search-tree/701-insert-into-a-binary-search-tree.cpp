@@ -12,8 +12,8 @@
 class Solution {
 public:
     TreeNode* insertIntoBST(TreeNode* root, int val) {
+        TreeNode* t=new TreeNode(val);
         if(root==nullptr){
-            TreeNode* t=new TreeNode(val);
             return t;
         }
         int f=1;
@@ -23,7 +23,6 @@ public:
                 if(root->right){
                     root=root->right;
                 }else{
-                    TreeNode* t=new TreeNode(val);
                     root->right=t;
                     f=0;
                 }
@@ -31,7 +30,6 @@ public:
                 if(root->left){
                     root=root->left;
                 }else{
-                    TreeNode* t=new TreeNode(val);
                     root->left=t;
                     f=0;
                 }
