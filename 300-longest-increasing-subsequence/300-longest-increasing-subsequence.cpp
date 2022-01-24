@@ -17,7 +17,7 @@ public:
         //         *it=nums[i];
         //     }
         // }
-        for(int i=0;i<n;i++){
+        for(int i=1;i<n;i++){
             for(int j=0;j<i;j++){
                 if(nums[i]>nums[j] && res[i]<res[j]+1){
                     res[i]=res[j]+1;
