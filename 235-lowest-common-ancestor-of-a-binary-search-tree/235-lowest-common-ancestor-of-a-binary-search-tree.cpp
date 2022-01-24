@@ -18,7 +18,7 @@ public:
             }else if(k<p->val && k<q->val){
                 root=root->right;
             }else{
-                return root;
+                break;
             }
         }
         return root;
