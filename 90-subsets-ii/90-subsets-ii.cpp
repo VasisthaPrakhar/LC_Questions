@@ -1,22 +1,21 @@
 class Solution {
-public:
-    void fun(set<vector<int>>&ans,vector<int>& a,vector<int>& b,int i){
-        if(i>=a.size()){
-            ans.insert(b);
-            return;
-        }
-        fun(ans,a,b,i+1);
-        b.push_back(a[i]);
-        fun(ans,a,b,i+1);
-        b.pop_back();
-    }
-   
+public:   
     vector<vector<int>> subsetsWithDup(vector<int>& a) {
         vector<int>b;
         sort(a.begin(), a.end());
         vector<vector<int>>ans;
         set<vector<int>>res;
-        fun(res,a,b,0);
+        int n=a.size();
+        int lim=pow(2,n);
+        for(int i=0;i<lim;i++){
+            vector<int>b;
+            for(int j=0;j<n;j++){
+                if(i&(1<<j)){
+                    b.push_back(a[j]);
+                }
+            }
+            res.insert(b);
+        }
         for(auto x:res){
             ans.push_back(x);
         }
