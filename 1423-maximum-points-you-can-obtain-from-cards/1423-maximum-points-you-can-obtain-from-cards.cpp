@@ -1,8 +1,6 @@
 class Solution {
 public:
     int maxScore(vector<int>& c, int k) {
-        ios::sync_with_stdio(false);
-        cin.tie(0);
         int n=c.size();
         int p[n];
         p[0]=c[0];
