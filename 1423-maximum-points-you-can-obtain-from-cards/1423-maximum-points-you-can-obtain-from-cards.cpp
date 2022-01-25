@@ -9,9 +9,6 @@ public:
         for(int i=1;i<n;i++){
             p[i]=p[i-1]+c[i];
         }
-        if(k==1){
-            return max(p[0],p[n-1]-p[n-2]);
-        }
         if(n==k){
             return p[n-1];
         }
