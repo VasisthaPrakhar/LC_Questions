@@ -3,8 +3,6 @@ public:
     int search(vector<int>& nums, int target) {
         int n=nums.size();
         int beg=0,end=n-1;
-        if(n==2){
-        }
         while(beg<=end){
             int mid=(beg+end)/2;
             if(nums[mid]==target){
