@@ -8,15 +8,10 @@ public:
             int mi=INT_MAX;
             for(int i=0;i<n;i++){
                 if(am-co[i]>=0){
-                    int temp=dp(co,am-co[i],memo,n);
-                    if(temp!=-1)
-                    mi=min(mi,temp);   
+                    mi=min((long long)mi,(long long)1+dp(co,am-co[i],memo,n));   
                 }
             }
-            if(mi==INT_MAX){
-                memo[am]=-1;
-            }else
-                memo[am]=mi+1;
+            memo[am]=mi;
         }
         return memo[am];
     }
