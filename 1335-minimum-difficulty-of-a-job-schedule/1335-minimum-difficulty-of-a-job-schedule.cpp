@@ -29,3 +29,10 @@ public:
         return dp(jd,0,1,d,memo,upmax,n);
     }
 };
+static auto fast_io = []
+{
+	ios::sync_with_stdio(false);
+	cout.tie(nullptr);
+	cin.tie(nullptr);
+	return 0;
+}();
