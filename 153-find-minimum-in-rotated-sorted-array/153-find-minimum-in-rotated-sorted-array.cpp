@@ -5,7 +5,7 @@ public:
         int beg=0,end=n-1;
         while(beg<end){
             int mid=(beg+end)/2;
-            if(a[mid]>=a[end] && a[mid]>=a[beg]){
+            if(a[mid]>a[end] && a[mid]>=a[beg]){
                 beg=mid+1;
             }else{
                 end=mid;
