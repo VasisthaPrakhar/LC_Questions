@@ -2,16 +2,17 @@ class Solution {
 public:
     int fun(vector<int>&a){
         int n=a.size();
-        stack<int>s,s1;
+        stack<int>s;
         vector<int>pre(n),suf(n);//pre to get index of min element in left and suf to get index of min element in right
         for(int i=0;i<n;i++){
-            while(!s1.empty() && a[s1.top()]>=a[i]){s1.pop();}
-            if(s1.empty()){pre[i]=-1;}
+            while(!s.empty() && a[s.top()]>=a[i]){s.pop();}
+            if(s.empty()){pre[i]=-1;}
             else{
-                pre[i]=s1.top();
+                pre[i]=s.top();
             }
-            s1.push(i);
+            s.push(i);
         }
+        while(!s.empty()){s.pop();}
         for(int i=n-1;i>=0;i--){
             while(!s.empty() && a[s.top()]>=a[i]){s.pop();}
             if(s.empty()){suf[i]=n;}
