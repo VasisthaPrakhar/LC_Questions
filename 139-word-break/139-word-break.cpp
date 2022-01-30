@@ -8,7 +8,7 @@ public:
             for(auto x:wd){
                 int l=x.length();
                 if(i>=l && dp[i-l]){
-                    if(s.substr(i-l,l)==x){
+                    if(s.substr(i-l,l).compare(x)==0){
                         dp[i]=true;
                         break;
                     }
