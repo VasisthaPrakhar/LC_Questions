@@ -17,7 +17,7 @@ public:
                 for(auto x:temp){
                     mp1[x-'a']++;
                 }
-                f++;
+                f--;
             }else{
                 mp1[s[i-1]-'a']--;
                 mp1[s[i+m-1]-'a']++;
