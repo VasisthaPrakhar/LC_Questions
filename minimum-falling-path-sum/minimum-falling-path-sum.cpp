@@ -1,9 +1,13 @@
+static const auto Initialize = []{
+    ios::sync_with_stdio(false); cin.tie(nullptr);
+    return nullptr;
+}();
 class Solution {
 public:
-    int dr[3]={1,1,1};
-    int dc[3]={-1,0,1};
     int minFallingPathSum(vector<vector<int>>& mat) {
         int n=mat.size();
+        int dr[3]={1,1,1};
+        int dc[3]={-1,0,1};
         for(int i=n-2;i>=0;i--){
             for(int j=0;j<n;j++){
                 int mi=INT_MAX;
@@ -18,7 +22,6 @@ public:
                 mat[i][j]+=mi;
             }
         }
-        int ans=*min_element(mat[0].begin(),mat[0].end());
-        return ans;
+        return *min_element(mat[0].begin(),mat[0].end());
     }
 };
