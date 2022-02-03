@@ -9,8 +9,7 @@ public:
         if(x==sum){
             return n;
         }
-        int t=sum-x,ans=-1;
-        int i=0,j=0,temp=0;
+        int t=sum-x,ans=-1,i=0,j=0,temp=0;
         while(j<n && i<=j){
             temp+=nums[j];
             while(i<=j && temp>t){
