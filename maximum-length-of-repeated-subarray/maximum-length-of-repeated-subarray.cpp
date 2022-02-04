@@ -5,12 +5,12 @@ public:
         int m=text2.size();
         int ans=INT_MIN;
         vector<vector<int>>dp(n+1,vector<int>(m+1,0));
-        for(int i=n-1;i>=0;i--){
-            for(int j=m-1;j>=0;j--){
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
                 if(text1[i]==text2[j]){
-                    dp[i][j]=1+dp[i+1][j+1];
+                    dp[i+1][j+1]=1+dp[i][j];
                 }
-                ans=max(ans,dp[i][j]);
+                ans=max(ans,dp[i+1][j+1]);
             }
         }
         return ans;
