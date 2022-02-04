@@ -3,7 +3,7 @@ class Solution {
 public:
     long long int dp(vector<int>& h, vector<vector<int>>& c, int &m, int &n, int t, int idx, vector<vector<vector<int>>>&memo,int last){
         if(idx>=m || t<0){
-            return t==0?t:INT_MAX;
+            return t==0?0:INT_MAX;
         }
         if(h[idx]!=0){
             return dp(h,c,m,n,t-(last!=h[idx]),idx+1,memo,h[idx]);
