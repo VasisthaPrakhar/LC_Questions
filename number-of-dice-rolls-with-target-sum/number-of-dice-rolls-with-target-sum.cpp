@@ -18,7 +18,7 @@ public:
         if(n*k<target){
             return 0;
         }
-        vector<vector<long long int>>memo(target+2,vector<long long int>(n+2,-1));
+        vector<vector<long long int>>memo(target+1,vector<long long int>(n+1,-1));
         return dp(memo,n,k,target);
     }
 };
