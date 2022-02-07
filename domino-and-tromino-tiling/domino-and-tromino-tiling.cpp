@@ -1,27 +1,27 @@
 class Solution {
     #define mod 1000000007
 public:
-    int dp(vector<vector<int>>&memo,int n,int e){
+    int dp(vector<int>&memo,int n){
         if(n<=1){
-            return e==2?1:0;
+            return n==0?1:0;
         }
-        if(memo[n][e]==-1){
-            int res=0;
-            if(e==2){
-                res=(res+dp(memo,n-1,2)%mod)%mod;
-                res=(res+dp(memo,n-2,2)%mod)%mod;
-                res=(res+(2*dp(memo,n-1,1))%mod)%mod;
-            }
-            else{
-                res=(res+dp(memo,n-1,1)%mod)%mod;
-                res=(res+dp(memo,n-2,2)%mod)%mod;
-            }
-            memo[n][e]=res;
+        if(memo[n]==-1){
+            memo[n]=((2*dp(memo,n-1))%mod + dp(memo,n-3)%mod)%mod;
         }
-        return memo[n][e];
+        return memo[n];
     }
     int numTilings(int n) {
-        vector<vector<int>>memo(n+1,vector<int>(3,-1));
-        return dp(memo,n,2);
+        if(n<=2){
+            return n;
+        }
+        vector<int>memo(n+1,-1);
+        for(int i=0;i<3;i++){
+            memo[i]=i;
+        }
+        memo[3]=5;
+        for(int i=4;i<=n;i++){
+            memo[i]=((2*memo[i-1])%mod + memo[i-3]%mod)%mod;
+        }
+        return memo[n];
     }
 };
