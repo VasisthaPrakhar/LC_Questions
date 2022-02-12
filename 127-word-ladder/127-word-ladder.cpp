@@ -1,3 +1,10 @@
+static auto fast_io = []
+{
+	ios::sync_with_stdio(false);
+	cout.tie(nullptr);
+	cin.tie(nullptr);
+	return 0;
+}();
 class Solution {
 public:
    int ladderLength(string b, string e, vector<string>& w) {
@@ -21,6 +28,7 @@ public:
                             n[i]=j+'a';
                             if(s.find(n)!=s.end()){
                                 q.push(n);
+                                s.erase(n);
                             }
                         }
                         n[i]=temp;
