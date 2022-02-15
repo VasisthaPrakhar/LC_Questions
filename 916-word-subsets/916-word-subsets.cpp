@@ -2,7 +2,7 @@ class Solution {
 public:
     vector<string> wordSubsets(vector<string>& words1, vector<string>& words2) {
         vector<string>ans;
-        unordered_map<char,int>m1,temp;
+        map<char,int>m1,temp;
         for(int i=0;i<words2.size();i++){
             for(auto x:words2[i]){
                 temp[x]++;
