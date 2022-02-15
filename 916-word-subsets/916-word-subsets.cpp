@@ -8,7 +8,7 @@ public:
                 temp[x]++;
             }
             for(auto x:words2[i]){
-                if(!m1.count(x)){
+                if(m1.find(x)==m1.end()){
                     m1[x]++;
                 }else{
                     m1[x]=max(m1[x],temp[x]);
@@ -22,7 +22,7 @@ public:
             }
             int f=0;
             for(auto x:m1){
-                if(!temp.count(x.first) || temp[x.first]<x.second){
+                if(temp.find(x.first)==temp.end() || temp[x.first]<x.second){
                     f=1;
                     break;
                 }
