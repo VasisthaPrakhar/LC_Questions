@@ -16,7 +16,6 @@ public:
             }
             temp.clear();
         }
-        temp.clear();
         for(int i=0;i<words1.size();i++){
             for(auto x:words1[i]){
                 temp[x]++;
