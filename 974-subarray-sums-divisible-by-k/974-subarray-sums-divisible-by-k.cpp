@@ -5,11 +5,6 @@ public:
         if(n==1){
             return nums[0]%k==0?1:0;
         }
-        // vector<int>pre(n);
-        // for(int i=0;i<n;i++){
-        //     sum+=nums[i];
-        //     pre[i]=sum;
-        // }
         unordered_map<int,int>m;
         m[0]=1;
         int ans=0;
@@ -24,7 +19,6 @@ public:
             }
             m[temp]++;
         }
-        //cout<<-7%5;
         return ans;
     }
 };
