@@ -20,7 +20,6 @@ public:
         sort(ca.begin(),ca.end());
         vector<int>a;
         fun(ca,target,a,0);
-        //vector<vector<int>>res(ans.begin(),ans.end());
         return ans;   
     }
 };
