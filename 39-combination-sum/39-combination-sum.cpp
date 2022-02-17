@@ -15,7 +15,6 @@ public:
         }
     }
     vector<vector<int>> combinationSum(vector<int>& c, int t) {
-        //sort(c.begin(),c.end());
         vector<int>a;
         fun(c,t,a,0);
         return ans;
