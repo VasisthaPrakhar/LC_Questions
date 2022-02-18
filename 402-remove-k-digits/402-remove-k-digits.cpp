@@ -2,12 +2,12 @@ class Solution {
 public:
     string removeKdigits(string num, int k) {
         int n=num.length();
-        // if(n<=k){
-        //     return "0";
-        // }
-        // if(k==0){
-        //     return num;
-        // }
+        if(n<=k){
+            return "0";
+        }
+        if(k==0){
+            return num;
+        }
         string ans;
         for(char &x:num){
             while(ans.length() && k>0 && x<ans.back()){
