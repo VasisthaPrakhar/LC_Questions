@@ -9,26 +9,17 @@ public:
             return num;
         }
         string ans="";
-        stack<char>s,t;
-        int idx=INT_MAX;
-        for(int i=n-1;i>=0;i--){
-            if(num[i]=='0'){
-                idx=i;
-            }
-            s.push(num[i]);
-        }
-        t.push(s.top());
-        s.pop();
-        while(!s.empty()){
-            while(k>0 && !t.empty() && s.top()<t.top()){
+        stack<char>t;
+        t.push(num[0]);
+        for(int i=1;i<n;i++){
+            while(k>0 && !t.empty() && num[i]<t.top()){
                 k--;
                 t.pop();
             }
-            t.push(s.top());
-            if(s.top()=='0' && t.size()==1){
+            t.push(num[i]);
+            if(num[i]=='0' && t.size()==1){
                 t.pop();
-            }
-            s.pop();
+            }   
         }
         while(k>0 && !t.empty()){
             k--;
