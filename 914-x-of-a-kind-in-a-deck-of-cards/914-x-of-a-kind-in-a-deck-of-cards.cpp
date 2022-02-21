@@ -8,11 +8,9 @@ public:
         for(auto &x:deck){
             m[x]++;
         }
-        auto it=m.begin();
-        int res=it->second;
-        it++;
-        for(;it!=m.end();it++){
-            res=gcd(it->second,res);
+        int res=0;
+        for(auto it:m){
+            res=gcd(it.second,res);
         }
         if(res<2){
             return false;
