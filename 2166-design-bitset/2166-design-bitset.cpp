@@ -1,3 +1,17 @@
+/**
+ * Your Bitset object will be instantiated and called as such:
+ * Bitset* obj = new Bitset(size);
+ * obj->fix(idx);
+ * obj->unfix(idx);
+ * obj->flip();
+ * bool param_4 = obj->all();
+ * bool param_5 = obj->one();
+ * int param_6 = obj->count();
+ * string param_7 = obj->toString();
+ */
+
+
+
 class Bitset {
     private: int c=0,n=0,f=0;
     string s;
@@ -13,13 +27,13 @@ public:
         if(f%2){
            if(s[idx]=='1'){
                 c++;
-                s[idx]='0';
-            }            
+            }
+            s[idx]='0';
         }else{
             if(s[idx]=='0'){
                 c++;
-                s[idx]='1';
-            }       
+            }
+            s[idx]='1';
         }
     }
     
@@ -27,18 +41,17 @@ public:
         if(f%2){
            if(s[idx]=='0'){
                 c--;
-               s[idx]='1';
             }
+            s[idx]='1';
         }else{
             if(s[idx]=='1'){
                 c--;
-                s[idx]='0';
-            }       
+            }
+            s[idx]='0';
         }
     }
     
     void flip() {
-       // cout<<c<<" ";
         c=n-c;
         f++;
     }
@@ -51,7 +64,7 @@ public:
     }
     
     bool one() {
-        if(c>=1){
+        if(n-c<=n-1){
             return true;
         }
         return false;
