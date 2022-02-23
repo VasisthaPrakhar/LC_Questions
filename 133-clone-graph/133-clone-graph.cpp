@@ -21,7 +21,7 @@ public:
 
 class Solution {
 public:
-    Node* dfs(Node* node,map<int,Node*>&m){
+    Node* dfs(Node* node,unordered_map<int,Node*>&m){
         Node* temp=new Node(node->val);
         m[node->val]=temp;
         for(auto x:node->neighbors){
@@ -37,7 +37,7 @@ public:
         if(node==nullptr){
             return node;
         }
-        map<int,Node*>m;
+        unordered_map<int,Node*>m;
         return dfs(node,m);
     }
 };
