@@ -34,24 +34,24 @@ public:
         if(head==nullptr || head->next==nullptr){
             return head;
         }
-        ListNode *ans=head,*temp=head;
-        vector<int>a;
-        while(head){
-            a.push_back(head->val);
-            head=head->next;
-        }
-        sort(a.begin(),a.end());
-        for(auto x:a){
-            temp->val=x;
-            temp=temp->next;
-        }
-        delete temp;
-        // ListNode* ans=head,*st=head;
-        // while(head->next!=nullptr){
+        // ListNode *ans=head,*temp=head;
+        // vector<int>a;
+        // while(head){
+        //     a.push_back(head->val);
         //     head=head->next;
         // }
-        // ListNode *prev=new ListNode(INT_MIN,st);
-        // ms(st,head,prev);
+        // sort(a.begin(),a.end());
+        // for(auto x:a){
+        //     temp->val=x;
+        //     temp=temp->next;
+        // }
+        // delete temp;
+        ListNode* ans=head,*st=head;
+        while(head->next!=nullptr){
+            head=head->next;
+        }
+        ListNode *prev=new ListNode(INT_MIN,st);
+        ms(st,head,prev);
         return ans;
     }
 };
