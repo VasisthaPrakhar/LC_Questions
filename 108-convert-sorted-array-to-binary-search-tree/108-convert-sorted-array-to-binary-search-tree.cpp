@@ -12,12 +12,8 @@
 class Solution {
 public:
     TreeNode* fun(vector<int>& nums,int s,int e){
-        if(s>e){
-            return nullptr;
-        }
-        if(s==e){
-            TreeNode* t=new TreeNode(nums[s]);
-            return t;
+        if(s>=e){
+            return s==e?new TreeNode(nums[s]):nullptr;
         }
         int mid=(s+e)/2;
         TreeNode* t=new TreeNode(nums[mid]);
