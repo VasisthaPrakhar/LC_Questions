@@ -33,7 +33,6 @@ public:
             mid=mid->next;
             f=f->next->next;
         }
-         //cout<<s->val<<" ";
         TreeNode* t=new TreeNode(mid->next->val);
         t->left=fun(s,mid);
         t->right=fun(mid->next->next,e);
