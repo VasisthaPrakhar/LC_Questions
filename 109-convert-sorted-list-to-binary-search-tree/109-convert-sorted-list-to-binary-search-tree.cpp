@@ -26,8 +26,7 @@ public:
             return nullptr;
         }
         if(s==e){
-            TreeNode* t=new TreeNode(s->val);
-            return t;
+            return new TreeNode(s->val);
         }
         ListNode* mid=s,*f=s->next->next;
         while(f && f!=e && f!=e->next){
