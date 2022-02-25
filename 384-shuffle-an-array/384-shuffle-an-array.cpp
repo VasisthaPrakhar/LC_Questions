@@ -12,9 +12,8 @@ public:
     vector<int> shuffle() {
         vector<int>temp=og;
         int n=og.size();
-        //srand(time(0));
         for(int i=0;i<n;i++){
-            swap(temp[i],temp[(rand()%(n))]);
+            swap(temp[i],temp[rand()%n]);
         }
         return temp;
     }
