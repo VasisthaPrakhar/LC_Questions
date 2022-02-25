@@ -13,17 +13,15 @@ public:
             }
             c++;
         }
-        //ss.clear(),ss1.clear();
-        //token="",token1="";
+        ss.clear(),ss1.clear();
         stringstream ss2(v1),ss3(v2);
         while(c--){
             getline(ss2,token,'.');
             getline(ss3,token1,'.');
         }
-       // cout<<token<<" "<<token1<<" ";
+        cout<<token<<" "<<token1<<" ";
         while(getline(ss2,token,'.')){
             long long int a=stoll(token);
-            //cout<<"test";
             if(a>0){
                 return 1;
             }
@@ -34,6 +32,7 @@ public:
                 return -1;
             }
         }
+        ss2.clear(),ss3.clear();
         return 0;
     }
 };
