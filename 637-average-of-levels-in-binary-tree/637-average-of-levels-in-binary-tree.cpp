@@ -17,7 +17,7 @@ public:
         q.push(root);
         while(!q.empty()){
             int sz=q.size();
-            long double f=0;
+            double f=0;
             for(int i=0;i<sz;i++){
                 auto node=q.front();
                 q.pop();
