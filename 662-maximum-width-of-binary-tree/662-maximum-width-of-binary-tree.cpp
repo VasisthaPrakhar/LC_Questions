@@ -15,11 +15,11 @@ public:
         if(root==nullptr){
             return 0;
         }
-        queue<pair<TreeNode*,int>>q;
-        int ans=0;
+        queue<pair<TreeNode*,long long int>>q;
+        long long int ans=0;
         q.push({root,0});
         while(!q.empty()){
-            int s=q.size(),ma=0,mi=0;
+            long long int s=q.size(),ma=0,mi=0;
             for(int i=0;i<s;i++){
                 auto node=q.front();
                 q.pop();
