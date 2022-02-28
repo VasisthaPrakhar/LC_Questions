@@ -14,8 +14,7 @@ public:
         int j=0,i=0;
         while(j<n){
             i=j;
-            int k=j;
-                j++;
+            int k=j++;
             while(j<n && a[k]+1==a[j]){
                 j++,k++;
             }
