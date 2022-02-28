@@ -9,13 +9,13 @@ public:
     }
     
     bool enQueue(int value) {
-        if((rear+1==n && front==0)|| rear+1==front){
+        if(isFull()){
             return false;
         }else if(front==-1){
             rear=front=0;
             q[rear]=value;
             return true;
-        }else if(rear+1>=n){
+        }else if(rear==n-1){
             rear=0;
             q[rear]=value;
             return true;
