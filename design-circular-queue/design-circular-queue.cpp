@@ -1,15 +1,15 @@
 class MyCircularQueue {
     vector<int>q;
-    int front=0,rear=0,n;
+    int front,rear,n;
 public:
     MyCircularQueue(int k) {
-        q.resize(k,-1);
+        q.resize(k);
         n=k;
         rear=-1,front=-1;
     }
     
     bool enQueue(int value) {
-        if((rear+1>=n && front==0)|| rear+1==front){
+        if((rear+1==n && front==0)|| rear+1==front){
             return false;
         }else if(front==-1){
             rear=front=0;
