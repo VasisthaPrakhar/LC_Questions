@@ -1,7 +1,7 @@
 class Solution {
 public:
     double champagneTower(int p, int qr, int qg) {
-        vector<vector<double>>dp(qr+2,vector<double>(101,0.0));
+        vector<vector<double>>dp(qr+2,vector<double>(qr+2,0.0));
         dp[0][0]=p;
         for(int i=0;i<=qr;i++){
             for(int j=0;j<=i;j++){
