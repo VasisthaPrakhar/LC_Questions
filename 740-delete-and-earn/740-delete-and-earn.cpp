@@ -2,7 +2,7 @@ class Solution {
 public:
     int deleteAndEarn(vector<int>& nums) {
         int ma=*max_element(nums.begin(),nums.end());
-        map<int,int>m;
+        unordered_map<int,int>m;
         for(int i=0;i<nums.size();i++){
             m[nums[i]]++;
         }
