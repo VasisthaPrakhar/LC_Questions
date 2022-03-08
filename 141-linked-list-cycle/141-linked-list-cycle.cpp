@@ -12,16 +12,13 @@ public:
         if(!head){
             return false;
         }
-        auto front=head->next;
-        while(front!=nullptr){
+        auto front=head;
+        while(front->next && front->next->next){
+            head=head->next;
+            front=front->next->next;
             if(head==front){
                 return true;
             }
-            head=head->next;
-            if(front->next)
-                front=front->next->next;
-            else
-                front=front->next;
         }
         return false;
     }
