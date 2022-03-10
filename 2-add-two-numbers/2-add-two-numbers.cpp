@@ -16,32 +16,28 @@ public:
         ListNode *res=ans;
         while(l1 && l2){
             int temp=l1->val+l2->val+c;
-            ListNode* t=new ListNode(temp%10);
+            ans->next=new ListNode(temp%10);
             c=temp/10;
-            ans->next=t;
             ans=ans->next;
             l1=l1->next;
             l2=l2->next;
         }
         while(l1){
             int temp=l1->val+c;
-            ListNode* t=new ListNode(temp%10);
+            ans->next=new ListNode(temp%10);
             c=temp/10;
-            ans->next=t;
             ans=ans->next;
             l1=l1->next;
         }
         while(l2){
             int temp=l2->val+c;
-            ListNode* t=new ListNode(temp%10);
+            ans->next=new ListNode(temp%10);
             c=temp/10;
-            ans->next=t;
             ans=ans->next;
             l2=l2->next;
         }
         if(c){
-            ListNode* t=new ListNode(c);
-            ans->next=t;
+            ans->next=new ListNode(c);
         }
         return res->next;
     }
