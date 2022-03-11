@@ -16,7 +16,7 @@ public:
             return a;
         }
         int c=0;
-        auto temp=head;
+        ListNode* temp=head;
         while(head){
             c++;
             head=head->next;
