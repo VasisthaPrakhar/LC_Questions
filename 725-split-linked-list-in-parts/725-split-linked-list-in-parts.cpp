@@ -26,9 +26,7 @@ public:
         int idx=0;
         head=temp;
         while(head){
-            int t1=t+(car>0);
-            car--;
-            //cout<<t1;
+            int t1=t+(car-->0);
             if(t1>0){
                 t1--;
                 a[idx++]=head;
@@ -38,7 +36,6 @@ public:
                 auto temp1=head->next;
                 head->next=nullptr;
                 head=temp1;
-                //cout<<head->val<<" ";
             }else
                 head=head->next;            
         }
