@@ -21,9 +21,7 @@ public:
             c++;
             head=head->next;
         }
-        int t=c/k;
-        int car=c%k;
-        int idx=0;
+        int t=c/k,car=c%k,idx=0;
         head=temp;
         while(head){
             int t1=t+(car-->0);
