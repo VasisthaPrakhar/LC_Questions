@@ -24,15 +24,12 @@ public:
         int f=1;
         unordered_map<Node*,Node*>m;
         while(head){
-            Node *t;
-            if(m.count(head)){
-                t=m[head];
-            }else{
-                t=new Node(head->val);
-                m[head]=t;
+            if(m.find(head)==m.end()){
+                m[head]=new Node(head->val);
             }
+            Node *t=m[head];
             if(head->random){
-                if(!m.count(head->random)){
+                if(m.find(head->random)==m.end()){
                     Node* t1=new Node(head->random->val);
                     m[head->random]=t1;
                 }
