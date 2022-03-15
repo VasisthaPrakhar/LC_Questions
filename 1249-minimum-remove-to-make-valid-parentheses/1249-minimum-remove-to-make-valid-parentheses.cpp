@@ -10,7 +10,7 @@ public:
                 st.push({s[i],i});
             }
         }
-        set<int>idx;
+        unordered_set<int>idx;
         while(!st.empty()){
             idx.insert(st.top().second);
             st.pop();
