@@ -18,7 +18,6 @@ public:
                     i++,j++;
             }
         }
-        cout<<s.size()<<" ";
         return s.size()==0;
     }
 };
