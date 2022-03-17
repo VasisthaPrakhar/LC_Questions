@@ -14,9 +14,7 @@ public:
         for(int i=0;i<n;i++){
             if(!st.empty() && s[i]==')' && st.top()=='('){
                 st.pop();
-                //cout<<st.size()<<" %%% ";
                 ans=ans+(st.size()==0?1:fun(st.size()));
-                //cout<<ans<<" ";
                 i++;
                 while(!st.empty() && s[i]==')' && st.top()=='(' && i<n){
                     st.pop();
@@ -27,7 +25,6 @@ public:
                 st.push(s[i]);
             }
         }
-       // cout<<endl;
         return ans;
     }
 };
