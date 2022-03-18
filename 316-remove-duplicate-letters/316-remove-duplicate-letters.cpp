@@ -1,8 +1,8 @@
 class Solution {
 public:
     string removeDuplicateLetters(string s) {
-        vector<int>freq(27,0);
-        vector<bool>visited(27,true);
+        vector<int>freq(26,0);
+        vector<bool>visited(26,true);
         for(auto x: s){
             freq[x-'a']++;
             visited[x-'a']=false;
