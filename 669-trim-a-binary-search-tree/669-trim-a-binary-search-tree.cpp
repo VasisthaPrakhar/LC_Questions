@@ -15,7 +15,7 @@ public:
         if(root==nullptr){
             return nullptr;
         }
-        if(root && root->val>=low && root->val<=high){
+        if(root->val>=low && root->val<=high){
             root->left=trimBST(root->left,low,high);
             root->right=trimBST(root->right,low,high);
         }else if(root->val<low){
