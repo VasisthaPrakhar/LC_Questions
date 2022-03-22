@@ -29,7 +29,6 @@ public:
             st.pop();
             auto it1=st.top();
             st.pop();
-            //cout<<it.first<<" "<<it1.first<<endl;
             while(it.first!=0 && it1.first!=0){
                 if(f){
                     ans.push_back(it1.second);
@@ -69,7 +68,6 @@ public:
         else{
             res=ans;
         }
-        //ans.pop_back();
         return res;
     }
 };
