@@ -1,7 +1,6 @@
 class Solution {
 public:
     string getHint(string secret, string guess) {
-        //if (secret.size() != guess.size() || secret.empty()) { return "0A0B"; }
         int n=secret.size();
         unordered_map<char,int>m;
         for(auto x:secret){
