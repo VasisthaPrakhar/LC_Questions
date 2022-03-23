@@ -17,10 +17,18 @@ public:
         return memo[idx-1][cp-1];
     }
     int minSteps(int n) {
-        if(n==1){
-            return 0;
+        // if(n==1){
+        //     return 0;
+        // }
+        // vector<vector<ll>>memo(n,vector<ll>(n,0));
+        // return 1+dp(memo,1,1,n);
+        int res = 0;
+        for(int i=2;i<=n;i++){
+            while(n%i == 0){
+                res+= i;
+                n=n/i;
+            }
         }
-        vector<vector<ll>>memo(n,vector<ll>(n,0));
-        return 1+dp(memo,1,1,n);
+        return res;
     }
 };
