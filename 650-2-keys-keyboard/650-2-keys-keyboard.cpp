@@ -28,6 +28,9 @@ public:
                 res+= i;
                 n=n/i;
             }
+            if(n==0){
+                break;
+            }
         }
         return res;
     }
