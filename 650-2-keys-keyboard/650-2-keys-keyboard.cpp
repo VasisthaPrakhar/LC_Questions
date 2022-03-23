@@ -3,7 +3,7 @@ class Solution {
 public:
     int dp(vector<vector<ll>>&memo,int idx,int cp,int &n){
         if(idx>n){
-            return 997;
+            return 1000;
         }
         if(n==idx){
             return 0;
