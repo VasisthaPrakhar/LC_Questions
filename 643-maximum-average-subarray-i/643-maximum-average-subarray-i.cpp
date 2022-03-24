@@ -7,7 +7,7 @@ public:
             sum+=nums[i];
         }
         if(n==k){
-            return sum/(double)k;
+            return sum/k;
         }
         int i=0,j=k;
         double ma=sum;
@@ -16,6 +16,6 @@ public:
             sum=sum-nums[i++];
             ma=max(ma,sum);
         }
-        return ma/(double)k;
+        return ma/k;
     }
 };
