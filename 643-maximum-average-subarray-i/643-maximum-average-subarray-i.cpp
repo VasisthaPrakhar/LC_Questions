@@ -14,7 +14,7 @@ public:
         while(j<n){
             sum=sum+nums[j++];
             sum=sum-nums[i++];
-            ma=max(ma,sum);
+            ma=ma>sum?ma:sum;
         }
         return ma/k;
     }
