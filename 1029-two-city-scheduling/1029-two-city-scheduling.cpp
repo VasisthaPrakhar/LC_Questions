@@ -15,7 +15,6 @@ public:
             }else{
                 sum+=c[i][1];
             }
-            //cout<<sum<<endl;
         }
         return sum;
     }
