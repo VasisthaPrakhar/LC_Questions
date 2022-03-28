@@ -1,8 +1,7 @@
 class Solution {
 public:
     bool search(vector<int>& a, int tar) {
-        int n=a.size();
-        int beg=0,end=n-1;
+        int beg=0,end=a.size()-1;
         while(beg<=end){
             while(beg<end && a[beg+1]==a[beg]){
                 beg++;
