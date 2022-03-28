@@ -22,10 +22,10 @@ public:
                     end=mid-1;
                 }
             }else{
-                 if (a[beg] > a[mid] || a[beg] <= tar) {
-                    end = mid - 1;
-                } else {
-                    beg = mid + 1;
+                if(a[beg]>a[mid] || a[beg]<=tar){
+                    end=mid-1;
+                }else{
+                    beg=mid+1;
                 }
             }
         }
