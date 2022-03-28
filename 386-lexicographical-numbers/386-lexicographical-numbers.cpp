@@ -1,7 +1,7 @@
 class Solution {
 public:
     vector<int>ans;
-    void fun(int n,int k){
+    void fun(int &n,int k){
         if(k>n){
             return;
         }else{
