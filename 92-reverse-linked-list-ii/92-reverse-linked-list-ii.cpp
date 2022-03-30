@@ -15,35 +15,31 @@ public:
             return root;
         }
         ListNode *prev,*suf,*temp,*ans=root;
-        stack<int>s;
         int i=1,f=0;
         while(i<=right){
             if(left>1 && i+1==left){
                 prev=root;
             }
             while(i>=left && i<=right && root){
-                // if(i==right){
-                //     end=root;
-                // }
                 if(i==left){
-                    suf=root;
                     temp=root;
+                    suf=root;
                     root=root->next;
                 }else{
-                    auto t=root->next;
-                    root->next=temp;
-                    temp=root;
+                    ListNode* t=root->next;
+                    root->next=suf;
+                    suf=root;
                     root=t;
                 }
                 f=1;
                 i++;
             }
             if(f){
-                suf->next=root;
+                temp->next=root;
                 if(left>1)
-                    prev->next=temp;
+                    prev->next=suf;
                 else
-                    ans=temp;                    
+                    ans=suf;                    
             }
             i++;
             if(root)
