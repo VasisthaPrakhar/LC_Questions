@@ -14,7 +14,7 @@ public:
         if(root->next==nullptr || left==right){
             return root;
         }
-        ListNode *prev,*suf,*temp,*end,*ans=root;
+        ListNode *prev,*suf,*temp,*ans=root;
         stack<int>s;
         int i=1,f=0;
         while(i<=right){
@@ -22,9 +22,9 @@ public:
                 prev=root;
             }
             while(i>=left && i<=right && root){
-                if(i==right){
-                    end=root;
-                }
+                // if(i==right){
+                //     end=root;
+                // }
                 if(i==left){
                     suf=root;
                     temp=root;
@@ -41,9 +41,9 @@ public:
             if(f){
                 suf->next=root;
                 if(left>1)
-                    prev->next=end;
+                    prev->next=temp;
                 else
-                    ans=end;                    
+                    ans=temp;                    
             }
             i++;
             if(root)
