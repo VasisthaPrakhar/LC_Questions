@@ -14,24 +14,39 @@ public:
         if(root->next==nullptr || left==right){
             return root;
         }
-        ListNode *ans=root;
+        ListNode *prev,*suf,*temp,*end,*ans=root;
         stack<int>s;
-        int i=1;
-        while(root){
-            if(i>=left && i<=right){
-                s.push(root->val);
+        int i=1,f=0;
+        while(i<=right){
+            if(left>1 && i+1==left){
+                prev=root;
+            }
+            while(i>=left && i<=right && root){
+                if(i==right){
+                    end=root;
+                }
+                if(i==left){
+                    suf=root;
+                    temp=root;
+                    root=root->next;
+                }else{
+                    auto t=root->next;
+                    root->next=temp;
+                    temp=root;
+                    root=t;
+                }
+                f=1;
+                i++;
+            }
+            if(f){
+                suf->next=root;
+                if(left>1)
+                    prev->next=end;
+                else
+                    ans=end;                    
             }
             i++;
-            root=root->next;
-        }
-        root=ans;
-        i=1;
-        while(root){
-            if(i>=left && i<=right){
-                root->val=s.top();
-                s.pop();
-            }
-            i++;
+            if(root)
             root=root->next;
         }
         return ans;
