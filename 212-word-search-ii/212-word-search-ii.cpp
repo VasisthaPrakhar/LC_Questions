@@ -19,7 +19,6 @@ public:
     int dr[4] = {1, -1, 0, 0}; 
     int dc[4] = {0, 0, -1, 1}; 
     int n,m;
-    vector<string>ans;
     void insert(string s,Node *root){
         Node *node=root;
         for(int i=0;i<s.length();i++){
@@ -30,7 +29,7 @@ public:
         }
         node->set(s);
     }
-    void dfs(int r, int c, vector<vector<char>>& grid, Node *trie) {
+    void dfs(int r, int c, vector<vector<char>>& grid, Node *trie, vector<string>&ans) {
         if (r < 0 || r >= n || c < 0 || c >= m || grid[r][c]=='0' || trie->next(grid[r][c])==nullptr) return;
         char ch=grid[r][c];
         trie=trie->next(ch);
@@ -40,7 +39,7 @@ public:
         }
         grid[r][c] = '0';
         for (int i = 0; i < 4; i++) { 
-            dfs(r + dr[i], c + dc[i],grid,trie);
+            dfs(r + dr[i], c + dc[i],grid,trie,ans);
         }
         grid[r][c]=ch;
     }
@@ -51,9 +50,10 @@ public:
         for(auto w:words){
             insert(w,trie);
         }
+        vector<string>ans;
         for(int j=0;j<n;j++){
             for(int k=0;k<m;k++){
-                    dfs(j,k,board,trie);
+                    dfs(j,k,board,trie,ans);
                 }
             }
         return ans;
