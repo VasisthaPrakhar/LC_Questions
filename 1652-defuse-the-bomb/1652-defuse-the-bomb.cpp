@@ -2,7 +2,7 @@ class Solution {
 public:
     vector<int> decrypt(vector<int>& code, int k) {
         int n=code.size();
-        vector<int>pre(n,0),ans(n);
+        vector<int>pre(n),ans(n);
         pre[0]=code[0];
         for(int i=1;i<n;i++){
             pre[i]=pre[i-1]+code[i];
