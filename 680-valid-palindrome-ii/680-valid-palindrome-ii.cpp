@@ -1,12 +1,6 @@
 class Solution {
 public:
-    bool check(string &s, int f){
-        int i,j;
-        if(f){
-            i=1,j=s.length()-1;
-        }else{
-            i=0,j=s.length()-2;
-        }
+    bool check(string &s, int i, int j){
         while(i<=j){
             if(s[i]!=s[j]){
                 return false;
@@ -21,9 +15,9 @@ public:
         int i=0,j=n-1;
         while(i<=j){
             if(s[i]!=s[j]){
-                string temp=s.substr(i,j-i+1);
-                cout<<temp<<" ";
-                return check(temp,0) || check(temp,1);
+                //string temp=s.substr(i,j-i+1);
+                //cout<<temp<<" ";
+                return check(s,i+1,j) || check(s,i,j-1);
             }else{
                 i++;
                 j--;
