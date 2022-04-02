@@ -1,7 +1,7 @@
 class Solution {
 public:
     bool check(string &s, int i, int j){
-        while(i<=j){
+        while(i<j){
             if(s[i++]!=s[j--]){
                 return false;
             }
