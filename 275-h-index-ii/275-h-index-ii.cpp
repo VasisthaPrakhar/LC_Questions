@@ -9,6 +9,7 @@ public:
         while(beg<=end){
             int mid=(beg+end)>>1;
             if(n-mid>c[mid]){
+               // ans=n-mid;
                 beg=mid+1;
             }else{
                 ans=n-mid;
