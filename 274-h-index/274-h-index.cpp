@@ -17,9 +17,6 @@ public:
     }
     int hIndex(vector<int>& c) {
         int n=c.size();
-        if(n==0){
-            return 0;
-        }
         sort(c.begin(),c.end());
         return fun(c);
     }
