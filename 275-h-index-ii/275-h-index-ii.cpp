@@ -5,14 +5,13 @@ class Solution {
 public:
     int hIndex(vector<int>& c) {
         int n=c.size();
-        int beg=1,end=1000,ans;
+        int beg=0,end=n-1,ans=0;
         while(beg<=end){
             int mid=(beg+end)>>1;
-            auto f=lower_bound(c.begin(),c.end(),mid)-c.begin();
-            if(n-f>=mid){
-                ans=mid;
+            if(n-mid>c[mid]){
                 beg=mid+1;
             }else{
+                ans=n-mid;
                 end=mid-1;
             }
         }
