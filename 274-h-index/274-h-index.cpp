@@ -1,13 +1,26 @@
 class Solution {
 public:
-    int hIndex(vector<int>& c) {
+     int fun(vector<int>& c) {
         int n=c.size();
-        sort(c.begin(),c.end());
-        for(int i=0;i<n;i++){
-            if(c[i]>=n-i){
-                return n-i;
+        int beg=1,end=1000,ans=0;
+        while(beg<=end){
+            int mid=(beg+end)>>1;
+            auto f=lower_bound(c.begin(),c.end(),mid)-c.begin();
+            if(n-f>=mid){
+                ans=mid;
+                beg=mid+1;
+            }else{
+                end=mid-1;
             }
         }
-        return 0;
+        return ans;
+    }
+    int hIndex(vector<int>& c) {
+        int n=c.size();
+        if(n==0){
+            return 0;
+        }
+        sort(c.begin(),c.end());
+        return fun(c);
     }
 };
