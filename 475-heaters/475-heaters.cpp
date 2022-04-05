@@ -19,7 +19,7 @@ public:
         sort(he.begin(),he.end());
         int n=ho.size();
         int m=he.size();
-        int beg=0,end=1e9;
+        int beg=0,end=max(*max_element(ho.begin(),ho.end()),*max_element(he.begin(),he.end()));
         while(beg<end){
             int mid=(beg+end)>>1;
             if(fun(ho,he,mid,n,m)){
