@@ -10,7 +10,7 @@ public:
     long long maxRunTime(int n, vector<int>& b) {
         long long int beg=0,end=1e14,mid,ans=0;
         while(beg<=end){
-            mid=(beg+end)/2;
+            mid=(beg+end)>>1;
             if(fun(n,b,mid)){
                 ans=mid;
                 beg=mid+1;
