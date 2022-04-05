@@ -28,7 +28,7 @@ public:
                         }
                     }
                 }else if(dir=='S'){
-                    for(int j=1;j<=co[i];j++){
+                    for(int j=0;j<co[i];j++){
                         p.second--;
                         if(s.count({p.first,p.second})){
                             p.second++;
@@ -36,7 +36,7 @@ public:
                         }
                     }
                 }else if(dir=='E'){
-                    for(int j=1;j<=co[i];j++){
+                    for(int j=0;j<co[i];j++){
                         p.first++;
                         if(s.count({p.first,p.second})){
                             p.first--;
