@@ -28,7 +28,6 @@ public:
                 beg=mid+1;
             }
         }
-        //cout<<beg<<" "<<end;
         return beg;
     }
 };
