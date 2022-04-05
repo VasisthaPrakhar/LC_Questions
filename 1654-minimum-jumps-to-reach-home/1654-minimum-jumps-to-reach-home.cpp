@@ -2,6 +2,7 @@ class Solution {
 public:
     int minimumJumps(vector<int>& fo, int a, int b, int x) {
         unordered_set<int>s(fo.begin(),fo.end());
+        int k=2000+a+b;
         set<pair<int,int>>st;
         int ans=0;
         queue<pair<int,int>>q;
@@ -19,7 +20,7 @@ public:
                     q.push({node.first-b,0});
                     st.insert({0,node.first-b});
                 }
-                if(!s.count(node.first+a) && node.first+a<6000 && !st.count({1,node.first+a})){
+                if(!s.count(node.first+a) && node.first+a<=k && !st.count({1,node.first+a})){
                     q.push({node.first+a,1});
                     st.insert({1,node.first+a});
                 }
