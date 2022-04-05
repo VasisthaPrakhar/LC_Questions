@@ -19,32 +19,27 @@ public:
             if(co[i]<0){
                 dir=m[{dir,co[i]}];
             }else{
-                if(dir=='N'){
-                    for(int j=1;j<=co[i];j++){
+                for(int j=0;j<co[i];j++){
+                    if(dir=='N'){
                         p.second++;
                         if(s.count({p.first,p.second})){
                             p.second--;
                             break;
                         }
-                    }
-                }else if(dir=='S'){
-                    for(int j=0;j<co[i];j++){
+                    }else if(dir=='S'){
                         p.second--;
                         if(s.count({p.first,p.second})){
                             p.second++;
                             break;
                         }
-                    }
-                }else if(dir=='E'){
-                    for(int j=0;j<co[i];j++){
+                    }else if(dir=='E'){
                         p.first++;
                         if(s.count({p.first,p.second})){
                             p.first--;
                             break;
                         }
                     }
-                }else{
-                    for(int j=1;j<=co[i];j++){
+                    else{
                         p.first--;
                         if(s.count({p.first,p.second})){
                             p.first++;
