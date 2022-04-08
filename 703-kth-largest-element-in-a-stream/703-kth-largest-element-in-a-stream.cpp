@@ -6,18 +6,14 @@ public:
         for(auto x:nums){
             p.push(x);
         }
-        m=k;
-        while(p.size()>k){
-           p.pop(); 
-        }                
+        m=k;              
     }
     
     int add(int val) {
         p.push(val);
         while(p.size()>m){
             p.pop();
-        }
-        
+        }        
         return p.top();
     }
 };
