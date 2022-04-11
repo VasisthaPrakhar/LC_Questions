@@ -2,7 +2,7 @@ class Solution {
 public:
     bool repeatedSubstringPattern(string s) {
         int n=s.length();
-        map<char,int>m;
+        unordered_map<char,int>m;
         for(auto x:s){
             m[x]++;
         }
@@ -26,7 +26,6 @@ public:
                 }
                 k+=l;
             }
-            //cout<<flag<<" ";
             if(flag==0){
                 return true;
             }
