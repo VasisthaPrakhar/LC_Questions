@@ -17,6 +17,6 @@ public:
                 beg=mid+1;
             }
         }
-        return end;
+        return beg;
     }
 };
