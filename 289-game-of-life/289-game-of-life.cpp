@@ -24,7 +24,6 @@ public:
                 if(board[i][j]==1){
                     grid[i][j]=1;
                     if(k<2 || k>3){
-                        //cout<<i<<" "<<j<<endl;
                         grid[i][j]=0;
                     }
                 }else{
