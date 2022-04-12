@@ -8,7 +8,8 @@ public:
         return ans<=t;
     }
     int smallestDivisor(vector<int>& nums, int th) {
-        int beg=1,end=1e6,mid;
+        int ma=*max_element(nums.begin(),nums.end());
+        int beg=1,end=ma,mid;
         while(beg<end){
             mid=(beg+end)>>1;
             if(check(nums,th,mid)){
