@@ -1,39 +1,27 @@
 class Solution{
 public:
-vector<int> spiralOrder(vector<vector<int>>& matrix) {
-        int n=matrix.size()-1;
-        int m=matrix[0].size()-1;
-        int k=0,i=0,j=0,k1=n/2,n2=n+1,m2=m+1;
+vector<int> spiralOrder(vector<vector<int>>& mat) {
+        int n=mat.size();
+        int m1=mat[0].size();
         vector<int>ans;
-        while(k<=k1 && ans.size()!=(n2*m2)){
-            if(i<=k&&j<=k){
-                for(j=k;j<=m;j++){
-                    ans.push_back(matrix[i][j]);
-                }              
+        unordered_map<int,vector<int>>m;
+        m[0]={0,1};
+        m[1]={1,0};
+        m[2]={0,-1};
+        m[3]={-1,0};
+        int dir=0,i=0,j=0,k=1;
+        while(ans.size()<n*m1){
+            ans.push_back(mat[i][j]);
+            mat[i][j]=-101;
+            int ni=i+m[dir][0];
+            int nj=j+m[dir][1];
+            if(ni>=0 && ni<n && nj>=0 && nj<m1 && mat[ni][nj]!=-101){
+                i=ni,j=nj;
+            }else{
+                dir=(dir+1)%4;
+                i=i+m[dir][0];
+                j=j+m[dir][1];
             }
-            else if(i<=k&&j>=m){
-                j--;
-                for(i=k+1;i<=n;i++){
-                   ans.push_back(matrix[i][j]);
-                }
-            }
-            else if(i>=n&&j>=m){
-                i--;
-                for(j=m-1;j>=k;j--){
-                    ans.push_back(matrix[i][j]);
-                }
-            }
-            else if(i>=n&&j<=k){
-                j++;
-                for(i=n-1;i>k;i--){
-                    ans.push_back(matrix[i][j]);
-                }
-                i++;
-                k++;
-                m--;
-                n--;
-            }
-        
         }
         return ans;
     }
