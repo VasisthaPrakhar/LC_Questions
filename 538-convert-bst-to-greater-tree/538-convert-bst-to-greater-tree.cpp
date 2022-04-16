@@ -16,9 +16,8 @@ public:
             return;
         }
         fun(root->right,sum);
-        int temp=root->val;
         root->val+=sum;
-        sum+=temp;
+        sum=root->val;
         fun(root->left,sum);
     }
     TreeNode* convertBST(TreeNode* root) {
