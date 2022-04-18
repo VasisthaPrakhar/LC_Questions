@@ -10,7 +10,7 @@ public:
                 a.push_back(1+fun(adj,s,x));
             }
         }
-        sort(a.begin(),a.end(),greater<int>());
+        sort(a.rbegin(),a.rend());
         if(!a.size()){
             return 0;
         }
