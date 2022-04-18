@@ -2,23 +2,22 @@ class Solution {
 public:
     int ans=0;
     int fun(vector<int>adj[],string &s,int root){
-        priority_queue<int>a;
+        vector<int>a;
         for(auto x:adj[root]){
             if(s[root]==s[x]){
                 ans=max(ans,fun(adj,s,x));
             }else{
-                a.push(1+fun(adj,s,x));
+                a.push_back(1+fun(adj,s,x));
             }
         }
-        if(a.empty()){
+        sort(a.begin(),a.end(),greater<int>());
+        if(!a.size()){
             return 0;
         }
-        int k=a.top();
-        a.pop();
-        if(a.size()>0){
-            ans=max(ans,a.top()+k);
+        if(a.size()>1){
+            ans=max(ans,a[0]+a[1]);
         }
-        return k;        
+        return a[0];        
     }
     int longestPath(vector<int>& par, string s) {
         int n=par.size();
