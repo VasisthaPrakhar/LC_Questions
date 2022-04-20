@@ -45,6 +45,7 @@ public:
     }
     
     bool hasNext() {
+        //return !s.empty();
         return idx<n-1;
     }
 };
