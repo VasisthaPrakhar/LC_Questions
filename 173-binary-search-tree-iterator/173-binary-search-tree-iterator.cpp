@@ -10,7 +10,7 @@
  * };
  */
 class BSTIterator {
-    private: stack<TreeNode*>s;
+    private: //stack<TreeNode*>s;
     vector<int>a;
     int idx=-1,n;
     void fun(TreeNode* root){
