@@ -30,10 +30,7 @@ class Solution {
                 return false;
             }
         }
-        //cout<<y1<<" "<<y2<<" ";
-        //cout<<x2-x1<<" "<<y2-y1<<" ";
         double m=(double)(y2-y1)/(double)(x2-x1);
-        //cout<<m<<" ";
         if(m==0.0){
             if(y1==0 || y2==0)
                 return true;
