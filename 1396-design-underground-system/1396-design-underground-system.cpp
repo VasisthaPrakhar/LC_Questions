@@ -1,5 +1,5 @@
 class UndergroundSystem {
-    private: map<int,pair<string,int>>m;
+    private: unordered_map<int,pair<string,int>>m;
     map<pair<string,string>,double>m1,m2;
 public:
     UndergroundSystem() {
