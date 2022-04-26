@@ -46,9 +46,6 @@ public:
             }
             return {ans[0],ans[1]};
         }
-        for(int i=0;i<=n;i++){
-            par[i]=i;
-        }
         vector<int>res(2);
         for(int i=0;i<m[cnt].size();i++){
             for(int i=0;i<=n;i++){
