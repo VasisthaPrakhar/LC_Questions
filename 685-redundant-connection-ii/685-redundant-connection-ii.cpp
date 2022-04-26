@@ -47,7 +47,7 @@ public:
             return {ans[0],ans[1]};
         }
         vector<int>res(2);
-        for(int i=0;i<m[cnt].size();i++){
+        for(int i=0;i<2;i++){
             for(int i=0;i<=n;i++){
                 par[i]=i;
             }
