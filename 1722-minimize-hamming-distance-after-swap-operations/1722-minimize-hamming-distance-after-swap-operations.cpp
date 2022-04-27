@@ -38,14 +38,6 @@ public:
         }
         int ans=0;
         for(auto x:m){
-            // for(auto y:x.second){
-            //     cout<<y<<" ";
-            // }
-            // cout<<"|| ";
-            // for(auto y:st[x.first]){
-            //     cout<<y<<" ";
-            // }
-            // cout<<endl;
             ans+=cmp(x.second,st[x.first]);
         }
         return ans;
