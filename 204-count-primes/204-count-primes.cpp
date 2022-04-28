@@ -1,7 +1,10 @@
 class Solution {
 public:
     int countPrimes(int n) {
-        vector<bool>v(n+1,true);
+        if(n<=2){
+            return 0;
+        }
+        vector<bool>v(n,true);
         v[0]=false;
         v[1]=false;
         for(int i=2;i<sqrt(n);i++){
@@ -11,6 +14,6 @@ public:
                 }
             }
         }
-        return count(v.begin(),v.begin()+n,true);
+        return count(v.begin(),v.end(),true);
     }
 };
