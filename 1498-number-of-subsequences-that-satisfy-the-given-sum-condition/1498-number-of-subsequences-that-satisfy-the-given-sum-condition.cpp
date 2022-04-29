@@ -21,7 +21,7 @@ public:
                 }
                 else{
                     j=f-nums.begin();
-                    if(nums[j]>k){j--;}
+                    j--;
                 }
             }
             else if(k==nums[i]){
