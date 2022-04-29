@@ -10,12 +10,15 @@ public:
             return 0;
         }
         w=(s+target)/2;
-        int dp[n+1][w+1];
-        memset(dp,0,sizeof(dp));
-        // for(int i=0;i<=n;i++){
-        //     dp[i][0]=1;
-        // }
-        dp[0][0]=1;
+        // int dp[n+1][w+1];
+        // memset(dp,0,sizeof(dp));
+        vector<vector<int>>dp(n+1,vector<int>(w+1,0));
+        for(int i=0;i<=w;i++){
+            dp[0][i]=0;
+        }
+        for(int i=0;i<=n;i++){
+            dp[i][0]=1;
+        }
         for(int i=1;i<=n;i++){
             for(int j=0;j<=w;j++){
                 if(nums[i-1]<=j){
