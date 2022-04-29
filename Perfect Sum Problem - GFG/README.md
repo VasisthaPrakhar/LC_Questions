@@ -29,5 +29,7 @@ You don't need to read input or print anything. Complete the function <strong><c
 <br>
 <strong>Constraints:</strong><br>
 1 ≤ <strong>N*sum</strong> ≤ 10<sup>6</sup></span></div>
+
+<div><span style="font-size:18px">0&lt;=arr[I]&lt;=10<sup>6</sup></span></div>
  <p></p>
             </div>
