@@ -18,7 +18,12 @@ public:
         if(n==0){
             return 0;
         }
-       vector<vector<int>>memo(n,vector<int>(2,0));
-        return fun(p,0,0,n,memo,fee);   
+       //vector<vector<int>>memo(n+1,vector<int>(2,0));
+        int b=INT_MAX,s=0;
+        for(int i=0;i<n;i++){
+            b=min(b,p[i]-s);
+            s=max(s,-b+p[i]-fee);
+        }
+        return s;   
     }
 };
