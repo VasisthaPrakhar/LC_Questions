@@ -2,18 +2,18 @@ class Solution {
 public:
     int findTargetSumWays(vector<int>& nums, int target) {
         int n=nums.size();
-        if(n==1){
-            if(nums[0]==target || nums[0]==-1*target){
-                return 1;
-            }else{
-                return 0;
-            }
-        }
+        // if(n==1){
+        //     if(nums[0]==target || nums[0]==-1*target){
+        //         return 1;
+        //     }else{
+        //         return 0;
+        //     }
+        // }
         int s=0,w=0;
         for(auto x:nums){
             s+=x;
         }
-        if(s<target || (s+target)%2!=0){
+        if(s<abs(target) || (s+target)%2!=0){
             return 0;
         }
         w=(s+target)/2;
