@@ -12,6 +12,8 @@ class Solution{
 	    for(int i=0;i<n;i++){
 	        w+=arr[i];
 	    }
+	    int k=w;
+	    w=ceil((double)w/2.0);
 	    bool dp[n+1][w+1];
 	    for(int i=0;i<=w;i++){
 	        dp[0][i]=false;
@@ -28,13 +30,11 @@ class Solution{
 	            }
 	        }
 	    }
-	    //cout<<dp[n][w]<<"ubeiubcui ";
 	    int ans=INT_MAX;
 	    for(int i=0;i<=w;i++){
 	        if(dp[n][i])
 	        {
-	            //cout<<i<<" ";
-	            ans=min(ans,abs(2*i-w));
+	            ans=min(ans,abs(2*i-k));
 	        }
 	    }
 	    return ans;
