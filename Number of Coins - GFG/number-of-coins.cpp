@@ -13,18 +13,18 @@ class Solution{
             return 0;
         }
         int dp[n+1][am+1];
-        for(int i=0;i<=am;i++){
-            dp[0][i]=INT_MAX-1;
-        }
         for(int i=0;i<=n;i++){
             dp[i][0]=0;
         }
-        // for(int i=1;i<=am;i++){
-        //     if(i%co[0])
-        //         dp[1][i]=INT_MAX-1;
-        //     else
-        //         dp[1][i]=i/co[0];
-        // }
+        for(int i=0;i<=am;i++){
+            dp[0][i]=INT_MAX-1;
+        }
+        for(int i=1;i<=am;i++){
+            if(i%co[0])
+                dp[1][i]=INT_MAX-1;
+            else
+                dp[1][i]=i/co[0];
+        }
         for(int i=1;i<=n;i++){
             for(int j=1;j<=am;j++){
                 if(co[i-1]<=j){
