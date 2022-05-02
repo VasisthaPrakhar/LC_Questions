@@ -1,33 +1,26 @@
 class Solution {
 public:
     int numSquares(int n) {
-        unordered_set<int>s;
         vector<int>sq;
         int k=1;
         while(k*k<=n){
             sq.push_back(k*k);
             k++;
         }
-        queue<int>q;
-        q.push(0);
-        int ans=0;
-        while(!q.empty()){
-            int sz=q.size();
-            while(sz--){
-                int node=q.front();
-                q.pop();
-                if(node==n){
-                    return ans;
-                }
-                for(auto x:sq){
-                    if(!s.count(node+x) && node+x<=n){
-                        s.insert(node+x);
-                        q.push(node+x);
-                    }
+        int m=sq.size();
+        vector<vector<int>>dp(m+1,vector<int>(n+1,0));
+        for(int i=0;i<=n;i++){
+            dp[0][i]=INT_MAX-1;
+        }
+        for(int i=1;i<=m;i++){
+            for(int j=1;j<=n;j++){
+                if(j>=sq[i-1]){
+                    dp[i][j]=min(dp[i-1][j],1+dp[i][j-sq[i-1]]);
+                }else{
+                    dp[i][j]=dp[i-1][j];
                 }
             }
-            ans++;
         }
-        return ans;
+        return dp[m][n];
     }
 };
