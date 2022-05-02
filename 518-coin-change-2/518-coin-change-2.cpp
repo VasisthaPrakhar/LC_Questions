@@ -1,13 +1,20 @@
 class Solution {
 public:
     int change(int am, vector<int>& co) {
-        vector<int>dp(am+1,0);
-        dp[0]=1;
-        for(int i=0;i<co.size();i++){
-            for(int j=co[i];j<=am;j++){
-                dp[j]+=dp[j-co[i]];
+        int n=co.size();
+        vector<vector<int>>dp(n+1,vector<int>(am+1,0));
+        for(int i=0;i<=n;i++){
+            dp[i][0]=1;
+        }
+        for(int i=1;i<=n;i++){
+            for(int j=0;j<=am;j++){
+                if(j>=co[i-1]){
+                    dp[i][j]=dp[i-1][j]+dp[i][j-co[i-1]];
+                }else{
+                    dp[i][j]=dp[i-1][j];
+                }
             }
         }
-        return dp[am];
+        return dp[n][am];
     }
 };
