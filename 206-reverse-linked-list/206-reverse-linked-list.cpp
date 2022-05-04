@@ -1,8 +1,5 @@
-static const auto Initialize = []{
-    ios::sync_with_stdio(false); cin.tie(nullptr);
-    return nullptr;
-}();
-/* Definition for singly-linked list.
+/**
+ * Definition for singly-linked list.
  * struct ListNode {
  *     int val;
  *     ListNode *next;
@@ -14,24 +11,21 @@ static const auto Initialize = []{
 class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
-        if(head==NULL){
-            return NULL;
+        if(head==nullptr){
+            return nullptr;
         }
-        ListNode* ans;
-        int f=1;
-        while(head!=NULL){
-            ListNode* temp=head->next;
-            if(f){
-                head->next=NULL;
-                    f--;
-            }
-            else{
-                head->next=ans;
-            }            
-            ans=head;
-            head=temp;
+        ListNode* ans=head,*res=head;
+        vector<int>a;
+        while(head){
+            a.push_back(head->val);
+            head=head->next;
         }
-       
+        reverse(a.begin(),a.end());
+        int i=0;
+        while(res){
+            res->val=a[i++];
+            res=res->next;
+        }
         return ans;
     }
 };
