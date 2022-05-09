@@ -5,7 +5,7 @@ public:
             ans.push_back(s);
             return;
         }
-        for(auto &x:m[d[idx]]){
+        for(auto x:m[d[idx]]){
             s.push_back(x);
             fun(ans,s,idx+1,n,m,d);
             s.pop_back();
