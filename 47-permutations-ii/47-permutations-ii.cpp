@@ -1,7 +1,7 @@
 class Solution {
 public:
     set<vector<int>>s;
-    void fun(vector<int>& a,int n,int idx,vector<int>&vis,vector<int>&res){
+    void fun(vector<int>& a,int n,int idx,int vis[],vector<int>&res){
         if(idx>=n){
             s.insert(res);
             return;
@@ -18,7 +18,8 @@ public:
     }
     vector<vector<int>> permuteUnique(vector<int>& nums) {
         int n=nums.size();
-        vector<int>res,vis(n,0);
+        vector<int>res;
+        int vis[9]={0};
         fun(nums,n,0,vis,res);
         vector<vector<int>>ans;
         for(auto x:s){
