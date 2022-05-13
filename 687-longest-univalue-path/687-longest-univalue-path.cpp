@@ -11,7 +11,6 @@
  */
 class Solution {
 public:
-    set<TreeNode*>s;
     int ans=0;
     int dfs(TreeNode* root,TreeNode* node){
         if(root==nullptr){
@@ -24,7 +23,6 @@ public:
         if(root->right && root->right->val==root->val){
             r=1+dfs(root->right,node);
         }
-        //cout<<l<<" "<<r<<endl;
         if(root==node){
             return l+r;
         }
@@ -34,9 +32,6 @@ public:
         if(root==nullptr){
             return;
         }
-        // if(s.find(root)!=s.end()){
-        //     return;
-        // }
         ans=max(ans,dfs(root,root));
         fun(root->left);
         fun(root->right);
