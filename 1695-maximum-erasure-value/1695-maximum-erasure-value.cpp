@@ -7,7 +7,7 @@ public:
         while(j<n){
             m[nums[j]]++;
             sum+=nums[j];
-            while(i<=j && m[nums[j]]>1){
+            while(i<j && m[nums[j]]>1){
                 m[nums[i]]--;
                 sum-=nums[i];
                 i++;
