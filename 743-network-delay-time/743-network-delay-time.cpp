@@ -7,16 +7,17 @@ public:
             adj[t[i][0]].push_back({t[i][1],t[i][2]});
         }
         vector<int>dis(n+1,INT_MAX);
-        priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>>q;
-        q.push({0,k});
+        //priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>>q;
+        set<pair<int,int>>q;
+        q.insert({0,k});
         dis[k]=0;
         while(!q.empty()){
-            auto node=q.top();
-            q.pop();
+            auto node=*q.begin();
+            q.erase(node);
             for(auto x:adj[node.second]){
                 if(dis[x.first]>dis[node.second]+x.second){
                     dis[x.first]=dis[node.second]+x.second;
-                    q.push({dis[x.first],x.first});
+                    q.insert({dis[x.first],x.first});
                 }
             }
         }
