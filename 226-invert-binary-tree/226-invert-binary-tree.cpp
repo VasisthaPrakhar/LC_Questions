@@ -15,9 +15,7 @@ public:
         if(root==nullptr){
             return;
         }
-        if(true){
-            swap(root->left,root->right);
-        }
+        swap(root->left,root->right);
         fun(root->left);
         fun(root->right);
     }
