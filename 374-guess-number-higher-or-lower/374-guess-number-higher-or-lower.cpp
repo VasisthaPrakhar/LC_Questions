@@ -13,9 +13,9 @@ static auto _ = [] () {ios_base::sync_with_stdio(false);cin.tie(nullptr);cout.ti
 class Solution {
 public:
     int guessNumber(int n) {
-        long long unsigned int beg=1,end=n;
+        long long unsigned int beg=1,end=n,mid;
         while(beg<=end){
-            long long unsigned int mid=(beg+end)>>1;
+            mid=(beg+end)>>1;
             int k=guess(mid);
             if(k==0){
                 return mid;
