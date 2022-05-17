@@ -15,7 +15,7 @@ public:
     int guessNumber(int n) {
         long long unsigned int beg=1,end=n,mid;
         while(beg<=end){
-            mid=(beg+end)>>1;
+            mid=(beg+end)/2;
             int k=guess(mid);
             if(k==0){
                 return mid;
