@@ -9,7 +9,7 @@
 class Solution {
 public:
     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
-        set<ListNode*>s;
+        unordered_set<ListNode*>s;
         while(headA){
             s.insert(headA);
             headA=headA->next;
