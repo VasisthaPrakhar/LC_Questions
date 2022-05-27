@@ -14,9 +14,10 @@ public:
         // Your code goes here
         vector<long long>v;
         long long mod=1000000007;
+        int a0=n-2;
         for(int i=0;i<n;i++){
             long long j=(i)<(n-i-1)?i:(n-i-1);
-            long long k=(j*(2*(n-2)+(j-1)*(-2))/2);
+            long long k=(j*(2*a0+(j-1)*(-2))/2);
             v.push_back(n+k);
         }
         long long int ans=0;
