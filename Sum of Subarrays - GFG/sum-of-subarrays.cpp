@@ -15,11 +15,9 @@ public:
         vector<long long>v;
         long long mod=1000000007;
         for(int i=0;i<n;i++){
-            if(i==0){
-                v.push_back(n);
-            }else{
-                v.push_back(n-i+(v[i-1]-i));
-            }
+            long long j=(i)<(n-i-1)?i:(n-i-1);
+            long long k=(j*(2*(n-2)+(j-1)*(-2))/2);
+            v.push_back(n+k);
         }
         long long int ans=0;
         for(int i=0;i<n;i++){
