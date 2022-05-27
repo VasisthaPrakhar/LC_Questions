@@ -101,32 +101,27 @@ class Solution {
         if(root==nullptr){
             return res;
         }
-        map<int,map<int,vector<int>>>m;
-        queue<pair<Node*,pair<int,int>>>q;
+        map<int,int>m;
+        queue<pair<Node*,int>>q;
         
-        q.push({root,{0,0}});
+        q.push({root,0});
         while(!q.empty()){
             int s=q.size();
             while(s--){
                 auto node=q.front();
                 q.pop();
-                int x=node.second.second;
-                int y=node.second.first;
-                m[x][y].push_back(node.first->data);
+                int x=node.second;
+                m[x]=node.first->data;
                 if(node.first->left){
-                    q.push({node.first->left,{y+1,x-1}});
+                    q.push({node.first->left,x-1});
                 }
                 if(node.first->right){
-                    q.push({node.first->right,{y+1,x+1}});
+                    q.push({node.first->right,x+1});
                 }
             }
         }
         for(auto x:m){
-            int c;
-            for(auto y:x.second){
-                c=*y.second.rbegin();
-            }
-            res.push_back(c);
+            res.push_back(x.second);
         }
         return res;
     }
