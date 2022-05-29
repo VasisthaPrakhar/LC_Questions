@@ -23,7 +23,6 @@ class Solution{
                 }
             }
         }
-        int f=1;
         return dist;
     }
 };
