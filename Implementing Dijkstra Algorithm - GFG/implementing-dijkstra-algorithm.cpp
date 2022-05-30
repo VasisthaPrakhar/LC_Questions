@@ -13,15 +13,15 @@ class Solution
         // Code here
         vector<int>dist(n,INT_MAX);
         dist[s]=0;
-        priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>>pq;
-        pq.push({0,s});
+        set<pair<int,int>>pq;
+        pq.insert({0,s});
         while(!pq.empty()){
-            auto node=pq.top();
-            pq.pop();
+            auto node=*pq.begin();
+            pq.erase(node);
             for(auto x:adj[node.second]){
                 if(dist[x[0]]>dist[node.second]+x[1]){
                     dist[x[0]]=dist[node.second]+x[1];
-                    pq.push({dist[x[0]],x[0]});
+                    pq.insert({dist[x[0]],x[0]});
                 }
             }
         }
