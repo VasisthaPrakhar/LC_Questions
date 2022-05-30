@@ -37,9 +37,9 @@ public:
                 }
             }
         }
-        for(auto x:dist){
-            cout<<x<<" ";
-        }
+        // for(auto x:dist){
+        //     cout<<x<<" ";
+        // }
         vector<int>dp(n+1,-1);
         return dfs(n,adj,dist,dp);
     }
