@@ -23,17 +23,17 @@ public:
             adj[x[0]].push_back({x[1],x[2]});
             adj[x[1]].push_back({x[0],x[2]});
         }
-        set<pair<int,int>>s;
+        priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>>s;
         vector<int>dist(n+1,INT_MAX);
-        s.insert({0,n});
+        s.push({0,n});
         dist[n]=0;
         while(!s.empty()){
-            auto node=*s.begin();
-            s.erase(node);
+            auto node=s.top();
+            s.pop();
             for(auto x:adj[node.second]){
                 if(dist[x.first]>dist[node.second]+x.second){
                     dist[x.first]=dist[node.second]+x.second;
-                    s.insert({dist[x.first],x.first});
+                    s.push({dist[x.first],x.first});
                 }
             }
         }
