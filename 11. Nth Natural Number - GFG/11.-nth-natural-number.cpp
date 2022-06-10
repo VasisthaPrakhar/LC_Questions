@@ -11,7 +11,6 @@ using namespace std;
 class Solution{
 	public:
     long long findNth(long long n){
-        // code here.
         string s="";
         while(n){
             s=to_string(n%9)+s;
