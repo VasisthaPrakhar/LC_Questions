@@ -2,7 +2,10 @@ class Solution {
 public:
     int minOperations(vector<int>& nums, int x) {
         int n=nums.size();
-        int sum=accumulate(nums.begin(),nums.end(),0);
+        int sum=0;
+        for(auto it:nums){
+            sum+=it;
+        }
         if(x>sum){
             return -1;
         }
