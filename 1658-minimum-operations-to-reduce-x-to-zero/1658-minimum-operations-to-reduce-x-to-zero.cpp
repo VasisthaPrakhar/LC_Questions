@@ -9,18 +9,17 @@ public:
         if(x==sum){
             return n;
         }
-        int t=sum-x,ans=-1,i=0,j=0,temp=0;
-        while(j<n && i<=j){
-            temp+=nums[j];
-            while(i<=j && temp>t){
-                temp-=nums[i];
+        int t=sum-x,i=0,j=0,ans=-1,k=0;
+        while(j<n){
+            k+=nums[j];
+            while(i<=j && k>t){
+                k-=nums[i];
                 i++;
             }
-            if(temp==t){
+            if(k==t)
                 ans=max(j-i+1,ans);
-            }
             j++;
         }
-        return ans==-1?-1:n-ans;
+        return ans==-1?ans:n-ans;
     }
 };
