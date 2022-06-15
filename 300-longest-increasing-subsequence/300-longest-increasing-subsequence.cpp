@@ -8,7 +8,7 @@ public:
         if(n==1){
             return 1;
         }
-        vector<int>res(n,0);
+        vector<int>res(n,1);
         // for(int i=0;i<n;i++){
         //     auto it=lower_bound(res.begin(),res.end(),nums[i]);
         //     if(it-res.begin()==res.size()){
@@ -17,13 +17,15 @@ public:
         //         *it=nums[i];
         //     }
         // }
+        int ans=1;
         for(int i=1;i<n;i++){
             for(int j=0;j<i;j++){
-                if(nums[i]>nums[j] && res[i]<res[j]+1){
-                    res[i]=res[j]+1;
+                if(nums[i]>nums[j]){
+                    res[i]=max(res[i],1+res[j]);
                 }
             }
+            ans=max(ans,res[i]);
         }
-        return *max_element(res.begin(),res.end())+1;
+        return ans;
     }
 };
