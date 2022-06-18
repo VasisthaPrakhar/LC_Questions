@@ -1,5 +1,5 @@
 class WordFilter {
-    private: unordered_map<string,map<string,int>>m;
+    private: unordered_map<string,unordered_map<string,int>>m;
 public:
     WordFilter(vector<string>& w) {
         for(int j=0;j<w.size();j++){
