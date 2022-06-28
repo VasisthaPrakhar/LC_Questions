@@ -1,26 +1,25 @@
 class Solution {
 public:
     int minDeletions(string s) {
-        map<char,int>m;
+        unordered_map<char,int>m;
         for(auto x:s){
             m[x]++;
         }
-        priority_queue<int>m1;
+        priority_queue<int>pq;
         for(auto x:m){
-            m1.push(x.second);
+            pq.push(x.second);
         }
-        int ans=s.length(),prev=-1;
-        while(!m1.empty()){
-            int k=m1.top();
-            if(prev==m1.top()){
+        int ans=0,prev=-1;
+        while(!pq.empty()){
+            int k=pq.top();
+            if(prev==pq.top()){
                 if(k>1)
-                    m1.push(k-1);
-                ans--;
+                    pq.push(k-1);
+                ans++;
             }
-            m1.pop();
-            //cout<<k<<" ";
+            pq.pop();
             prev=k;
         }
-        return s.length()-ans;
+        return ans;
     }
 };
