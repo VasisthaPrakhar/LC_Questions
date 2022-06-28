@@ -1,13 +1,14 @@
 class Solution {
 public:
     int minDeletions(string s) {
-        unordered_map<char,int>m;
+        vector<int>m(26,0);
         for(auto x:s){
-            m[x]++;
+            m[x-'a']++;
         }
         priority_queue<int>pq;
-        for(auto x:m){
-            pq.push(x.second);
+        for(int i=0;i<26;i++){
+            if(m[i]>0)
+                pq.push(m[i]);
         }
         int ans=0,prev=-1;
         while(!pq.empty()){
