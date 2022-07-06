@@ -29,11 +29,12 @@ int main()
 
 bool findPair(int arr[], int sz, int n){
     //code
-    sort(arr,arr+sz);
-    for(int i=0;i<sz-1;i++){
-        if(binary_search(arr+i+1,arr+sz,arr[i]+n)){
+    set<int>s;
+    for(int i=0;i<sz;i++){
+        if(!s.empty() && ((s.find(arr[i]-n)!=s.end())||s.find(arr[i]+n)!=s.end())){
             return true;
         }
+        s.insert(arr[i]);
     }
     return false;
 }
