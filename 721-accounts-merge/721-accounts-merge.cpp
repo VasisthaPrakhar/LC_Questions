@@ -1,6 +1,6 @@
 class Solution {
 public:
-    void dfs(string &s,map<string,vector<string>>&adj,vector<string>&res,set<string>&vis){
+    void dfs(string &s,unordered_map<string,vector<string>>&adj,vector<string>&res,unordered_set<string>&vis){
         vis.insert(s);
         res.push_back(s);
         for(auto x:adj[s]){
@@ -11,8 +11,8 @@ public:
     }
     vector<vector<string>> accountsMerge(vector<vector<string>>& acc) {
         vector<vector<string>>ans;
-        map<string,vector<string>>adj;
-        set<string>vis;
+        unordered_map<string,vector<string>>adj;
+        unordered_set<string>vis;
         int n=acc.size();
         for(int i=0;i<n;i++){
             for(int j=2;j<acc[i].size();j++){
