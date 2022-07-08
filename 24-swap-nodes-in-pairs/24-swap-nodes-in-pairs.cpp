@@ -18,7 +18,7 @@ public:
         int f=1;
         while(head){
             if(head->next!=nullptr){
-                ListNode* temp=head->next;
+                auto temp=head->next;
                 head->next=temp->next;
                 temp->next=head;
                 if(f){
