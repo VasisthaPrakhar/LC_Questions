@@ -16,7 +16,7 @@ public:
             return nullptr;
         }
         int k=m[pr[s2]];
-        TreeNode* t=new TreeNode(pr[s2],fun(pr,in,s1,k-1,s2+1,m),fun(pr,in,k+1,e1,s2+k-s1+1,m));
+        TreeNode* t=new TreeNode(pr[s2],fun(pr,in,s1,k-1,s2+1,m),fun(pr,in,k+1,e1,s2+(k-s1)+1,m));//k-s1 to find element in left subtree and move ahead of them
         return t;
     }
     TreeNode* buildTree(vector<int>& pr, vector<int>& in) {
