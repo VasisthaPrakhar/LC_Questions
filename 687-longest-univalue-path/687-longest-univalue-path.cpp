@@ -12,10 +12,12 @@
 class Solution {
 public:
     int ans=0;
+    //unordered_set<TreeNode*>vis;
     int dfs(TreeNode* root,TreeNode* node){
         if(root==nullptr){
             return 0;
         }
+        //vis.insert(root);
         int l=0,r=0;
         if(root->left && root->left->val==root->val){
             l=1+dfs(root->left,node);
@@ -32,7 +34,8 @@ public:
         if(root==nullptr){
             return;
         }
-        ans=max(ans,dfs(root,root));
+        //if(!vis.count(root))
+            ans=max(ans,dfs(root,root));
         fun(root->left);
         fun(root->right);
     }
