@@ -12,33 +12,37 @@ class Solution {
 public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
         int c=0;
-        ListNode *ans=new ListNode(-1);
-        ListNode *res=ans;
-        while(l1 && l2){
-            int temp=l1->val+l2->val+c;
-            ans->next=new ListNode(temp%10);
-            c=temp/10;
-            ans=ans->next;
-            l1=l1->next;
-            l2=l2->next;
-        }
+        ListNode* ans=new ListNode(-1);
+        ListNode* res=ans;
+       while(l1 && l2){
+           int k=l1->val+l2->val+c;
+           c=k/10;
+           ListNode *temp=new ListNode(k%10);
+           res->next=temp;
+           res=res->next;
+           l1=l1->next;
+           l2=l2->next;
+       }
         while(l1){
-            int temp=l1->val+c;
-            ans->next=new ListNode(temp%10);
-            c=temp/10;
-            ans=ans->next;
-            l1=l1->next;
+            int k=l1->val+c;
+           c=k/10;
+           ListNode *temp=new ListNode(k%10);
+            res->next=temp;
+           res=res->next;
+           l1=l1->next;
         }
         while(l2){
-            int temp=l2->val+c;
-            ans->next=new ListNode(temp%10);
-            c=temp/10;
-            ans=ans->next;
-            l2=l2->next;
+            int k=l2->val+c;
+           c=k/10;
+           ListNode *temp=new ListNode(k%10);
+            res->next=temp;
+           res=res->next;
+           l2=l2->next;
         }
         if(c){
-            ans->next=new ListNode(c);
+            ListNode *temp=new ListNode(c);
+            res->next=temp;
         }
-        return res->next;
+        return ans->next;
     }
 };
