@@ -21,7 +21,7 @@ public:
         }
         TreeNode* x=lowestCommonAncestor(root->left,p,q);
         TreeNode* y=lowestCommonAncestor(root->right,p,q);
-        TreeNode* res;
+        TreeNode* res=nullptr;
             if(x && y){
                res=root;
             }else{
