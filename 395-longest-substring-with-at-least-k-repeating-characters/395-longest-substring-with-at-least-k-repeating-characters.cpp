@@ -18,7 +18,8 @@ public:
             return n;
         }
         int l=longestSubstring(s.substr(0,i),k);
-        int r=longestSubstring(s.substr(i+1),k);
+        while(i<n && m[s[i]]<k) i++;
+        int r=longestSubstring(s.substr(i),k);
         ans=max(l,r);
         return ans;
     }
