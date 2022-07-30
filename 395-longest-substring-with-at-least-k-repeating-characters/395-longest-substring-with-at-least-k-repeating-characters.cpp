@@ -6,10 +6,9 @@ public:
         if(k>n){
             return 0;
         }
-        int ans=0,i=0,j=0;
-        while(j<n){
-            m[s[j]]++;
-            j++;
+        int ans=0,i=0;
+        for(auto x:s){
+            m[x]++;
         }
         while(i<n && m[s[i]]>=k){
             i++;
@@ -18,6 +17,7 @@ public:
             return n;
         }
         int l=longestSubstring(s.substr(0,i),k);
+        
         while(i<n && m[s[i]]<k) i++;
         int r=longestSubstring(s.substr(i),k);
         ans=max(l,r);
