@@ -7,7 +7,7 @@ public:
             return 0;
         }
         int ans=0,i=0;
-        for(auto x:s){
+        for(auto &x:s){
             m[x]++;
         }
         while(i<n && m[s[i]]>=k){
