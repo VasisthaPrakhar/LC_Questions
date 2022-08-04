@@ -3,7 +3,8 @@ public:
     int maximalSquare(vector<vector<char>>& mat) {
         int n=mat.size();
         int m=mat[0].size();
-        vector<vector<int>>dp(n+1,vector<int>(m+1,0));
+        int dp[n+1][m+1];
+        memset(dp,0,sizeof(dp));
         int ans=0;
         for(int i=1;i<=n;i++){
             for(int j=1;j<=m;j++){
