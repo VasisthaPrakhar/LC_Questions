@@ -1,30 +1,33 @@
 class Solution {
 public:
-    set<vector<int>>ans;
-    void fun(vector<int>&a ,int idx, vector<int>&res,int &n){
-        if(idx==n){
-            if(res.size()>1)
-                ans.insert(res);
+    set<vector<int>>s;
+    void dp(int n,int idx,int prev,vector<int>&a,vector<int>&nums){
+        if(idx>n){
             return;
         }
-        if(res.size()>1)
-                ans.insert(res);
-        if(a[idx]>=res.back()){
-            res.push_back(a[idx]);
-            fun(a,idx+1,res,n);
-            res.pop_back();
+        if(a.size()>=2){
+            s.insert(a);
         }
-        fun(a,idx+1,res,n);
+        // for(auto x:a){
+        //     cout<<x<<" ";
+        // }
+        // cout<<endl;
+        for(int i=idx;i<n;i++){
+            if(nums[i]>=prev){
+                a.push_back(nums[i]);
+                dp(n,i+1,nums[i],a,nums);
+                a.pop_back();
+            }
+        }
     }
     vector<vector<int>> findSubsequences(vector<int>& nums) {
         int n=nums.size();
-        vector<int>res;
-        for(int i=0;i<n;i++){
-            res.push_back(nums[i]);
-            fun(nums,i+1,res,n);
-            res.pop_back();
+        vector<vector<int>>ans;
+        vector<int>a;
+        dp(n,0,-101,a,nums);
+        for(auto x:s){
+            ans.push_back(x);
         }
-        vector<vector<int>>ans1(ans.begin(),ans.end());
-        return ans1;
+        return ans;
     }
 };
