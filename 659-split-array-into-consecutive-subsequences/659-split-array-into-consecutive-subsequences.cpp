@@ -2,7 +2,7 @@ class Solution {
 public:
     bool isPossible(vector<int>& nums) {
       int n=nums.size();
-      map<int,int>m;
+      unordered_map<int,int>m;
       for(auto x:nums){
         m[x]++;
       }
@@ -13,7 +13,7 @@ public:
           continue;
         }
         int freq=m[nums[j]],curr=nums[j],cnt=0;
-        while(m.count(curr) && m[curr]>=freq){
+        while(m.find(curr)!=m.end() && m[curr]>=freq){
           freq=max(freq,m[curr]);
           m[curr]--;
           curr++;
