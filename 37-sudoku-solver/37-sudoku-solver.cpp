@@ -60,8 +60,7 @@ public:
         for(int i=0;i<n;i++){
             for(int j=0;j<m;j++){
                 if(grid[i][j]=='.'){
-                    for(char k='1';k<='9';k++){
-                        char ch=k;
+                    for(char ch='1';ch<='9';ch++){
                         if(checkrow(grid,m,i,ch) && checkcol(grid,n,j,ch) && checkbox(grid,n,m,i,j,ch)){
                             grid[i][j]=ch;
                             fun(grid,n,m);
