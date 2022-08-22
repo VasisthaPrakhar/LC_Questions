@@ -56,7 +56,7 @@ public:
         }
         return true;
     }
-    bool fun(vector<vector<char>>& grid,int n,int m){
+    void fun(vector<vector<char>>& grid,int n,int m){
         for(int i=0;i<n;i++){
             for(int j=0;j<m;j++){
                 if(grid[i][j]=='.'){
@@ -64,19 +64,18 @@ public:
                         char ch=k;
                         if(checkrow(grid,m,i,ch) && checkcol(grid,n,j,ch) && checkbox(grid,n,m,i,j,ch)){
                             grid[i][j]=ch;
-                            if(fun(grid,n,m)){
-                                ans=grid;
-                                return true;
-                            }
-                            else
+                            fun(grid,n,m);
+                            if(ans.size()==0)
                                 grid[i][j]='.';
                         }
                     }
-                    return false;
+                    return;
                 }               
             }
         }
-        return true;
+        if(ans.size()==0){
+            ans=grid;
+        }
     }
     void solveSudoku(vector<vector<char>>& grid) {
         int n=9,m=9;
