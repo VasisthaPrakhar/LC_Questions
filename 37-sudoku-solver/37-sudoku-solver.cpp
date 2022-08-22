@@ -18,24 +18,35 @@ public:
         return true;
     }
     bool checkbox(vector<vector<char>>& grid,int n,int m,int r,int c,char ch){
-        vector<int>a={0,3,6,9};
-        int f=lower_bound(a.begin(),a.end(),r)-a.begin();
-        int ir,ic,fr,fc;
-        if(r==a[f]){
-            ir=a[f];
-            fr=a[f+1];
-        }else{
-            ir=a[f-1];
-            fr=a[f];
-        }
-        f=lower_bound(a.begin(),a.end(),c)-a.begin();
-        if(c==a[f]){
-            ic=a[f];
-            fc=a[f+1];
-        }else{
-            ic=a[f-1];
-            fc=a[f];
-        }
+        // vector<int>a={0,3,6,9};
+        // int f=lower_bound(a.begin(),a.end(),r)-a.begin();
+        // int ir,ic,fr,fc;
+        // if(r==a[f]){
+        //     ir=a[f];
+        //     fr=a[f+1];
+        // }else{
+        //     ir=a[f-1];
+        //     fr=a[f];
+        // }
+        // f=lower_bound(a.begin(),a.end(),c)-a.begin();
+        // if(c==a[f]){
+        //     ic=a[f];
+        //     fc=a[f+1];
+        // }else{
+        //     ic=a[f-1];
+        //     fc=a[f];
+        // }
+        // for(int i=ir;i<fr;i++){
+        //     for(int j=ic;j<fc;j++){
+        //         if(grid[i][j]==ch){
+        //             return false;
+        //         }
+        //     }
+        // }
+        int ir=(r/3)*3;
+        int fr=((r/3)+1)*3;
+        int ic=(c/3)*3;
+        int fc=((c/3)+1)*3;
         for(int i=ir;i<fr;i++){
             for(int j=ic;j<fc;j++){
                 if(grid[i][j]==ch){
