@@ -32,7 +32,7 @@ public:
         while(ans->next && slow){
             if(f%2==0){
                 temp=ans->next;
-                cout<<ans->val<<" "<<slow->val<<endl;
+                //cout<<ans->val<<" "<<slow->val<<endl;
                 ans->next=slow;
                 slow=slow->next;
                 ans=ans->next;
@@ -42,10 +42,5 @@ public:
             }
             f++;
         }
-        // auto k=head;
-        // while(k){
-        //     cout<<k->val<<" ";
-        //     k=k->next;
-        // }
     }
 };
