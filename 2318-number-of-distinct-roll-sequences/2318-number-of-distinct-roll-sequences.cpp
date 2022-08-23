@@ -7,7 +7,7 @@ public:
             return 1;
         }
         if(memo[n][prev][prevprev]==-1){
-            long long int res=0;
+            int res=0;
             for(int i=1;i<=6;i++){
                 if(i!=prev && i!=prevprev && (prev==0 || __gcd(prev,i)==1)){
                     res=(res%mod + fun(n-1,i,prev)%mod)%mod;
