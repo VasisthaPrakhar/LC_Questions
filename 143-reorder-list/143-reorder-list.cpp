@@ -29,10 +29,6 @@ public:
         slow=rev(slow);
         ListNode* ans=head,*temp;
         auto k=head;
-        // while(k){
-        //     cout<<k->val<<" ";
-        //     k=k->next;
-        // }
         int f=0;
         while(ans && slow){
             if(f%2==0){
