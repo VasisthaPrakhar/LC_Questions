@@ -11,10 +11,9 @@ public:
     }
     bool reorderedPowerOf2(int n) {
         set<vector<int>>m;
-        int k=1;
-        for(int i=0;i<30;i++){
+        for(int i=0;i<31;i++){
+            int k=1<<i;
             m.insert(fun(k));
-            k*=2;
         }
         vector<int>a=fun(n);
         if(m.find(a)!=m.end()){
