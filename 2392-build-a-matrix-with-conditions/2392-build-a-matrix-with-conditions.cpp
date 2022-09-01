@@ -53,14 +53,6 @@ public:
                 }   
             }
         }
-        // cout<<"debug"<<endl;
-        // for(int i=0;i<row.size();i++){
-        //     cout<<row[i]<<" ";
-        // }
-        // cout<<endl;
-        // for(int i=0;i<col.size();i++){
-        //     cout<<col[i]<<" ";
-        // }
         if(row.size()!=k || col.size()!=k){
             return {};
         }
