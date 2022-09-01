@@ -16,10 +16,16 @@ public:
         if(root->val>=ma){
             ans++;
         }
-        if(root->left)
-            fun(root->left,max(ma,root->left->val));
-        if(root->right)
-            fun(root->right,max(ma,root->right->val));
+        if(root->left){
+            int l=root->left->val;
+            int k = ma>l?ma:l;
+            fun(root->left,k);
+        }
+        if(root->right){
+            int l=root->right->val;
+            int k = ma>l?ma:l;
+            fun(root->right,k);
+        }
     }
     int goodNodes(TreeNode* root) {
         if(!root){
