@@ -2,7 +2,7 @@ class Solution {
 public:
     vector<int> eventualSafeNodes(vector<vector<int>>& g) {
         int n=g.size();
-        unordered_map<int,unordered_set<int>>adj;
+        unordered_map<int,set<int>>adj;
         vector<int>ind(n,0),ans;
         for(int i=0;i<n;i++){
             for(auto x:g[i]){
