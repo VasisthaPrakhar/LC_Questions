@@ -25,19 +25,16 @@ public:
         
         q.push({root,{0,0}});
         while(!q.empty()){
-            int s=q.size();
-            while(s--){
-                auto node=q.front();
-                q.pop();
-                int x=node.second.second;
-                int y=node.second.first;
-                m[x][y].insert(node.first->val);
-                if(node.first->left){
-                    q.push({node.first->left,{y+1,x-1}});
-                }
-                if(node.first->right){
-                    q.push({node.first->right,{y+1,x+1}});
-                }
+            auto node=q.front();
+            q.pop();
+            int x=node.second.second;
+            int y=node.second.first;
+            m[x][y].insert(node.first->val);
+            if(node.first->left){
+                q.push({node.first->left,{y+1,x-1}});
+            }
+            if(node.first->right){
+                q.push({node.first->right,{y+1,x+1}});
             }
         }
         for(auto x:m){
