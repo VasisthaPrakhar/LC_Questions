@@ -15,8 +15,7 @@ public:
         if(root==nullptr){
             return 0;
         }
-        int a=fun(root->left);
-        int b=fun(root->right);
+        int a=fun(root->left),b=fun(root->right);
         if(a==1){
             root->left=nullptr;
         }
