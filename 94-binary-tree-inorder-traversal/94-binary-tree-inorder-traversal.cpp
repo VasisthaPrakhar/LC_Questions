@@ -11,28 +11,38 @@
  */
 class Solution {
 public:
-    vector<int> inorderTraversal(TreeNode* root) {
-        vector<int>in;
-        TreeNode *cur=root;
-        while(cur!=nullptr){
-            if(cur->left==nullptr){
-                in.push_back(cur->val);
-                cur=cur->right;
-            }else{
-                TreeNode *prev=cur->left;
-                while(prev->right && prev->right!=cur){
-                    prev=prev->right;
-                }
-                if(prev->right==nullptr){
-                    prev->right=cur;
-                    cur=cur->left;
-                }else{
-                    prev->right=nullptr;
-                    in.push_back(cur->val);
-                    cur=cur->right;
-                }
-            }
+    vector<int>ans;
+    void fun(TreeNode *root){
+        if(root==nullptr){
+            return;
         }
-        return in;
+        fun(root->left);
+        ans.push_back(root->val);
+        fun(root->right);
+    }
+    vector<int> inorderTraversal(TreeNode* root) {
+        // vector<int>in;
+        // TreeNode *cur=root;
+        // while(cur!=nullptr){
+        //     if(cur->left==nullptr){
+        //         in.push_back(cur->val);
+        //         cur=cur->right;
+        //     }else{
+        //         TreeNode *prev=cur->left;
+        //         while(prev->right && prev->right!=cur){
+        //             prev=prev->right;
+        //         }
+        //         if(prev->right==nullptr){
+        //             prev->right=cur;
+        //             cur=cur->left;
+        //         }else{
+        //             prev->right=nullptr;
+        //             in.push_back(cur->val);
+        //             cur=cur->right;
+        //         }
+        //     }
+        // }
+        fun(root);
+        return ans;
     }
 };
