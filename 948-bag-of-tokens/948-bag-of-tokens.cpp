@@ -7,7 +7,7 @@ public:
         }
         int j=n-1,c=0,ans=0;
         sort(t.begin(),t.end());
-        for(int i=0;i<n;i++){
+        for(int i=0;i<=j;i++){
             if(p>=t[i]){
                 p-=t[i];
                 c++;
