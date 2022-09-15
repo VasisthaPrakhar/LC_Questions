@@ -8,7 +8,7 @@ public:
         unordered_map<int,int>m;
         vector<int>ans;
         sort(c.begin(),c.end());
-        for(auto x:c){
+        for(auto &x:c){
             if(x%2==0 && m.find(x/2)!=m.end()){
                 m[x/2]--;
                 if(m[x/2]==0){
