@@ -1,18 +1,18 @@
 class Solution {
 public:
     int minGroups(vector<vector<int>>& in) {
-        sort(in.begin(),in.end());
-        int n=in.size();
-        priority_queue<int,vector<int>,greater<int>>pq;
-        pq.push(in[0][1]);
-        for(int i=1;i<n;i++){
-            if(pq.top()>=in[i][0]){
-                pq.push(in[i][1]);
-            }else{
-                pq.pop();
-                pq.push(in[i][1]);
-            }
+        vector<int>pre(1000005,0);
+        int ma=0;
+        for(auto x:in){
+            ma=max(ma,x[1]);
+            pre[x[0]]+=1;
+            pre[x[1]+1]+=-1;
         }
-        return pq.size();
+        int ans=pre[0];
+        for(int i=1;i<=ma;i++){
+            pre[i]+=pre[i-1];
+            ans=max(ans,pre[i]);
+        }
+        return ans;
     }
 };
