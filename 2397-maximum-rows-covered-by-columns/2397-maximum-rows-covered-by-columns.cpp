@@ -1,7 +1,7 @@
 class Solution {
 public:
     int ans=0;
-    void fun(vector<vector<int>>& grid, int num, int col, int n, int m){ 
+    void fun(vector<vector<int>>& grid, int num, int col, int &n, int &m){ 
         if(num<=0){
             int cnt=0;
             for(int i=0;i<n;i++){
