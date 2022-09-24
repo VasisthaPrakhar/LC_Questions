@@ -3,7 +3,6 @@ public:
     int ans=0;
     void fun(vector<vector<int>>& grid, int num, int col, int n, int m){ 
         if(num<=0){
-            //cout<<"debug "<<col<<endl;
             int cnt=0;
             for(int i=0;i<n;i++){
                 int flag=0;
@@ -18,7 +17,6 @@ public:
                 }
             }
             ans=max(ans,cnt);
-            //cout<<ans<<endl;
             return;
         }
         if(col>=m){
