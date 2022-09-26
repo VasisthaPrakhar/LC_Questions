@@ -7,10 +7,7 @@ public:
         nums.insert(nums.begin(),1);
         nums.insert(nums.end(),1);
         for(int i=n;i>0;i--){
-            for(int j=1;j<=n;j++){
-                if(i>j){
-                    continue;
-                }
+            for(int j=i;j<=n;j++){
                 int ma=INT_MIN;
                 for(int idx=i;idx<=j;idx++){
                     ma=max(ma,nums[i-1]*nums[idx]*nums[j+1] + dp[idx+1][j] + dp[i][idx-1]);
