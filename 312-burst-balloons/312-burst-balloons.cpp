@@ -2,7 +2,7 @@ class Solution {
 public:
     int maxCoins(vector<int>& nums) {
         int n=nums.size();
-        int dp[502][502];
+        int dp[n+2][n+2];
         memset(dp,0,sizeof(dp));
         nums.insert(nums.begin(),1);
         nums.insert(nums.end(),1);
