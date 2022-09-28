@@ -4,7 +4,6 @@ public:
         int n=d.length();
         int i=0,j=0,l=-1,r=-1;
         while(j<n){
-           // cout<<j<<" ";
             if(d[j]=='L'){
                 if(r==-1){
                     if(l!=-1){
@@ -15,13 +14,11 @@ public:
                         i++;
                     }
                 }else{
-                    int p=r;
                     int q=j;
-                    //cout<<p<<" "<<q;
-                    while(p<q){
-                        d[p]='R';
+                    while(r<q){
+                        d[r]='R';
                         d[q]='L';
-                        p++;
+                        r++;
                         q--;
                     }
                     r=-1;
