@@ -1,32 +1,47 @@
 class Solution {
 public:
-    string pushDominoes(string s) {
-         int N = s.size(), right = -1;
-    for (int i = 0; i < N; ++i) {
-        if (s[i] == 'L') {
-            if (right == -1) { 
-                // Step 2
-                for (int j = i - 1; j >= 0 && s[j] == '.'; --j) {
-                  s[j] = 'L';  
-                } 
-            } else {
-                // Step 8
-                for (int j = right + 1, k = i - 1; j < k; ++j, --k) {
-                    s[j] = 'R';
-                    s[k] = 'L';
-                } 
-                right = -1;
+    string pushDominoes(string d) {
+        int n=d.length();
+        int i=0,j=0,l=-1,r=-1;
+        while(j<n){
+           // cout<<j<<" ";
+            if(d[j]=='L'){
+                if(r==-1){
+                    if(l!=-1){
+                        i=l;
+                    }
+                    while(i<j){
+                        d[i]='L';
+                        i++;
+                    }
+                }else{
+                    int p=r;
+                    int q=j;
+                    //cout<<p<<" "<<q;
+                    while(p<q){
+                        d[p]='R';
+                        d[q]='L';
+                        p++;
+                        q--;
+                    }
+                    r=-1;
+                }
+                l=j;
+            }else if(d[j]=='R'){
+                if(r!=-1){
+                    i=r;
+                    while(i<j){
+                        d[i++]='R';
+                    }
+                }
+                r=j;
             }
-        } else if (s[i] == 'R') {
-            if (right != -1) {
-                for (int j = right + 1; j < i; ++j) s[j] = 'R';
-            }
-            right = i;
+            j++;
         }
-    }
-    if (right != -1) {
-        for (int j = right + 1; j < N; ++j) s[j] = 'R';
-    }
-    return s;
+        while(r<n && r!=-1){
+            d[r]='R';
+            r++;
+        }
+        return d;
     }
 };
