@@ -35,27 +35,12 @@ class Solution
         // return ans;
         deque<int>q;
         vector<int>ans;
-        // for(int i=0;i<k;i++){
-        //     if(q.empty()){
-        //         q.push_back(i);
-        //     }else{
-        //         while(!q.empty() && arr[q.back()]<arr[i]){
-        //             q.pop_back();
-        //         }
-        //         q.push_back(i);
-        //     }
-        // }
-        //ans.push_back(arr[q.front()]);
         int j=0;
         while(j<n){
-            if(q.empty()){
-                q.push_back(j);
-            }else{
-                while(!q.empty() && arr[q.back()]<arr[j]){
-                    q.pop_back();
-                }
-                q.push_back(j);
+            while(!q.empty() && arr[q.back()]<arr[j]){
+                q.pop_back();
             }
+            q.push_back(j);
             if(!q.empty() && q.front()<=j-k){
                 q.pop_front();
             }
