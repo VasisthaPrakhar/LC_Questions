@@ -1,40 +1,38 @@
-// { Driver Code Starts
+//{ Driver Code Starts
 #include <bits/stdc++.h>
 using namespace std;
 
- // } Driver Code Ends
+// } Driver Code Ends
 class Solution{
-
+    typedef long long int ll;
   public:
 	int minDifference(int arr[], int n)  { 
 	    // Your code goes here
-	    int w=0;
+	    ll sum=0;
 	    for(int i=0;i<n;i++){
-	        w+=arr[i];
+	        sum+=arr[i];
 	    }
-	    int k=w;
-	    w=ceil((double)w/2.0);
-	    bool dp[n+1][w+1];
-	    for(int i=0;i<=w;i++){
-	        dp[0][i]=false;
-	    }
+	    ll k=sum;
+	    sum/=2;
+	    bool dp[n+1][sum+1];
+	    memset(dp,false,sizeof(dp));
 	    for(int i=0;i<=n;i++){
 	        dp[i][0]=true;
 	    }
 	    for(int i=1;i<=n;i++){
-	        for(int j=1;j<=w;j++){
-	            if(arr[i-1]<=j){
-	                dp[i][j]=dp[i-1][j]||dp[i-1][j-arr[i-1]];           
+	        for(int j=0;j<=sum;j++){
+	            if(j-arr[i-1]>=0){
+	                dp[i][j]=dp[i-1][j] || dp[i-1][j-arr[i-1]];
 	            }else{
 	                dp[i][j]=dp[i-1][j];
 	            }
 	        }
 	    }
-	    int ans=INT_MAX;
-	    for(int i=0;i<=w;i++){
-	        if(dp[n][i])
-	        {
-	            ans=min(ans,abs(2*i-k));
+	    ll ans=0;
+	    for(int i=sum;i>=0;i--){
+	        if(dp[n][i]){
+	            ans= k-2*i;
+	            break;
 	        }
 	    }
 	    return ans;
@@ -42,7 +40,7 @@ class Solution{
 };
 
 
-// { Driver Code Starts.
+//{ Driver Code Starts.
 int main() 
 {
    
@@ -65,4 +63,5 @@ int main()
 	     
     }
     return 0;
-}  // } Driver Code Ends
+}
+// } Driver Code Ends
