@@ -5,13 +5,13 @@ public:
         if(n==1){
             return names;
         }
-        // set<string>s;
-        // for(auto x:names){
-        //     s.insert(x);
-        // }
-        // if(s.size()==n){
-        //     return names;
-        // }
+        set<string>s;
+        for(auto x:names){
+            s.insert(x);
+        }
+        if(s.size()==n){
+            return names;
+        }
         vector<string>ans;
         unordered_map<string,int>m;
         for(int i=0;i<n;i++){
