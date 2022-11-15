@@ -23,6 +23,7 @@ class Solution {
                         mi=min(x,mi);
                     }
                 }
+                //cout<<ans<<endl;
                 ans+=ma-mi;
             }
         }
