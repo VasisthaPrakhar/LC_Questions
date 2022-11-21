@@ -7,11 +7,11 @@ class Solution{
 	public:
 	vector<vector<int>> ans;
 	void fun(int n,vector<int>&a){
-	    if(n==0){
-	        ans.push_back(a);
+	    if(n<0){
 	        return;
 	    }
-	    if(n<0){
+	    if(n==0){
+	        ans.push_back(a);
 	        return;
 	    }
 	    int up=n;
