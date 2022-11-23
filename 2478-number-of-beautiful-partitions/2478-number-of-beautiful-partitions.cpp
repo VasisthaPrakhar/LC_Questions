@@ -27,7 +27,7 @@ public:
         }
         return dp[st][no]=res%mod;
     }
-    int beautifulPartitions(string s, int k, int mi) {
+    int beautifulPartitions(string &s, int k, int mi) {
         int n=s.length();
         if(isprime(s[n-1]) || !isprime(s[0])){
             return 0;
