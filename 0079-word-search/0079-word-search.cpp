@@ -20,10 +20,12 @@ public:
     grid[r][c]=temp;
     return false;
 }
-    bool exist(vector<vector<char>>& grid, string word) {
+    bool exist(vector<vector<char>>& grid, string &word) {
         n=grid.size();
         m=grid[0].size();
+        reverse(word.begin(),word.end());
         s=word;
+        //cout<<s<<" ";
         p=word.length();
         for(int i=0;i<n;i++){
             for(int j=0;j<m;j++){
