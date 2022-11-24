@@ -23,7 +23,7 @@ public:
     bool exist(vector<vector<char>>& grid, string &word) {
         n=grid.size();
         m=grid[0].size();
-        reverse(word.begin(),word.end());
+        //reverse(word.begin(),word.end());
         s=word;
         //cout<<s<<" ";
         p=word.length();
