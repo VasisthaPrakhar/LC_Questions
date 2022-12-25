@@ -8,7 +8,7 @@ public:
         return true;
     }
     int takeCharacters(string s, int k) {
-        map<int,vector<int>>ml,mr;
+        unordered_map<int,vector<int>>ml,mr;
         int n=s.length();
         if(k==0){
             return 0;
@@ -55,7 +55,6 @@ public:
             if(f){
                 j--;
             }
-            //cout<<j<<" "<<i<<endl;
             ans=min(ans,n-(j-i-1));
         }
         return ans;
