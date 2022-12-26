@@ -1,9 +1,9 @@
 class Solution {
 public:
     bool canJump(vector<int>& nums) {
-        int i=0,end=0,n=nums.size();
-        for(i=0;i<=end;i++){
-            end=end>i+nums[i]?end:i+nums[i];
+        int end=0,n=nums.size();
+        for(int i=0;i<=end;i++){
+            end=max(i+nums[i],end);
             if(end>=n-1){
                 return true;
             }
