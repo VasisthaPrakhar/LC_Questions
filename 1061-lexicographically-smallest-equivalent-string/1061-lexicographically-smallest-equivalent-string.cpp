@@ -1,7 +1,7 @@
 class Solution {
 public:
     int findpar(int u,vector<int>&par){
-        if(u==par[u])
+        if(par[u]==-1 || par[u]==u)
             return u;
         return findpar(par[u],par);
     }
@@ -12,10 +12,10 @@ public:
     }
     string smallestEquivalentString(string s1, string s2, string b) {
         int n=s1.length();
-        vector<int>par(26,0);
-        for(int i=0;i<26;i++){
-            par[i]=i;
-        }
+        vector<int>par(26,-1);
+        // for(int i=0;i<26;i++){
+        //     par[i]=i;
+        // }
         for(int i=0;i<n;i++){
             unionn(s1[i]-'a',s2[i]-'a',par);
         }
