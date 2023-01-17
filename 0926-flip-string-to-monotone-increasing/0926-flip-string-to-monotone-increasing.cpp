@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int minFlipsMonoIncr(string s) {
+    int minFlipsMonoIncr(string &s) {
         int c0=0,c1=0,n=s.length();
         for(int i=0;i<n;i++){
             if(s[i]=='0'){
