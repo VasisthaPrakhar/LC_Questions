@@ -1,7 +1,6 @@
 class Solution {
 public:   
     vector<vector<int>> subsetsWithDup(vector<int>& a) {
-        vector<int>b;
         sort(a.begin(), a.end());
         vector<vector<int>>ans;
         set<vector<int>>res;
