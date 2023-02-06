@@ -40,7 +40,7 @@ public:
         }
         int ans=0;
         for(auto x:a){
-            int g=x.first+k;
+            int g=x.first+k+1;
             int z=b.lower_bound(g)->second;
             ans=max(ans,x.second+z);
         }
