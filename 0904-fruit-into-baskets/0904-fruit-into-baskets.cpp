@@ -6,7 +6,7 @@ public:
             return n;
         }
         int j=0,i=0,ans=2;
-        map<int,int>m;
+        unordered_map<int,int>m;
         while(j<n){
             m[a[j]]++;
             while(i<j && m.size()>2){
