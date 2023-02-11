@@ -24,9 +24,9 @@ public:
         // return ans;
         int n=s.length();
         int ans=0;
-        
+        unordered_map<char,int>m;
         for(int sz=1;sz<27;sz++){
-            unordered_map<char,int>m;
+            m.clear();
             int j=0,i=0,p=0;
             while(j<n){
                 m[s[j]]++;
