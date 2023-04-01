@@ -1,55 +1,49 @@
 class Solution {
-    int n, m;
-    vector<string> pizza;
-    typedef long long int LL;
-    LL P = 1e9 + 7;
-    LL g[55][55];
-    LL f[55][55][15];
-    
-    int dp(int r, int c, int rest) {
-        if (f[r][c][rest] != -1) return f[r][c][rest];
-        
-        if (rest == 0) {
-            if (g[r][c] > 0) f[r][c][rest] = 1;
-            else f[r][c][rest] = 0;
-            return f[r][c][rest];
-        }
-        
-        f[r][c][rest] = 0;
-        
-        // cut horizontally to [row, i-1] [i, n-1]
-        for (int i = r + 1; i < n; i++) {
-            if (g[r][c] - g[i][c] > 0 && g[i][c] >= rest) {
-                f[r][c][rest] = (f[r][c][rest] + dp(i, c, rest - 1)) % P;
-            }
-        }
-        
-        // cut vertically to [col, j-1] [j, m-1]
-        for (int j = c + 1; j < m; j++) {
-            if (g[r][c] - g[r][j] > 0 && g[r][j] >= rest)
-                f[r][c][rest] = (f[r][c][rest] + dp(r, j, rest - 1)) % P;
-        }
-        
-        return f[r][c][rest];
-    }
-    
 public:
-    int ways(vector<string>& pizza, int k) {
-        n = pizza.size();
-        m = pizza[0].length();
-        this->pizza = pizza;
-        
-        memset(g, 0, sizeof(g));
-        for (int i = n - 1; i >= 0; i--) {
-            for (int j = m - 1; j >= 0; j--) {
-                g[i][j] = g[i][j+1];
-                for (int l = i; l < n; l++)
-                    g[i][j] += (pizza[l][j] == 'A');
+    typedef long long int ll;
+    int mod=1e9+7;
+    int dp[51][51][11];
+    int fun(vector<vector<int>>&a,int k,int n,int m,int r,int c){
+        if(dp[r][c][k]!=-1){
+            return dp[r][c][k];
+        }
+        if(k==0){
+            if(a[r][c]==0){
+                return 0;
+            }else{
+                return 1;
             }
         }
-        
-        memset(f, -1, sizeof(f));
-        
-        return dp(0, 0, k-1);
+        ll res=0;
+        for(int i=r+1;i<n;i++){
+            if(a[i][c]>=k && a[r][c]>a[i][c]){
+                res=(res%mod+fun(a,k-1,n,m,i,c)%mod)%mod;
+            }
+        }
+        for(int i=c+1;i<m;i++){
+            if(a[r][i]>=k && a[r][c]>a[r][i]){
+                res=(res%mod+fun(a,k-1,n,m,r,i)%mod)%mod;
+            }
+        }
+        return dp[r][c][k]=res;
+    }
+    int ways(vector<string>& p, int k) {
+        int n=p.size();
+        int m=p[0].length();
+        vector<vector<int>>a(n,vector<int>(m,0));
+        for(int i=n-1;i>=0;i--){
+            for(int j=m-1;j>=0;j--){
+                for(int z=i;z<n;z++){
+                   if(p[z][j]=='A'){
+                       a[i][j]+=1;
+                   }
+                }
+                if(j!=m-1){
+                    a[i][j]+=a[i][j+1];
+                }
+            }
+        }
+        memset(dp,-1,sizeof(dp));
+        return fun(a,k-1,n,m,0,0);
     }
 };
