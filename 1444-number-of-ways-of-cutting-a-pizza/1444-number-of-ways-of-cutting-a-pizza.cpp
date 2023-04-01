@@ -4,15 +4,15 @@ public:
     int mod=1e9+7;
     int dp[51][51][11];
     int fun(vector<vector<int>>&a,int k,int n,int m,int r,int c){
-        if(dp[r][c][k]!=-1){
-            return dp[r][c][k];
-        }
         if(k==0){
             if(a[r][c]==0){
                 return 0;
             }else{
                 return 1;
             }
+        }
+        if(dp[r][c][k]!=-1){
+            return dp[r][c][k];
         }
         ll res=0;
         for(int i=r+1;i<n;i++){
@@ -43,6 +43,12 @@ public:
                 }
             }
         }
+        // for(auto x:a){
+        //     for(auto y:x){
+        //         cout<<y<<" ";
+        //     }
+        //     cout<<endl;
+        // }
         memset(dp,-1,sizeof(dp));
         return fun(a,k-1,n,m,0,0);
     }
