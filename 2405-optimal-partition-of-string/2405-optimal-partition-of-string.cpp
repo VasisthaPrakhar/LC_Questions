@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int partitionString(string s) {
+    int partitionString(string &s) {
         int i=0,j=0,n=s.length(),ans=0;
         unordered_map<char,int>m;
         while(j<n){
