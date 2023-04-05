@@ -17,7 +17,7 @@ public:
             // cout<<ma<<" "<<nums[i]<<" "<<nums[i-1]<<endl;
             // ma=max({ma,nums[i],nums[i-1]});
             sum+=nums[i];
-            ans=max((sum+i)/(i+1),ans);
+            ans=max((long long int)ceil((double)sum/(double)(i+1)),ans);
         }
         return ans;
     }
