@@ -2,8 +2,8 @@ class Solution {
 public:
     vector<long long> distance(vector<int>& nums) {
         int n=nums.size();
-        map<int,vector<long long int>>pos;
-        map<int,int>mp;
+        unordered_map<int,vector<long long int>>pos;
+        unordered_map<int,int>mp;
         for(int i=0;i<n;i++){
             if(pos.find(nums[i])!=pos.end())
                 pos[nums[i]].push_back(i+pos[nums[i]].back());
