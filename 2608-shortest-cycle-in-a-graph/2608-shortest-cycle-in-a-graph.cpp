@@ -54,7 +54,18 @@ public:
                 }
             }
         }
-        cout<<endl;
+        for(auto &x:vis){
+            x=0;
+        }
+         for(int i=n-1;i>=0;i--){
+            if(!vis[i]){
+                int k=bfs(i,n,adj,vis);
+                if(k!=-1){
+                    ans=min(ans,k);
+                }
+            }
+        }
+        //cout<<endl;
         return ans==INT_MAX?-1:ans;
     }
 };
