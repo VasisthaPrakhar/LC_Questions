@@ -17,7 +17,7 @@ public:
         if(root==nullptr){
             return {0,0};
         }
-        pair<int,int>p={0,0},a,b;
+        pair<int,int>a,b;
         a=fun(root->left);
         b=fun(root->right);
         ans=max({ans,a.second+1,b.first+1});
