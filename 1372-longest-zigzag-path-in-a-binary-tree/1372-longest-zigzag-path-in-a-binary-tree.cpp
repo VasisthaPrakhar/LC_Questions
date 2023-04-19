@@ -25,15 +25,13 @@ public:
         return p;
     }
     int longestZigZag(TreeNode* root) {
-        if(root==NULL){return 0;}
+        //if(root==NULL){return 0;}
         mp.clear();
         fun(root);
         int ans=0;
         for(auto x:mp){
             ans=max({ans,x.second.first,x.second.second});
         }
-        //cout<<ans;
-        //cout<<endl;
         return ans-1;
     }
 };
