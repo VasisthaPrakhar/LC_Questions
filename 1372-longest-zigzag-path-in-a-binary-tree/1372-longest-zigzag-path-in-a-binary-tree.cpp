@@ -20,10 +20,8 @@ public:
         pair<int,int>p={0,0},a,b;
         a=fun(root->left);
         b=fun(root->right);
-        p.first=a.second+1;
-        p.second=b.first+1;
-        ans=max({ans,p.first,p.second});
-        return p;
+        ans=max({ans,a.second+1,b.first+1});
+        return {a.second+1,b.first+1};
     }
     int longestZigZag(TreeNode* root) {
         //mp.clear();
