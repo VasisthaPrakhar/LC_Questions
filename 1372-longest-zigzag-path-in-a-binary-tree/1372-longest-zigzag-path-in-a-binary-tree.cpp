@@ -11,7 +11,7 @@
  */
 class Solution {
 public:
-    map<TreeNode*,pair<int,int>>mp;
+    unordered_map<TreeNode*,pair<int,int>>mp;
     pair<int,int> fun(TreeNode* root){
         if(root==nullptr){
             return {0,0};
@@ -25,7 +25,6 @@ public:
         return p;
     }
     int longestZigZag(TreeNode* root) {
-        //if(root==NULL){return 0;}
         mp.clear();
         fun(root);
         int ans=0;
