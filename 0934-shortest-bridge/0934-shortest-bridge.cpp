@@ -28,17 +28,10 @@ public:
             }
             if(f){break;}
         }
-        // for(int i=0;i<n;i++){
-        //     for(int j=0;j<m;j++){
-        //         cout<<grid[i][j]<<" ";
-        //     }
-        //     cout<<endl;
-        // }
         while(!q.empty()){
             int r=q.front()[0];
             int c=q.front()[1];
             int dist=q.front()[2];
-            //cout<<r<<" "<<c<<" "<<dist<<endl;
             q.pop();
             for(int i=0;i<4;i++){
                 int nr=r+dr[i];
