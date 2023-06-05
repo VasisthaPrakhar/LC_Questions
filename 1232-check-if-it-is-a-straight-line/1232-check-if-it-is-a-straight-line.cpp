@@ -23,7 +23,6 @@ public:
                     return false;
                 }
             }
-            cout<<slope<<" ";
             x=co[i][0];
             y=co[i][1];
         }
