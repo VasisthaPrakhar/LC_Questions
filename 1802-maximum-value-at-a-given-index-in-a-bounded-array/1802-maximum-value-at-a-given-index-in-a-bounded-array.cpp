@@ -7,7 +7,7 @@ public:
         }
         return (n*(n+1))/2;
     }
-    bool check(int k,int n, int ma, int j){
+    bool check(ll k,int n, int ma, int j){
         ll sum=k,z=k-1,x=k-1;
         if(j>=z){
             sum+=su(z)+(j-z);
