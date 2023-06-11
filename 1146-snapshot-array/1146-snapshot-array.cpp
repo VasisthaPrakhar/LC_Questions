@@ -1,7 +1,7 @@
 class SnapshotArray {
 private: vector<int>a;
     int c;
-    map<int,map<int,int>>m;
+    unordered_map<int,map<int,int>>m;
 public:
     SnapshotArray(int length) {
         a.resize(length,0);
