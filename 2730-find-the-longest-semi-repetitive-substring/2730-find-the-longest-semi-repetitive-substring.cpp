@@ -6,7 +6,7 @@ public:
             return 1;
         }
         int i=0,j=1,ans=0;
-        map<int,int>m,m1;
+        unordered_map<int,int>m,m1;
         while(j<n){
             if(s[j]==s[j-1]){
                 m[j-1]++;
@@ -20,8 +20,6 @@ public:
                 }
                 i++;
             }
-            
-            //cout<<i<<" ";
             ans=max(ans,j-i+1);
             j++;
         }
