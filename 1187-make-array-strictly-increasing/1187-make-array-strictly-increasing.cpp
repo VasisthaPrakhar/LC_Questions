@@ -1,6 +1,6 @@
 class Solution {
 public:
-    map<int,map<int,int>>dp;
+    unordered_map<int,unordered_map<int,int>>dp;
     int fun(vector<int>& a, vector<int>& b,int n,int idx,int prev){
         if(idx==n){
             return 0;
