@@ -13,7 +13,7 @@ public:
         //cout<<a[idx]<<" "<<prev<<endl;
         auto f=upper_bound(b.begin(),b.end(),prev)-b.begin();
         int res=2002;
-        if(f<b.size()){
+        if(f<b.size() && b[f]>prev){
             res=fun(a,b,n,idx+1,b[f])+1;
             //cout<<f;
         }
