@@ -4,7 +4,7 @@ public:
         int ma=0,s=0;
         for(auto x:gain){
             s+=x;
-            ma=ma<s?s:ma;
+            ma=max(ma,s);
         }
         return ma;
     }
