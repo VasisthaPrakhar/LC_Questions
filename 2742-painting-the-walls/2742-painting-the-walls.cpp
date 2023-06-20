@@ -11,7 +11,7 @@ public:
             dp[i][0]=0;
         }
         for(int i=1;i<=n;i++){
-            for(int j=0;j<=n;j++){
+            for(int j=1;j<=n;j++){
                 //if(j>time[i-1])
                 dp[i][j]=min(dp[i-1][j],dp[i-1][max(j-time[i-1]-1,0)]+cost[i-1]);
                 // else{
