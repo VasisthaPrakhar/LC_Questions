@@ -10,22 +10,22 @@ public:
         }
         return ans;
     }
-    bool check(vector<int>&s, vector<int>&c){
-        int i=0,j=1;
-        while(i<j){
-            if(s[i]!=s[j]){
-                return false;
-            }
-            i++;
-            j--;
-        }
-        return true;
-    }
+    // bool check(vector<int>&s, vector<int>&c){
+    //     int i=0,j=1;
+    //     while(i<j){
+    //         if(s[i]!=s[j]){
+    //             return false;
+    //         }
+    //         i++;
+    //         j--;
+    //     }
+    //     return true;
+    // }
 
     long long minCost(vector<int>& a, vector<int>& c) {
         ll n=a.size();
         ll beg=-100000000, end=100000000;
-        check(a,c);
+        //check(a,c);
         while(beg<end)
         {
             ll mid=(beg+end)/2;
