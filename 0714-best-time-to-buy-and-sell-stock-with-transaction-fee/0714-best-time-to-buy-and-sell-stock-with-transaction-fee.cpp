@@ -1,17 +1,17 @@
 class Solution {
 public:
-    int fun(vector<int>& p,int h,int i, int &n,vector<vector<int>>&memo,int &fee){
-        if(i==n){
+    int fun(vector<int>& p,int h,int idx, int &n,vector<vector<int>>&memo,int &fee){
+        if(idx==n){
             return 0;
         }
-        if(memo[i][h]==0){
+        if(memo[idx][h]==0){
             if(h){
-                memo[i][h]=max(-fee+p[i]+fun(p,0,i+1,n,memo,fee),fun(p,h,i+1,n,memo,fee));
+                memo[idx][h]=max(-fee+p[idx]+fun(p,0,idx+1,n,memo,fee),fun(p,h,idx+1,n,memo,fee));
             }else{
-                memo[i][h]=max(-p[i]+fun(p,1,i+1,n,memo,fee),fun(p,h,i+1,n,memo,fee));
+                memo[idx][h]=max(-p[idx]+fun(p,1,idx+1,n,memo,fee),fun(p,h,idx+1,n,memo,fee));
             }
         }
-        return memo[i][h];
+        return memo[idx][h];
     }
     int maxProfit(vector<int>& p, int fee) {
         int n=p.size();
