@@ -2,7 +2,8 @@ class Solution {
 public:
     int longestArithSeqLength(vector<int>& nums) {
         //unordered_map<int,unordered_map<int,int>>mp;
-        vector<vector<int>>dp(2001,vector<int>(2001,0));
+        int dp[2001][2001];
+        memset(dp,0,sizeof(dp));
         int n=nums.size();
         int ans=2;
         for(int i=0;i<n-1;i++){
