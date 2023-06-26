@@ -4,7 +4,7 @@ public:
     long long totalCost(vector<int>& a, int z, int c) {
         int n=a.size();
         int i=0,j=n-1;
-        cout<<n;
+        //cout<<n;
         priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>>l,r;
         ll ans=0,v=0;
         while(i<=j && v<z){
