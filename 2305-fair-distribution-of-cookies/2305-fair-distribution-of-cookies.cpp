@@ -13,6 +13,7 @@ public:
             child[i]+=c[idx];
             res=min(res,fun(idx+1,c,child,k,n));
             child[i]-=c[idx];
+            if(child[i]==0){break;}
         }
         return res;
     }
