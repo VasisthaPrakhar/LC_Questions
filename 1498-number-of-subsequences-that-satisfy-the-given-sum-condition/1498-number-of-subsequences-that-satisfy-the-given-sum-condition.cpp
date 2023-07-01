@@ -15,18 +15,11 @@ public:
         while(i<n){
             int k=target-nums[i];
             if(k>nums[i]){
-                auto f=upper_bound(nums.begin(),nums.end(),k);
-                if((f-nums.begin())>=n){
-                    j=n-1;
-                }
-                else{
-                    j=f-nums.begin();
-                    j--;
-                }
+                j=upper_bound(nums.begin(),nums.end(),k)-nums.begin();
+                j--;
             }
             else if(k==nums[i]){
-                auto f=upper_bound(nums.begin(),nums.end(),k);
-                j=f-nums.begin();
+                j=upper_bound(nums.begin(),nums.end(),k)-nums.begin();
                 j--;                
             }else{
                 i++;
