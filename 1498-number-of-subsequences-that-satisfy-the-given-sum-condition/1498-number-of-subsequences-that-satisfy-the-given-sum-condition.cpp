@@ -25,9 +25,9 @@ public:
                 }
             }
             else if(k==nums[i]){
-                 auto f=upper_bound(nums.begin(),nums.end(),k);
+                auto f=upper_bound(nums.begin(),nums.end(),k);
                 j=f-nums.begin();
-                j--;
+                j--;                
             }else{
                 i++;
                 continue;
