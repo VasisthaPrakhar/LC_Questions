@@ -14,11 +14,7 @@ public:
         int i=0,j=0,ans=0;
         while(i<n){
             int k=target-nums[i];
-            if(k>nums[i]){
-                j=upper_bound(nums.begin(),nums.end(),k)-nums.begin();
-                j--;
-            }
-            else if(k==nums[i]){
+            if(k>=nums[i]){
                 j=upper_bound(nums.begin(),nums.end(),k)-nums.begin();
                 j--;                
             }else{
