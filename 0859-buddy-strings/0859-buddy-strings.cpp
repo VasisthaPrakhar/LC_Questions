@@ -21,6 +21,7 @@ public:
                     f++;
                 }
             }
+            if(f>2){return false;}
             st.insert(s[i]);
         }
         if((s==t && st.size()<n)||f==2){
