@@ -5,7 +5,7 @@ public:
         int m=t.length(),f=0;
         if(n!=m){return false;}
         char a,b;
-        set<char>st;
+        unordered_set<char>st;
         for(int i=0;i<n;i++){
             if(!f){
                 if(s[i]!=t[i]){
@@ -23,10 +23,7 @@ public:
             }
             st.insert(s[i]);
         }
-        if(s==t && st.size()<n){
-            return true;
-        }
-        if(f==2){
+        if((s==t && st.size()<n)||f==2){
             return true;
         }
         return false;
