@@ -33,7 +33,7 @@ public:
                 ans1+=1<<i;
             }
         }
-        if(ans1==INT_MIN){return ans1;}
+        if(ans1<0)return ans1;
         return ans>ans1?ans:-ans1;
     }
 };
