@@ -12,7 +12,7 @@ public:
                 }
                 i++;
             }
-            ma=j-i+1>ma?j-i+1:ma;
+            ma=max(j-i+1,ma);
             j++;
         }
         return ma;
