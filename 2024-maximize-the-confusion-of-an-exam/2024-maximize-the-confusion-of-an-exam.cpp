@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int fun(string &s, int k,char ch){
+    int fun(string &s, int &k,char ch){
         int n=s.length();
         int ma=0,j=0,i=0,z=0;
         while(j<n){
@@ -18,7 +18,7 @@ public:
         }
         return ma;
     }
-    int maxConsecutiveAnswers(string a, int k) {
+    int maxConsecutiveAnswers(string &a, int k) {
         return max(fun(a,k,'T'),fun(a,k,'F'));
     }
 };
