@@ -1,8 +1,7 @@
 class Solution {
 public:
     int fun(string &s, int &k,char ch){
-        int n=s.length();
-        int ma=0,j=0,i=0,z=0;
+        int n=s.length(),ma=0,j=0,i=0,z=0;
         while(j<n){
             if(s[j]!=ch){
                 z++;
