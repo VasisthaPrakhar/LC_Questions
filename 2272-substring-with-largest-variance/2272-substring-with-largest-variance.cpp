@@ -16,6 +16,7 @@ public:
                         if(l>0){
                             ans=max(ans,h-l);
                         }else{
+                            //cout<<h<<endl;
                             if(f){ans=max(ans,h-1);}
                         }
                         if(l>h){
