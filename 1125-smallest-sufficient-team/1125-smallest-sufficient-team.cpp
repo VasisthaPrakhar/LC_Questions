@@ -13,13 +13,13 @@ public:
         if(count(k)==n){
             return {};
         }
+        if(idx==n1){
+            return {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
+        }
         if(mp.find(idx)!=mp.end()){
             if(mp[idx].find(k)!=mp[idx].end()){
                 return mp[idx][k];
             }
-        }
-        if(idx==n1){
-            return {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
         }
         vector<int>res1;
         int x=mp1[idx];
