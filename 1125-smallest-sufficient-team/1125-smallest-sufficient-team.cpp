@@ -9,7 +9,7 @@ public:
         }
         return c;
     }
-    vector<int> fun(map<string,int>&m, int &n, vector<vector<string>>&p, int &n1, int idx, int k){
+    vector<int> fun(map<string,int>&m, int &n, unordered_map<int,int>&mp1, int &n1, int idx, int k){
         if(count(k)==n){
             return {};
         }
@@ -22,27 +22,32 @@ public:
             return {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
         }
         vector<int>res1;
-        int x=0;
-        for(auto y:p[idx]){
-            x=x|(1<<m[y]);
-        }
+        int x=mp1[idx];
         if(k < (k|x)){
-            res1=fun(m,n,p,n1,idx+1,k|x);
+            res1=fun(m,n,mp1,n1,idx+1,k|x);
             res1.push_back(idx);
         }else{
             res1={1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
         }
-        vector<int>res=fun(m,n,p,n1,idx+1,k);
+        vector<int>res=fun(m,n,mp1,n1,idx+1,k);
         return mp[idx][k]=(int)res.size()<(int)res1.size()?res:res1;
     }
     vector<int> smallestSufficientTeam(vector<string>& re, vector<vector<string>>& p) {
         int n=re.size();
         map<string,int>m;
+        unordered_map<int,int>mp1;
         for(int i=0;i<n;i++){
             m[re[i]]=i+1;
         }
         int n1=p.size();
+        for(int i=0;i<n1;i++){
+            int k=0;
+            for(auto x:p[i]){
+                k=k|(1<<m[x]);
+            }
+            mp1[i]=k;
+        }
         mp.clear();
-        return fun(m,n,p,n1,0,0);
+        return fun(m,n,mp1,n1,0,0);
     }
 };
