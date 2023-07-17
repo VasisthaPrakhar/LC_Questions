@@ -9,7 +9,7 @@ public:
         }
         return c;
     }
-    vector<int> fun(map<string,int>&m, int n, vector<vector<string>>&p, int n1, int idx, int k){
+    vector<int> fun(map<string,int>&m, int &n, vector<vector<string>>&p, int &n1, int idx, int k){
         if(count(k)==n){
             return {};
         }
