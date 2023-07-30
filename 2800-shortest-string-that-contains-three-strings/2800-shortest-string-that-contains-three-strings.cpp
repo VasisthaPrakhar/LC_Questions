@@ -1,6 +1,6 @@
 class Solution {
 public:
-    string fun1(string a, string &b){
+    string fun1(string &a, string &b){
         int n=a.length();
         int m=b.length();
         vector<int>pos;
@@ -47,7 +47,7 @@ public:
         }
         return ans;
     }
-    string minimumString(string a, string b, string c) {
+    string minimumString(string &a, string &b, string &c) {
         return mini({fun(a,b,c),fun(a,c,b),fun(b,a,c),fun(b,c,a),fun(c,a,b),fun(c,b,a)});
     }
 };
