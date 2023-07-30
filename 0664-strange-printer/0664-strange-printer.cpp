@@ -14,7 +14,6 @@ public:
         if(j-i==1){
             return t[j]==t[i]?1:2;
         }
-        
         int res=1+fun(t,i+1,j);
         for(int k=i+1;k<=j;k++){
             if(t[k]==t[i])
