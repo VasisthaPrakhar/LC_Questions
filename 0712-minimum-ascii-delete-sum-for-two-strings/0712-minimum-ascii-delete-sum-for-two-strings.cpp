@@ -1,19 +1,32 @@
 class Solution {
 public:
     int minimumDeleteSum(string s1, string s2) {
-        int m = s1.size(), n = s2.size();
-        vector<int> dp(n+1, 0);
-        for (int j = 1; j <= n; j++)
-            dp[j] = dp[j-1]+s2[j-1];
-        for (int i = 1; i <= m; i++) {
-            int t1 = dp[0];
-            dp[0] += s1[i-1];
-            for (int j = 1; j <= n; j++) {
-                int t2 = dp[j];
-                dp[j] = s1[i-1] == s2[j-1]? t1:min(dp[j]+s1[i-1], dp[j-1]+s2[j-1]);
-                t1 = t2;
+        int n=s1.length();
+        int m=s2.length();
+        int sum=0;
+        for(auto x:s1){
+            sum+=x;
+        }
+        for(auto x:s2){
+            sum+=x;
+        }
+        int dp[n+1][m+1];
+        memset(dp,-1,sizeof(dp));
+        for(int i=0;i<=n;i++){
+            dp[i][0]=0;
+        }
+        for(int i=0;i<=m;i++){
+            dp[0][i]=0;
+        }
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=m;j++){
+                if(s1[i-1]==s2[j-1]){
+                    dp[i][j]=s1[i-1]+dp[i-1][j-1];
+                }else{
+                    dp[i][j]=max(dp[i-1][j],dp[i][j-1]);
+                }
             }
         }
-        return dp[n];
+        return sum-2*dp[n][m];
     }
 };
