@@ -16,13 +16,7 @@ public:
     }
     int minScoreTriangulation(vector<int>& val) {
         int n=val.size();
-        vector<int>a;
-        a.push_back(val[n-1]);
-        for(int i=0;i<n;i++){
-            a.push_back(val[i]);
-        }
-        a.push_back(val[0]);
         memset(dp,-1,sizeof(dp));
-        return fun(1,n,a,n);
+        return fun(0,n-1,val,n);
     }
 };
