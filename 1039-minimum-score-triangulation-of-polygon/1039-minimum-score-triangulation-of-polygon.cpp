@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int dp[55][55];
+    int dp[52][52];
     int fun(int i,int j,vector<int>& a,int n){
         if(i>j-2){
             return 0;
