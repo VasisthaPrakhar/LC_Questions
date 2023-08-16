@@ -29,13 +29,7 @@ public:
         }
         int f=0;
         ans=max({ans,bond,ma});
-        if(ans==bond){
-            f=1;
-        }
         ll res = max({ans,(k-1)*sum + ma,ma})%mod;
-        if(f){
-            res = max({ans,(k-1)*sum + ma,ma})%mod;
-        }
         return res%mod;
     }
 };
