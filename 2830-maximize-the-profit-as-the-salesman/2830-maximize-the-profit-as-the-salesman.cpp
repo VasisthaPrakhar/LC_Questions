@@ -3,19 +3,16 @@ public:
     int dp[100001];
     vector<int>a;
     typedef long long int ll;
-    int fun(vector<vector<int>>&v,int n, int idx,int last){
+    int fun(vector<vector<int>>&v,int n, int idx){
         if(idx>=n){
             return 0;
         }
-        // if(v[idx][0]<=last){
-        //     return fun(v,n,idx+1,last);
-        // }
         if(dp[idx]!=-1){
             return dp[idx];
         }
         ll res=0;
         int z=upper_bound(a.begin()+idx+1,a.end(),v[idx][1])-a.begin();
-        res=max(v[idx][2]+fun(v,n,z,v[idx][1]),fun(v,n,idx+1,last));
+        res=max(v[idx][2]+fun(v,n,z),fun(v,n,idx+1));
         return dp[idx]=res;
     }
     int maximizeTheProfit(int n, vector<vector<int>>& v) {
@@ -29,6 +26,6 @@ public:
         }
         //vector<ll>dp(m+1,-1);
         memset(dp,-1,sizeof(dp));
-        return fun(v,m,0,-1);
+        return fun(v,m,0);
     }
 };
