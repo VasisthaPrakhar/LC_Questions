@@ -9,13 +9,13 @@ public:
         for(int i=0;i<n;i++){
             sum+=nums[i];
             m[nums[i]]++;
+            if(sum==t){
+                return 0;
+            }
         }
         if(sum<t){
             return -1;
         }
-        // if(sum==t){
-        //     return 0;
-        // }
         int i=0,ans=0;
         while(t){
             int k=t&1;
