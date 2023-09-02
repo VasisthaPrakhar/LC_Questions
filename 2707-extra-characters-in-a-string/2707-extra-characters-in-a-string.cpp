@@ -8,11 +8,10 @@ public:
         if(dp[beg]!=-1){
             return dp[beg];
         }
-        int n=sz-beg,f=0,res=INT_MAX-5;
+        int n=sz-beg,res=INT_MAX-5;
         for(int i=n;i>0;i--){
             string t=s.substr(beg,i);
             if(st.find(t)!=st.end()){
-                f=1;
                 res=min(res,fun(s,beg+i,sz,st));
             }
         }
