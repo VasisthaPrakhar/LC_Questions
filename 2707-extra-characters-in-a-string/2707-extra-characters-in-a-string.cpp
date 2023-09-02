@@ -1,7 +1,7 @@
 class Solution {
 public:
     int dp[51];
-    int fun(string &s,int beg, int sz, set<string>&st){
+    int fun(string &s,int beg, int sz, unordered_set<string>&st){
         if(sz-beg<=0){
             return 0;
         }
@@ -20,9 +20,9 @@ public:
         }
         return dp[beg]=res;
     }
-    int minExtraChar(string s, vector<string>& d) {
+    int minExtraChar(string &s, vector<string>& d) {
         int n=s.length();
-        set<string>st;
+        unordered_set<string>st;
         for(auto x:d){
             st.insert(x);
         }
