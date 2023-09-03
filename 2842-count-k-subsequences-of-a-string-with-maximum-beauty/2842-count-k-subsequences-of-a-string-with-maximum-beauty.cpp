@@ -19,7 +19,7 @@ public:
     }
     int countKSubsequencesWithMaxBeauty(string s, int k) {
         int n=s.length();
-        map<char,int>m;
+        unordered_map<char,int>m;
         for(auto x:s){
             m[x]++;
         }
@@ -52,14 +52,12 @@ public:
         while(it !=temp.end()){
             ll v = (ll)power(it->first,it->second)%mod;
             res.push_back(v);
-            //cout<<it->second<<" ";
             it++;
         }
         ll ans=1;
         for(auto x:res){
             ans = (ans%mod * x%mod)%mod;
         }
-        //cout<<endl;
         return ans;
     }
 };
