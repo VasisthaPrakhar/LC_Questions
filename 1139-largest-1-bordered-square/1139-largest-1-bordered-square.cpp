@@ -79,7 +79,7 @@ public:
         //     }
         //     cout<<endl;
         // }
-        cout<<ans<<endl;
+        //cout<<ans<<endl;
         return ans*ans;
     }
 };
