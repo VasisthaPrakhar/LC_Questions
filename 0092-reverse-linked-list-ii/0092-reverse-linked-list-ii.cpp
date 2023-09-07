@@ -23,6 +23,9 @@ public:
         return prev;
     }
     ListNode* reverseBetween(ListNode* head, int left, int right) {
+        if(head->next==nullptr || left==right){
+            return head;
+        }
         ListNode* prev=nullptr,*ans=head;
         int n=1;
         while(head){
