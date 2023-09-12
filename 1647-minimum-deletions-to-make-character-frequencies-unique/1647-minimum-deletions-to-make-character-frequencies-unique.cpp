@@ -12,7 +12,7 @@ public:
         int ans=0,prev=-1;
         while(!pq.empty()){
             int k=pq.top();
-            cout<<k<<" ";
+            //cout<<k<<" ";
             if(k==prev){
                 ans++;
                 if(k>1)
