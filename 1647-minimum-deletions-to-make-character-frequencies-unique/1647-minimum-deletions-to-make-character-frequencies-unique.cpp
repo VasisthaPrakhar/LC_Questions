@@ -6,7 +6,7 @@ public:
             m[x]++;
         }
         priority_queue<int>pq;
-        for(auto x:m){
+        for(auto &x:m){
             pq.push(x.second);
         }
         int ans=0,prev=-1;
