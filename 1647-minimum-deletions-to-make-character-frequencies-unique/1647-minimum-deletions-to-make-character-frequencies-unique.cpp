@@ -1,7 +1,7 @@
 class Solution {
 public:
     int minDeletions(string &s) {
-        map<char,int>m;
+        unordered_map<char,int>m;
         for(auto &x:s){
             m[x]++;
         }
