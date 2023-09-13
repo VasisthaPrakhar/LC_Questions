@@ -1,6 +1,6 @@
 class Solution {
 public:
-    string s_sum(string s,string t){
+    string s_sum(string &s,string &t){
         int n=s.length()-1,m=t.length()-1;
         int car=0;
         string ans="";
@@ -27,14 +27,13 @@ public:
         }
         return ans;
     }
-    bool fun(string p1,string p2,int n, int idx, string num,int f){
+    bool fun(string p1,string p2,int n, int idx, string &num,int f){
         if(idx==n){
             if(f>=3){
                 return true;
             }
             return false;
         }
-        //cout<<p1<<" "<< p2<< " "<<num[idx]<<endl;
         bool ans=false;
         if(p1=="-1" && p2=="-1"){
             for(int i=1;i<n;i++){
@@ -49,7 +48,6 @@ public:
                 ans|=fun(p1,s,n,idx+i,num,f+1);
             }
         }else{
-            //cout<<p1<<" "<< p2<< " "<<num[idx]<<endl;
             string s=s_sum(p1,p2);
             int i=0,m=s.length();
             while(i<m){
