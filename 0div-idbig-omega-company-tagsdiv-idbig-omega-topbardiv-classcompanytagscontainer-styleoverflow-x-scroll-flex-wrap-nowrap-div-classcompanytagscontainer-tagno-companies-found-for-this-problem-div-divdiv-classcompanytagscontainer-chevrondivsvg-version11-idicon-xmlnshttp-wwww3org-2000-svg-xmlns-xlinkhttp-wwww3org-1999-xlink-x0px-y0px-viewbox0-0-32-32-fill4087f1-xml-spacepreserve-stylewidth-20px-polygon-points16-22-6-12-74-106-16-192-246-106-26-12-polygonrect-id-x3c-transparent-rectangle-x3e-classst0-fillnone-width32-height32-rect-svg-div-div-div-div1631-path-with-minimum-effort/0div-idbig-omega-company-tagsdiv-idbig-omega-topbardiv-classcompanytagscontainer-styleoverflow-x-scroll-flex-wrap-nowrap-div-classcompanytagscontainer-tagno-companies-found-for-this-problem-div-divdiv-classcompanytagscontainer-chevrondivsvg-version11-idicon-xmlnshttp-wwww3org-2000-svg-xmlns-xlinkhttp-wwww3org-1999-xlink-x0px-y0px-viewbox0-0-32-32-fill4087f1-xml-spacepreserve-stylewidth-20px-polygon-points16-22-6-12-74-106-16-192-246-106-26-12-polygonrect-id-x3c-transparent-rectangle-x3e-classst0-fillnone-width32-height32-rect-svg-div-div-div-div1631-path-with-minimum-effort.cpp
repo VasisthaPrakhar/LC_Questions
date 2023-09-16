@@ -33,8 +33,13 @@ public:
     int minimumEffortPath(vector<vector<int>>& h) {
         int n=h.size();
         int m=h[0].size();
+        int beg=0,end=0,ans;
+        for(auto x:h){
+            for(auto y:x){
+                end=max(end,y);
+            }
+        }
         vector<vector<int>> mat=h;
-        int beg=0,end=1e6,ans;
         while(beg<=end){
             int mid=(beg+end)>>1;
             if(bfs(mat,h,mid,n,m)){
