@@ -1,33 +1,3 @@
-// class Solution {
-// public:
-//     int dr[4]={0,0,1,-1};
-//     int dc[4]={1,-1,0,0};
-//     int ans;
-//     void dfs(int r,int c,set<pair<int,int>>vis,vector<vector<int>>&grid, int n, int m,int k){
-//         if(r==n-1 && c==m-1){
-//             ans=min(ans,k);
-//             return;
-//         }
-//         vis.insert({r,c});
-//         for(int i=0;i<4;i++){
-//             int nr=r+dr[i];
-//             int nc=c+dc[i];
-//             if(nr<0 || nr>=n || nc<0 ||nc>=m || vis.find({nr,nc})!=vis.end()){
-//                 continue;
-//             }
-//             dfs(nr,nc,vis,grid,n,m,max(k,abs(grid[nr][nc]-grid[r][c])));
-//         }
-//         vis.erase({r,c});
-//     }
-//     int minimumEffortPath(vector<vector<int>>& h) {
-//         int n=h.size();
-//         int m=h[0].size();
-//         set<pair<int,int>>vis;
-//         ans=INT_MAX;
-//         dfs(0,0,vis,h,n,m,0);
-//         return ans;
-//     }
-// };
 class Solution {
 public:
     int dr[4]={1,-1,0,0};
