@@ -16,7 +16,7 @@ public:
         return false;
     }
     int maxNumberOfAlloys(int n, int k, int budget, vector<vector<int>>& co, vector<int>& stock, vector<int>& cost) {
-        ll beg=0,end=1e14,ans=0,mid=0,f=1;
+        ll beg=0,end=1e10,ans=0,mid=0,f=1;
         while(beg<=end){
             //cout<<beg<<" "<<end<<endl;
             mid=(beg+end)/2;
