@@ -3,19 +3,20 @@ public:
     vector<int> kWeakestRows(vector<vector<int>>& mat, int k) {
         int n=mat.size();
         int m=mat[0].size();
-        vector<int>ans;
         set<pair<int,int>>s;
         for(int i=0;i<n;i++){
-            int sum=0;
+            int c=0;
             for(int j=0;j<m;j++){
-                sum+=mat[i][j];
+                if(mat[i][j]==1){
+                    c++;
+                }
             }
-            s.insert({sum,i});
+            s.insert({c,i});
         }
-        auto it=s.begin();
-        while(k-- && it!=s.end()){
-            ans.push_back(it->second);
-            it++;
+        vector<int>ans;
+        while(k--){
+            ans.push_back(s.begin()->second);
+            s.erase(s.begin());
         }
         return ans;
     }
