@@ -2,27 +2,24 @@ class Solution {
 public:
     int minOperations(vector<int>& nums, int x) {
         int n=nums.size();
-        int sum=0;
-        for(auto it:nums){
-            sum+=it;
-        }
-        if(x>sum){
+        int sum=accumulate(nums.begin(),nums.end(),0LL);
+        int k=sum-x;
+        if(k<0){
             return -1;
         }
-        if(x==sum){
-            return n;
-        }
-        int t=sum-x,i=0,j=0,ans=-1,k=0;
+        if(k==0){return n;}
+        int res=0,j=0,i=0,s=0;
         while(j<n){
-            k+=nums[j];
-            while(i<=j && k>t){
-                k-=nums[i];
+            s+=nums[j];
+            while(i<=j && s>k){
+                s-=nums[i];
                 i++;
             }
-            if(k==t)
-                ans=max(j-i+1,ans);
+            if(s==k){
+                res=max(res,j-i+1);
+            }
             j++;
         }
-        return ans==-1?ans:n-ans;
+        return res==0?-1:n-res;
     }
 };
