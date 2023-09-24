@@ -16,15 +16,6 @@ private: vector<vector<double>> init(double p,int qr){
 public:
     double champagneTower(int p, int qr, int qc) {
         vector<vector<double>>a=init(p,qr);
-        // for(int i=0;i<101;i++){
-        //     for(int j=0;j<a[i].size();j++){
-        //         cout<<a[i][j]<<" ";
-        //         if(a[i][j]>1){
-        //             a[i][j]=1;
-        //         }
-        //     }
-        //     cout<<endl;
-        // }
         return a[qr][qc];
     }
 };
