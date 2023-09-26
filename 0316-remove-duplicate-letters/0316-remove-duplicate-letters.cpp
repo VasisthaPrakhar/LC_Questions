@@ -1,6 +1,6 @@
 class Solution {
 public:
-    string removeDuplicateLetters(string s) {
+    string removeDuplicateLetters(string &s) {
         int n=s.length();
         vector<int>a(26,0),vis(26,0);
         for(int i=0;i<n;i++){
