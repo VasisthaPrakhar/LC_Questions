@@ -7,7 +7,7 @@ public:
             a[s[i]-'a']++;
         }
         string ans="";
-        ans.push_back(s[0]);
+        ans+=s[0];
         a[s[0]-'a']--;
         vis[s[0]-'a']=1;
         for(int i=1;i<n;i++){
@@ -17,7 +17,7 @@ public:
                     vis[ans.back()-'a']=0;
                     ans.pop_back();
                 }
-                ans.push_back(s[i]);
+                ans+=s[i];
                 vis[s[i]-'a']=1;
             }
         }
