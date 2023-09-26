@@ -1,29 +1,26 @@
 class Solution {
 public:
     string removeDuplicateLetters(string s) {
-        vector<int>freq(26,0);
-        vector<bool>visited(26,true);
-        for(auto x: s){
-            freq[x-'a']++;
-            visited[x-'a']=false;
+        int n=s.length();
+        vector<int>a(26,0),vis(26,0);
+        for(int i=0;i<n;i++){
+            a[s[i]-'a']++;
         }
-        int f=0;
-        string ans=" ";
-        for(int i=0;i<s.length();i++){
-            freq[s[i]-'a']--;
-            if(visited[s[i]-'a']==false){
-                if(f==1){
-                    while(s[i]<ans.back() && freq[ans.back()-'a']>0){
-                        visited[ans.back()-'a']=false;
-                        ans.pop_back();
-                    }
+        string ans="";
+        ans.push_back(s[0]);
+        a[s[0]-'a']--;
+        vis[s[0]-'a']=1;
+        for(int i=1;i<n;i++){
+            a[s[i]-'a']--;
+            if(!vis[s[i]-'a']){
+                while(ans.size()>0 && s[i]<ans.back() && a[ans.back()-'a']>0){
+                    vis[ans.back()-'a']=0;
+                    ans.pop_back();
                 }
-                ans=ans+s[i];
-                visited[s[i]-'a']=true;
-                f=1;
-                //cout<<ans<<" ";
+                ans.push_back(s[i]);
+                vis[s[i]-'a']=1;
             }
         }
-        return ans.substr(1,ans.length());
+        return ans;
     }
 };
