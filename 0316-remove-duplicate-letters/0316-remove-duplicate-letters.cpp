@@ -13,7 +13,7 @@ public:
         for(int i=1;i<n;i++){
             a[s[i]-'a']--;
             if(!vis[s[i]-'a']){
-                while(ans.size()>0 && s[i]<ans.back() && a[ans.back()-'a']>0){
+                while(ans.size() && s[i]<ans.back() && a[ans.back()-'a']>0){
                     vis[ans.back()-'a']=0;
                     ans.pop_back();
                 }
