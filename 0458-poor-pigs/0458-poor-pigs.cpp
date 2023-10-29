@@ -1,6 +1,12 @@
 class Solution {
 public:
-    int poorPigs(int buckets, int minutesToDie, int minutesToTest) {
-        return ceil(log2(buckets)/log2(int(minutesToTest/minutesToDie)+1));
+    typedef long long int ll;
+    int poorPigs(int b, int md, int mt) {
+        ll a=mt/md+1;
+        int die=0;
+        for(int p=1;p<b;p*=a){
+            die++;
+        }
+        return die;
     }
 };
