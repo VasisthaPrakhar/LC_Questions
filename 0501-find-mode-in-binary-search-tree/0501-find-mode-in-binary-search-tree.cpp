@@ -11,7 +11,7 @@
  */
 class Solution {
 public:
-    void fun(TreeNode* root, map<int,int>&m){
+    void fun(TreeNode* root, unordered_map<int,int>&m){
         if(root==nullptr){
             return;
         }
@@ -20,7 +20,7 @@ public:
         fun(root->right,m);
     }
     vector<int> findMode(TreeNode* root) {
-        map<int,int>m;
+        unordered_map<int,int>m;
         fun(root,m);
         int ma=0;
         vector<int>ans;
