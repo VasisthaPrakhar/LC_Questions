@@ -1,7 +1,7 @@
 class Solution {
 public:
     typedef long long int ll;
-    map<int,map<vector<int>,ll>>dp;
+    // map<int,map<vector<int>,ll>>dp;
     // void fun(int node, vector<int>adj[],vector<int>&res,map<int,vector<int>>&m,vector<int>&vis){
     //     vis[node]=1;
     //     res.push_back(node);
@@ -48,7 +48,7 @@ public:
     //     res1=fun1(idx+1,n,v,m);
     //     return dp[idx][v]=max(res,res1);
     // }
-    ll fun(int node, vector<int>adj[],map<int,ll>&m,vector<ll>&vis,vector<int>&v){
+    ll fun(int node, vector<int>adj[],map<int,ll>&m,vector<int>&vis,vector<int>&v){
         vis[node]=1;
         ll res=0;
         for(auto x:adj[node]){
@@ -58,7 +58,7 @@ public:
         }
         return m[node]=v[node]+res;
     }
-    ll fun1(int node, vector<int>adj[],map<int,ll>&m,vector<ll>&vis,vector<int>&v,vector<ll>&dp){
+    ll fun1(int node, vector<int>adj[],map<int,ll>&m,vector<int>&vis,vector<int>&v,vector<ll>&dp){
         if(dp[node]!=-1){
             return dp[node];
         }
@@ -76,18 +76,15 @@ public:
     }
     long long maximumScoreAfterOperations(vector<vector<int>>& ed, vector<int>& v) {
         int n=v.size();
-        vector<int>adj[n];
+        vector<int>adj[n],vis(n,0);
         for(auto x:ed){
             adj[x[0]].push_back(x[1]);
             adj[x[1]].push_back(x[0]);
         }
-        vector<ll>vis(n,0),dp(n,-1),vis1(n,0);
+        vector<ll>dp(n,-1);
         map<int,ll>m;
         ll sum = fun(0,adj,m,vis,v);
-        // for(auto x:m){
-        //     cout<<x.first<<":"<<x.second;
-        //     cout<<endl;
-        // }
-        return fun1(0,adj,m,vis1,v,dp);
+        for(auto &x:vis){x=0;}
+        return fun1(0,adj,m,vis,v,dp);
     }
 };
