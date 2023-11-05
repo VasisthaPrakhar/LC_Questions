@@ -6,11 +6,12 @@ public:
         if(k>=n){
             return ma;
         }
+        if (k == 1) return arr[0] > arr[1] ? arr[0] : arr[1];
         deque<int>q;
         for(auto x:arr){
             q.push_back(x);
         }
-        map<int,int>m;
+        unordered_map<int,int>m;
         while(n){
             int a=q.front();
             q.pop_front();
