@@ -18,7 +18,7 @@ public:
             }
             v.push_back(temp);
         }
-        cout<<q.size()<<" "<<n<<endl;
+        //cout<<q.size()<<" "<<n<<endl;
         if(q.size()==0){return -1;}
         if(s==t && q.size()){return 0;}
         int ans=0;
@@ -28,7 +28,7 @@ public:
             while(sz--){
                 auto node=q.front();
                 q.pop();
-                cout<<node<<" ";
+                //cout<<node<<" ";
                 if(v[node].find(t)!=v[node].end()){
                     return ans;
                 }
