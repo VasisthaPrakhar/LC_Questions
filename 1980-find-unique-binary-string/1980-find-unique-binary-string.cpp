@@ -12,7 +12,7 @@ public:
     string findDifferentBinaryString(vector<string>& nums) {
         int n=nums.size(),k=nums[0].length();
         int lim=pow(2,k);
-        set<string>st(nums.begin(),nums.end());
+        unordered_set<string>st(nums.begin(),nums.end());
         for(int i=0;i<lim;i++){
             string s=conv(i);
             while(s.length()!=k){
