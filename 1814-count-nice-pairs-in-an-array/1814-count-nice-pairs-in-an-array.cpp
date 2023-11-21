@@ -12,13 +12,13 @@ public:
     }
     int countNicePairs(vector<int>& nums) {
         int n=nums.size();
-        unordered_map<ll,ll>m;
+        unordered_map<int,ll>m;
         for(auto x:nums){
             m[rev(x)-x]++;
         }
         ll ans=0;
         for(int i=0;i<n;i++){
-            ans=ans + (ll)(m[rev(nums[i])-nums[i]]-1);
+            ans=ans + m[rev(nums[i])-nums[i]]-1;
         }
         //cout<<ans<<endl;
         return (ans/2)%mod;
