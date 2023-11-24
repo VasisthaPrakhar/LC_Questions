@@ -4,19 +4,15 @@ public:
     int findMaximumXOR(vector<int>& nums) {
        ll mask=0, ans=0;
        unordered_set<ll>s;
-       for(int i=31;i>=0;i--){
+       for(int i=30;i>=0;i--){
            mask|=(1<<i);
-           for(auto x:nums){
-               //if(mask & x)
-                s.insert(mask & x);
-           }
-           //if(s.size()==0){continue;}
            ll t=ans|(1<<i);
-           for(auto x:s){
-               if(s.find(t^x)!=s.end()){
+           for(auto x:nums){
+               if(s.find(t^(x & mask))!=s.end()){
                    ans=t;
                    break;
                }
+               s.insert(mask & x);
            }
            s.clear();
        }
