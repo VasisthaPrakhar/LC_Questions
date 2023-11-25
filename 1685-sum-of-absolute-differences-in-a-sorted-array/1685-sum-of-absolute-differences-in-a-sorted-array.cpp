@@ -3,12 +3,12 @@ public:
     typedef long long int ll;
     vector<int> getSumAbsoluteDifferences(vector<int>& nums) {
         int n=nums.size();
-        vector<ll>prev,suf(n,0);
+        vector<ll>prev(n,0),suf(n,0);
         vector<int>ans(n,0);
         ll sum=0;
         for(int i=0;i<n;i++){
             sum+=nums[i];
-            prev.push_back(sum);
+            prev[i]=sum;
         }
         sum=0;
         for(int i=n-1;i>=0;i--){
