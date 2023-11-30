@@ -17,13 +17,13 @@ public:
             n/=2;
         }
         int m=a.size();
-        ll ans=pre[m-1],k=0;
+        ll ans=0;
         //cout<<ans<<" "<<m;
-        for(int i=0;i<m-1;i++){
+        for(int i=0;i<m;i++){
             if(a[i]>0){
-                k=pre[i]-k;
+                ans=pre[i]-ans;
             }
         }
-        return ans-k;
+        return ans;
     };
 };
