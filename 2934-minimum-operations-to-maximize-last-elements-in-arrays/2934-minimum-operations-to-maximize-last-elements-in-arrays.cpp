@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int fun(int x,int y,int n,vector<int>& a, vector<int>& b){
+    int fun(int &x,int &y,int &n,vector<int>& a, vector<int>& b){
         set<int>s;
         int f=0;
         //cout<<x<<" "<<y<<endl;
