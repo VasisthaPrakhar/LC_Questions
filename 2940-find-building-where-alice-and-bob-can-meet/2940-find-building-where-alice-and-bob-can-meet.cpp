@@ -14,7 +14,6 @@ public:
             }
             return a.first<b.first;
         });
-        set<int>s;
         unordered_map<int,int>mp;
         for(int i=n-1;i>=0;i--){
             // s.insert(v[i].second);
@@ -27,7 +26,6 @@ public:
             // }
             mp[v[i].second]=i;
         }
-        map<int,set<int>>mp1;
         vector<int>ans(m);
         int j=0;
         for(int i=0;i<m;i++){
@@ -70,7 +68,6 @@ public:
             }else{
                 res=b;
             }
-            mp1[ma].insert(res);
             ans[j++]=res;
            // mp[a][b]=res;
         }
