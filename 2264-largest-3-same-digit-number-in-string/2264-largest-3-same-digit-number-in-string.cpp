@@ -34,19 +34,20 @@
 // };
 class Solution {
 public:
-    bool check(string &s){
-        map<char,int>m;
+    bool check(string &s,map<int,int>&m){
         for(auto x:s){
             m[x]++;
         }
         return m.size()==1;
     }
-    string largestGoodInteger(string num) {
+    string largestGoodInteger(string &num) {
         string ans="";
         int n=num.length();
+        map<int,int>m;
         for(int i=0;i<n-2;i++){
+            m.clear();
             string temp=num.substr(i,3);
-            if(check(temp)){
+            if(check(temp,m)){
                 ans=max(ans,temp);
             }
         }
