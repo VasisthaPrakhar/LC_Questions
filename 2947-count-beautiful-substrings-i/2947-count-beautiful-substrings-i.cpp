@@ -21,7 +21,7 @@ public:
         }
         if(x==y && (x*y)%k==0){
             a=1;
-            cout<<i<<" "<<j<<endl;
+            //cout<<i<<" "<<j<<endl;
         }
         return dp[i][j]=a+fun(s,k,v,c,i+1,j)+fun(s,k,v,c,i,j-1);
     }
