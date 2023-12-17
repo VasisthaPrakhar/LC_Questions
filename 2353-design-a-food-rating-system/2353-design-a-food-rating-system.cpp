@@ -1,7 +1,7 @@
 class FoodRatings {
 private:
     unordered_map<string,pair<int,string>>m;
-    unordered_map<string,map<int,set<string>,greater<int>>>mc;
+    map<string,map<int,set<string>,greater<int>>>mc;
 public:
     FoodRatings(vector<string>& f, vector<string>& c, vector<int>& r) {
         int n=f.size();
@@ -12,7 +12,7 @@ public:
     }
     
     void changeRating(string food, int nr) {
-        auto temp=m[food];
+       auto temp=m[food];
         mc[temp.second][temp.first].erase(food);
         if(mc[temp.second][temp.first].size()==0){
             mc[temp.second].erase(temp.first);
