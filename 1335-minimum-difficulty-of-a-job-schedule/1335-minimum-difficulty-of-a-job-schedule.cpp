@@ -1,10 +1,4 @@
-static auto fast_io = []
-{
-	ios::sync_with_stdio(false);
-	cout.tie(nullptr);
-	cin.tie(nullptr);
-	return 0;
-}();
+
 class Solution {
 public:
     int dp(vector<int>&jd,int idx,int day,int &d, vector<vector<int>>&memo,vector<int>&upmax,int n){
@@ -36,4 +30,3 @@ public:
         return dp(jd,0,1,d,memo,upmax,n);
     }
 };
-
