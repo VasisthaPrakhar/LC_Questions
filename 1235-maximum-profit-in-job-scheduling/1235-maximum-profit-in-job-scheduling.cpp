@@ -1,20 +1,20 @@
 class Solution {
 public:
     typedef long long int ll;
-    int fun(vector<vector<int>>&v,int n, int idx,int last, vector<ll>&dp){
+    ll dp[50001];
+    int fun(vector<vector<int>>&v,int n, int idx,int last,vector<int>&st){
         if(idx>=n){
             return 0;
         }
         if(v[idx][0]<last){
-            return fun(v,n,idx+1,last,dp);
+            auto f=lower_bound(st.begin()+idx+1,st.end(),last)-st.begin();
+            return fun(v,n,f,last,st);
         }
         if(dp[idx]!=-1){
             return dp[idx];
         }
         ll res=0;
-        //else{
-            res=max(v[idx][2]+fun(v,n,idx+1,v[idx][1],dp),fun(v,n,idx+1,last,dp));
-        //}
+        res=max(v[idx][2]+fun(v,n,idx+1,v[idx][1],st),fun(v,n,idx+1,last,st));
         return dp[idx]=res;
     }
     int jobScheduling(vector<int>& st, vector<int>& end, vector<int>& p) {
@@ -29,7 +29,8 @@ public:
             v[i][2]=p[i];
         }
         sort(v.begin(),v.end());
-        vector<ll>dp(n,-1);
-        return fun(v,n,0,0,dp);
+        sort(st.begin(),st.end());
+        memset(dp,-1,sizeof(dp));
+        return fun(v,n,0,0,st);
     }
 };
