@@ -27,17 +27,14 @@ public:
             }
             int mi=min(a.first,b.first);
             int ma=max(a.second,b.second);
-            //cout<<mi<<" "<<ma<<endl;
             ans=max({ans,abs(mi-root->val),abs(ma-root->val)});
             return {min({a.first,b.first,root->val}),max({a.second,b.second,root->val})};
         }
         
     }
     int maxAncestorDiff(TreeNode* root) {
-        //int mi=INT_MIN,ma=INT_MAX;
         ans=0;
         auto f=fun(root);
-        //cout<<f.first<<" "<<f.second<<endl;
         return ans;
     }
 };
