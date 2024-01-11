@@ -34,7 +34,7 @@ public:
     }
     int maxAncestorDiff(TreeNode* root) {
         ans=0;
-        auto f=fun(root);
+        fun(root);
         return ans;
     }
 };
