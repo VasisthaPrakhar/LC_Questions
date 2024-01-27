@@ -12,6 +12,8 @@ public:
         for(int i=0;i<n;i++){
             if(k-i>=0){
                 res = (res%mod + fun(n-1,k-i)%mod)%mod;
+            }else{
+                break;
             }
         }
         return dp[n][k]=res%mod;
