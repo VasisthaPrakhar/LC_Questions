@@ -11,25 +11,28 @@
  */
 class Solution {
 public:
-    int ans=0;
-    // unordered_map<TreeNode*,pair<int,int>>mp;
+    int ans;
     pair<int,int> fun(TreeNode* root){
-        if(root==nullptr){
-            return {0,0};
+        if(root->left==nullptr && root->right==nullptr){
+            return {1,1};
         }
-        pair<int,int>a,b;
-        a=fun(root->left);
-        b=fun(root->right);
-        ans=max({ans,a.second+1,b.first+1});
-        return {a.second+1,b.first+1};
+        pair<int,int> l,r;
+        if(root->left){
+            l=fun(root->left);
+        }
+        if(root->right){
+            r=fun(root->right);
+        }
+        ans=max({ans,l.second+1,r.first+1});
+        return {l.second+1,r.first+1};
     }
     int longestZigZag(TreeNode* root) {
-        //mp.clear();
         ans=0;
-        fun(root);
-        // for(auto x:mp){
-        //     ans=max({ans,x.second.first,x.second.second});
-        // }
+        auto x=fun(root);
+        if(ans==0)return ans;
         return ans-1;
+        // auto x=fun(root);
+        // cout<<x.first<<" "<<x.second<<" "<<ans<<endl;
+        // return 0;
     }
 };
