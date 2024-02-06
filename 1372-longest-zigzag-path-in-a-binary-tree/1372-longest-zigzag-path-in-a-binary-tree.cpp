@@ -13,25 +13,20 @@ class Solution {
 public:
     int ans;
     pair<int,int> fun(TreeNode* root){
-        if(root->left==nullptr && root->right==nullptr){
-            return {1,1};
+        if(root==nullptr){
+            return {0,0};
         }
         pair<int,int> l,r;
-        if(root->left){
-            l=fun(root->left);
-        }
-        if(root->right){
-            r=fun(root->right);
-        }
+        l=fun(root->left);
+        r=fun(root->right);
         ans=max({ans,l.second+1,r.first+1});
         return {l.second+1,r.first+1};
     }
     int longestZigZag(TreeNode* root) {
         ans=0;
         auto x=fun(root);
-        if(ans==0)return ans;
+        //if(ans==0)return ans;
         return ans-1;
-        // auto x=fun(root);
         // cout<<x.first<<" "<<x.second<<" "<<ans<<endl;
         // return 0;
     }
