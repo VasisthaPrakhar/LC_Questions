@@ -15,13 +15,21 @@ public:
             return 1;
         }
         int ans=0;
-        for(int i=0;i<n-1;i++){
-            for(int j=i+1;j<n;j++){
-                if(fun(s,i,j)){
+        unordered_map<char,unordered_set<int>>m;
+        for(int i=0;i<n;i++){
+            m[s[i]].insert(i);
+        }
+        for(int i=0;i<n;i++){
+            for(auto x:m[s[i]]){
+                if(fun(s,i,x)){
                     ans++;
                 }
             }
+            m[s[i]].erase(i);
+            if(m[s[i]].size()==0){
+                m.erase(s[i]);
+            }
         }
-        return ans+n;
+        return ans;
     }
 };
