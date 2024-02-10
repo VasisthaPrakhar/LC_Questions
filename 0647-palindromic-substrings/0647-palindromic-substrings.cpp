@@ -15,7 +15,7 @@ public:
             return 1;
         }
         int ans=0;
-        map<char,unordered_set<int>>m;
+        map<char,set<int>>m;
         for(int i=0;i<n;i++){
             m[s[i]].insert(i);
         }
