@@ -2,14 +2,14 @@ class Solution {
 public:
     int maxPalindromesAfterOperations(vector<string>& w) {
         int n=w.size();
-        map<int,int>m;
+        unordered_map<int,int>m;
         for(auto &x:w){
             for(auto &y:x){
                 m[y]++;
             }
         }
         int ev=0,od=0;
-        for(auto x:m){
+        for(auto &x:m){
             if(x.second%2){
                 ev+=x.second-1;
                 od++;
@@ -21,7 +21,7 @@ public:
             return a.length()<b.length();
         });
         int ans=0,k=0;
-        for(auto x:w){
+        for(auto &x:w){
             int l=x.length();
             if(l%2){
                 if(ev+od>=l){
