@@ -8,6 +8,7 @@ public:
     void unionn(int u,int v,vector<int>&par,vector<int>&rank){
         u=findpar(u,par);
         v=findpar(v,par);
+        if(u==v){return;}
         if(rank[u]<rank[v]){
             par[u]=v;
         }        else if(rank[v]<rank[u]){
