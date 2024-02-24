@@ -46,20 +46,19 @@ public:
     // }
     vector<int> findAllPeople(int n, vector<vector<int>>& me, int f) {
         map<int,vector<pair<int,int>>>m;
-        for(auto x:me){
+        for(auto &x:me){
             m[x[2]].push_back({x[0],x[1]});
         }
-        set<int>s;
         vector<int>res,rank(n,0),par(n,0);
         for(int i=0;i<n;i++){
             par[i]=i;
         }
         unionn(0,f,par,rank);
-        for(auto x:m){
-            for(auto y:x.second){
+        for(auto &x:m){
+            for(auto &y:x.second){
                 unionn(y.first,y.second,par,rank);
             }
-            for(auto y:x.second){
+            for(auto &y:x.second){
                 if(findpar(y.first,par)!=par[0]){
                     rank[y.first]=0;
                     par[y.first]=y.first;
