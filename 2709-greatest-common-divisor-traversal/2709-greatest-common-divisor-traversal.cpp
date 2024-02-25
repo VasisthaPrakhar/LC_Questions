@@ -1,7 +1,7 @@
 class Solution {
 public:
-    set<int> fun(int n){
-        set<int>res;
+    unordered_set<int> fun(int n){
+        unordered_set<int>res;
         while(n%2==0){ 
             res.insert(2);
             n=n/2; 
@@ -35,9 +35,9 @@ public:
     }
     bool canTraverseAllPairs(vector<int>& nums) {
         int n=nums.size();
-        map<int,vector<int>>m;
+        unordered_map<int,vector<int>>m;
         for(int i=0;i<n;i++){
-            auto s=fun(nums[i]);
+            unordered_set<int>s=fun(nums[i]);
             //  for(auto y:s){
             //     cout<<y<<" ";
             // }
