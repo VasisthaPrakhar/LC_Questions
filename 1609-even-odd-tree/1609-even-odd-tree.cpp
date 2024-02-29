@@ -33,7 +33,7 @@ public:
             mp[k]=arr;
             k++;
         }
-        for(auto x:mp){
+        for(auto &x:mp){
             if(x.first%2){
                 int n=x.second.size();
                 if(x.second[0]%2){return false;}
