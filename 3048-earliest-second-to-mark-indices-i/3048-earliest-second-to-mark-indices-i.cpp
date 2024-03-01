@@ -12,11 +12,10 @@ public:
         if(mp.size()!=n){return false;}
         ll su=0;
         for(int i=0;i<=mid;i++){
+            su++;
             if(mp[ch[i]]==i){
-                if(su<nums[ch[i]-1]){return false;}
-                su-=nums[ch[i]-1];
-            }else{
-                su++;
+                if(su<nums[ch[i]-1]+1){return false;}
+                su-=nums[ch[i]-1]+1;
             }
         }
         return true;
