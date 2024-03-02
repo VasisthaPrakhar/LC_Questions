@@ -25,8 +25,9 @@ public:
         if(a.size()<2){return 0;}
         int ans=0;
         for(int i=0;i<a.size()-1;i++){
+            if(a[i]==0){continue;}
             for(int j=i+1;j<a.size();j++){
-                if(a[i]!=0 && a[j]!=0)
+                if(a[j]!=0)
                     ans+=(ll)a[i]*(ll)a[j];
             }
         }
