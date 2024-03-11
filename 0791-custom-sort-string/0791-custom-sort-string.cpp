@@ -1,7 +1,7 @@
 class Solution {
 public:
     string customSortString(string order, string s) {
-        map<char,int>mp;
+        unordered_map<char,int>mp;
         for(auto &x:s){
             mp[x]++;
         }
