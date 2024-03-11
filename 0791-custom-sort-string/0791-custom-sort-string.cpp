@@ -1,6 +1,6 @@
 class Solution {
 public:
-    string customSortString(string order, string s) {
+    string customSortString(string &order, string &s) {
         unordered_map<char,int>mp;
         for(auto &x:s){
             mp[x]++;
