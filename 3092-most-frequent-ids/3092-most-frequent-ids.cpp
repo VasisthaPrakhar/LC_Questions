@@ -3,7 +3,7 @@ public:
     typedef long long int ll;
     vector<long long> mostFrequentIDs(vector<int>& nums, vector<int>& freq) {
         int n=nums.size();
-        map<ll,ll>m;
+        unordered_map<ll,ll>m;
         map<ll,set<ll>,greater<ll>>mp;
         vector<ll>ans(n,0);
         for(int i=0;i<n;i++){
