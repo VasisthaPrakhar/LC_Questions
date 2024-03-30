@@ -1,7 +1,7 @@
 class Solution {
 public:
     typedef long long int ll;
-    ll fun(vector<int>&nums, int n, int k){
+    ll fun(vector<int>&nums, int &n, int k){
         ll i=0,j=0,ans=0;
         unordered_map<int,int>m;
         while(j<n){
