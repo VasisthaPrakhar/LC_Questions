@@ -23,7 +23,6 @@ public:
             if(p!=-1 && q!=-1){
                 ans+=max(0LL,(ll)min(p,q)-arr.back()); 
             }
-            //cout<<p<<" "<<q<<" "<<ans<<endl;
             j++;
         }
         return ans;
