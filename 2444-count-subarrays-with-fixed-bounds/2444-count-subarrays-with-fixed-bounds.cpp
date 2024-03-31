@@ -17,7 +17,7 @@ public:
             if(nums[j]==minK){
                 q=j;
             }
-             if(nums[j]==maxK){
+            if(nums[j]==maxK){
                 p=j;
             }
             if(p!=-1 && q!=-1){
