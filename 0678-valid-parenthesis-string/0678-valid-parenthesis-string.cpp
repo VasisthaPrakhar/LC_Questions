@@ -1,7 +1,7 @@
 class Solution {
 public:
     
-    bool fun(int idx, int n, string &s, int k, unordered_map<int,map<int,bool>>&m){
+    bool fun(int idx, int n, string &s, int k, unordered_map<int,unordered_map<int,bool>>&m){
         if(idx>=n){
             if(k==0){return true;}
             return false;
@@ -28,7 +28,7 @@ public:
     }
     bool checkValidString(string &s) {
         int n=s.length();
-        unordered_map<int,map<int,bool>>m;
+        unordered_map<int,unordered_map<int,bool>>m;
         return fun(0,n,s,0,m);
     }
 };
