@@ -1,7 +1,7 @@
 class Solution {
 public:
     unordered_map<int,unordered_map<int,int>>dp;
-    int fun(int idx,int n,int num,unordered_map<int,map<int,int>>&a,int prev){
+    int fun(int idx,int n,int num,unordered_map<int,unordered_map<int,int>>&a,int prev){
         if(idx>=n){
             return 0;
         }
@@ -17,17 +17,14 @@ public:
                 res=min(res,(num-x.second) + fun(idx+1,n,num,a,x.first));
             }
         }
-        // if(res==INT_MAX){
-        //     res=min(res,num+fun(idx+1,n,num,a,-1));
-        // }
         return dp[idx][prev]=res;
     }
     int minimumOperations(vector<vector<int>>& grid) {
         int n=grid.size();
         int m=grid[0].size();
-        unordered_map<int,map<int,int>>mp;
+        unordered_map<int,unordered_map<int,int>>mp;
         for(int j=0;j<m;j++){
-            map<int,int>mp1;
+            unordered_map<int,int>mp1;
             for(int i=0;i<n;i++){
                 mp1[grid[i][j]]++;
             }
