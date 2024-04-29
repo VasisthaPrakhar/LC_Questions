@@ -15,18 +15,6 @@ public:
         for(int i=0;i<n;i++){
             z=z^nums[i];
         }
-        if(k==z){
-            return 0;
-        }
-        cout<<z;
         return dif(z,k);
-        // int ans=INT_MAX;
-        // for(int i=0;i<n;i++){
-        //     int t=nums[i]^z;
-        //     int s=k^t;
-        //     cout<<s<<" ";
-        //     ans=min(nums[i],s);
-        // }
-        // return ans;
     }
 };
