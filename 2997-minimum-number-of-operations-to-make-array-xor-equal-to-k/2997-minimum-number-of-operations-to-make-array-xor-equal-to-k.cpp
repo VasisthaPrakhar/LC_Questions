@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int dif(int a,int b){
+    int dif(int &a,int &b){
         int c=0;
         for(int i=0;i<32;i++){
             int k=1<<i;
