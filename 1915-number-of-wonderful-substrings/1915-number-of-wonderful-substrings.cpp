@@ -7,7 +7,9 @@ public:
     }
     long long wonderfulSubstrings(string &w) {
         int n=w.length();
-        unordered_map<ll,int>m;
+        // unordered_map<ll,int>m;
+        int m[1025];
+        memset(m,0,sizeof(m));
         m[0]++;
         ll a=0,ans=0;
         for(int i=0;i<n;i++){
