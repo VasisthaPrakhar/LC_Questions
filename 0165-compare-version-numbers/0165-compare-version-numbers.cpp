@@ -22,7 +22,6 @@ public:
                 }
                 if(a.size()==0){a.push_back('0');}
                 if(b.size()==0){b.push_back('0');}
-                //cout<<a<<" "<<b<<endl;
                 long long int c=stoll(a);
                 long long int d=stoll(b);
                 if(c<d){
@@ -34,7 +33,6 @@ public:
                 a="";
             }
         }
-       // if(a.size()==0){a.push_back('0');}
         string b="";
         for(;j<m;j++){
             if(v2[j]=='.'){
@@ -47,7 +45,6 @@ public:
         }
         if(a.size()==0){a.push_back('0');}
         if(b.size()==0){b.push_back('0');}
-        //cout<<a<<" "<<b<<endl;
         long long int c=stoll(a);
         long long int d=stoll(b);
         if(c<d){
