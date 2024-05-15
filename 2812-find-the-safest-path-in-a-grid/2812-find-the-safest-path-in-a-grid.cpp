@@ -21,24 +21,6 @@ public:
                 }
             }
         }
-//         while(!q.empty()){
-//             auto t = q.front();
-//             q.pop();
-
-//             int x = t.first, y = t.second;
-//             int s = a[x][y];
-
-//             for(int i =0; i < 4; i++){
-//                 int newX = x + dr[i];
-//                 int newY = y + dc[i];
-
-//                 if(newX >= 0 && newX < n && newY >= 0 && newY < n && a[newX][newY] > 1 + s) { 
-
-//                     a[newX][newY] = 1 + s;
-//                     q.push({newX, newY});
-//                 }
-//             }
-//         }
     }
     int maximumSafenessFactor(vector<vector<int>>& grid) {
         int n=grid.size();
