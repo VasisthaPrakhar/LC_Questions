@@ -3,42 +3,42 @@ public:
     int dr[4]={1,-1,0,0};
     int dc[4]={0,0,1,-1};
     void bfs(queue<pair<int,int>>&q,int n,vector<vector<int>>& a){
-        // int ans=0;
-        // while(!q.empty()){
-        //     int sz=q.size();
-        //     ans++;
-        //     while(sz--){
-        //         auto node=q.front();
-        //         int x=node.first;
-        //         int y=node.second;
-        //         q.pop();
-        //         for(int i=0;i<4;i++){
-        //             int nr=x+dr[i];
-        //             int nc=y+dc[i];
-        //             if(nr<0 || nr>=n || nc<0 || nc>=n || a[nr][nc]<ans){continue;}
-        //             q.push({nr,nc});
-        //             a[nr][nc]=min(ans,a[nr][nc]);
-        //         }
-        //     }
-        // }
+        int ans=0;
         while(!q.empty()){
-            auto t = q.front();
-            q.pop();
-
-            int x = t.first, y = t.second;
-            int s = a[x][y];
-
-            for(int i =0; i < 4; i++){
-                int newX = x + dr[i];
-                int newY = y + dc[i];
-
-                if(newX >= 0 && newX < n && newY >= 0 && newY < n && a[newX][newY] > 1 + s) { 
-
-                    a[newX][newY] = 1 + s;
-                    q.push({newX, newY});
+            int sz=q.size();
+            ans++;
+            while(sz--){
+                auto node=q.front();
+                int x=node.first;
+                int y=node.second;
+                q.pop();
+                for(int i=0;i<4;i++){
+                    int nr=x+dr[i];
+                    int nc=y+dc[i];
+                    if(nr<0 || nr>=n || nc<0 || nc>=n || a[nr][nc]<=ans){continue;}
+                    q.push({nr,nc});
+                    a[nr][nc]=min(ans,a[nr][nc]);
                 }
             }
         }
+//         while(!q.empty()){
+//             auto t = q.front();
+//             q.pop();
+
+//             int x = t.first, y = t.second;
+//             int s = a[x][y];
+
+//             for(int i =0; i < 4; i++){
+//                 int newX = x + dr[i];
+//                 int newY = y + dc[i];
+
+//                 if(newX >= 0 && newX < n && newY >= 0 && newY < n && a[newX][newY] > 1 + s) { 
+
+//                     a[newX][newY] = 1 + s;
+//                     q.push({newX, newY});
+//                 }
+//             }
+//         }
     }
     int maximumSafenessFactor(vector<vector<int>>& grid) {
         int n=grid.size();
