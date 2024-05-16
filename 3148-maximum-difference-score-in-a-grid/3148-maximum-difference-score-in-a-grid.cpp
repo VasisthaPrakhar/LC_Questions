@@ -5,14 +5,14 @@ public:
         int m=grid[0].size();
         int mr[n][m],mc[n][m];
         for(int i=0;i<n;i++){
-            int ma=INT_MIN;
+            int ma=0;
             for(int j=m-1;j>=0;j--){
                 ma=max(grid[i][j],ma);
                 mr[i][j]=ma;
             }
         }
         for(int j=0;j<m;j++){
-            int ma=INT_MIN;
+            int ma=0;
             for(int i=n-1;i>=0;i--){
                 ma=max(mr[i][j],ma);
                 mc[i][j]=ma;
