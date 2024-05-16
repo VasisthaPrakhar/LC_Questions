@@ -3,7 +3,7 @@ public:
     int maxScore(vector<vector<int>>& grid) {
         int n=grid.size();
         int m=grid[0].size();
-        vector<vector<int>>mc(n,vector<int>(m)),mr(n,vector<int>(m));
+        int mr[n][m],mc[n][m];
         for(int i=0;i<n;i++){
             int ma=INT_MIN;
             for(int j=m-1;j>=0;j--){
