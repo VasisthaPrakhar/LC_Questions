@@ -13,13 +13,6 @@ class Solution {
 public:
     int fun(TreeNode* root, int t){
         if(root==nullptr){return 1;}
-        // if(root->left==NULL && root->right==NULL){
-        //     if(root->val==t){
-        //         return 1;
-        //     }else{
-        //         return 0;
-        //     }
-        // }
         int l=fun(root->left,t);
         int r=fun(root->right,t);
         if(l==1){
@@ -36,13 +29,9 @@ public:
         return 0;
     }
     TreeNode* removeLeafNodes(TreeNode* root, int t) {
-        fun(root,t);
-        if(root->left==NULL && root->right==NULL){
-            if(root->val==t){
-                return nullptr;
-            }else{
-                return root;
-            }
+        int ans=fun(root,t);
+        if(ans){
+            return nullptr;
         }
         return root;
     }
