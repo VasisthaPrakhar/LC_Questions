@@ -13,14 +13,13 @@ class Solution {
 public:
     int fun(TreeNode* root, int t){
         if(root==nullptr){return 1;}
-        if(root->left==NULL && root->right==NULL){
-            if(root->val==t){
-                return 1;
-            }else{
-                return 0;
-            }
-        }
-        //int l=0,r=0;
+        // if(root->left==NULL && root->right==NULL){
+        //     if(root->val==t){
+        //         return 1;
+        //     }else{
+        //         return 0;
+        //     }
+        // }
         int l=fun(root->left,t);
         int r=fun(root->right,t);
         if(l==1){
