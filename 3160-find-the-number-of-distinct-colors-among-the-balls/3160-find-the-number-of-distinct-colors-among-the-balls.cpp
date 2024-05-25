@@ -3,18 +3,17 @@ public:
     vector<int> queryResults(int limit, vector<vector<int>>& q) {
         unordered_map<int,int>c,b;
         int n=q.size();
-        vector<int>ans(n);
+        vector<int>ans;
         for(int i=0;i<n;i++){
-            vector<int>x=q[i];
-            if(b.find(x[0])!=b.end()){
-                c[b[x[0]]]--;
-                if(c[b[x[0]]]==0){
-                    c.erase(b[x[0]]);
+            if(b.find(q[i][0])!=b.end()){
+                c[b[q[i][0]]]--;
+                if(c[b[q[i][0]]]==0){
+                    c.erase(b[q[i][0]]);
                 }
             }
-            b[x[0]]=x[1];
-            c[x[1]]++;
-            ans[i]=c.size();
+            b[q[i][0]]=q[i][1];
+            c[q[i][1]]++;
+            ans.push_back((int)c.size());
         }
         return ans;
     }
