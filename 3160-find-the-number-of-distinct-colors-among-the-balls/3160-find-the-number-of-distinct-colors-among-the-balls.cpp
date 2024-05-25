@@ -1,7 +1,7 @@
 class Solution {
 public:
     vector<int> queryResults(int limit, vector<vector<int>>& q) {
-        map<int,int>c,b;
+        unordered_map<int,int>c,b;
         int n=q.size();
         vector<int>ans(n);
         for(int i=0;i<n;i++){
