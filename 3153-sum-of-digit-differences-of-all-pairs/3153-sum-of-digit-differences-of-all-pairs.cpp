@@ -17,15 +17,12 @@ public:
         for(int i=0;i<11;i++){
             int k=n;
             for(int j=0;j<11;j++){
-                //cout<<mp[i][j]<<" ";
-                //int c=0;
                 if(mp[i][j]>0){
                     ans+=(k-mp[i][j])*mp[i][j];
                     k-=mp[i][j];
                 }
-                //ans+=c;
+                if(k<=0){break;}
             }
-            //cout<<endl;
         }
         return ans;
     }
