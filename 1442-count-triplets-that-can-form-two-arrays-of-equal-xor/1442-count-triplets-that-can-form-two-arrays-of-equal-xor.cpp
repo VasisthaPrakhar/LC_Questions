@@ -4,7 +4,7 @@ public:
         int n=arr.size(),ans=0;
         for(int i=1;i<n;i++){
             int k=0;
-            map<int,int>mp;
+            unordered_map<int,int>mp;
             for(int j=i;j<n;j++){
                 k=k^arr[j];
                 mp[k]++;
