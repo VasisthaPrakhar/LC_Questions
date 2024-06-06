@@ -1,5 +1,6 @@
 class Solution {
 public:
+    int speedup = []{ios::sync_with_stdio(0); cin.tie(0); return 0;}();
     bool isNStraightHand(vector<int>& hand, int g) {
         int n=hand.size();
         if(n%g!=0){
