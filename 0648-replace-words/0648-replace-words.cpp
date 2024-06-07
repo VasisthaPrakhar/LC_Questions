@@ -1,7 +1,7 @@
 class Solution {
 public:
     string replaceWords(vector<string>& d, string &s) {
-        map<string,int>mp;
+        unordered_map<string,int>mp;
         for(auto x:d){
             mp[x]++;
         }
