@@ -26,16 +26,12 @@ public:
     }
     int maximumLength(vector<int>& nums, int k) {
         int n=nums.size();
-        map<int,vector<int>>mp;
-        for(int i=0;i<n;i++){
-            mp[nums[i]].push_back(i);
-        }
-        int j=1;
-        for(auto &x:mp){
-            for(auto &y:x.second){
-                nums[y]=j;
+        unordered_map<int, int> have;
+        for (int &x : nums) {
+            if (!have.count(x)) {
+                have[x] = have.size()+1;
             }
-            j++;
+            x = have[x];
         }
         memset(dp,-1,sizeof(dp));
         return fun(0,k,nums,n,0);
