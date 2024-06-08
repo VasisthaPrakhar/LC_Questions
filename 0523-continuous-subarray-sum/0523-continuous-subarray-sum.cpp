@@ -1,6 +1,7 @@
 class Solution {
 public:
     bool checkSubarraySum(vector<int>& nums, int k) {
+        ios::sync_with_stdio(false); cin.tie(0); cout.tie(0);
         int n=nums.size();
         if(n<2){return false;}
         long long int sum=nums[0];
