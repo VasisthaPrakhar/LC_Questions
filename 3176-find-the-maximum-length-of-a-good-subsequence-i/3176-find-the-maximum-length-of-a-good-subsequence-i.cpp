@@ -1,6 +1,5 @@
 class Solution {
 public:
-    //unordered_map<string,int>dp;
     int dp[501][26][502];
     int fun(int idx,int k,vector<int>&a, int n,int prev){
         if(idx>=n){
