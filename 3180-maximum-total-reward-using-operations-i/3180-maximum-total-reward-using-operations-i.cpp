@@ -2,6 +2,7 @@ class Solution {
 public:
     unordered_map<int,int>dp;
     int fun(vector<int>&a,int n,int prev){
+        int speedup = []{ios::sync_with_stdio(0); cin.tie(0); return 0;}();
         if(dp.find(prev)!=dp.end()){
             return dp[prev];
         }
@@ -15,6 +16,7 @@ public:
     }
     
     int maxTotalReward(vector<int>& r) {
+        int speedup = []{ios::sync_with_stdio(0); cin.tie(0); return 0;}();
         int n=r.size();
         set<int>s;
         for(auto x:r){
