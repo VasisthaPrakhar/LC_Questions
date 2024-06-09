@@ -1,6 +1,6 @@
 class Solution {
 public:
-    map<int,int>dp;
+    unordered_map<int,int>dp;
     int fun(vector<int>&a,int n,int prev){
         if(dp.find(prev)!=dp.end()){
             return dp[prev];
