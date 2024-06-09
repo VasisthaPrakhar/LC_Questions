@@ -2,7 +2,7 @@ class Solution {
 public:
     unordered_map<int,int>dp;
     int fun(vector<int>&a,int n,int prev){
-        int speedup = []{ios::sync_with_stdio(0); cin.tie(0); return 0;}();
+        //int speedup = []{ios::sync_with_stdio(0); cin.tie(0); return 0;}();
         if(dp.find(prev)!=dp.end()){
             return dp[prev];
         }
