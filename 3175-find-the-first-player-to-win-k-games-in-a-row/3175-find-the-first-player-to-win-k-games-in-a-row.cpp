@@ -6,7 +6,7 @@ public:
         for(int i=0;i<n;i++){
             q.push_back({s[i],i});
         }
-        if(k>n){
+        if(k>2*n){
             return max_element(s.begin(),s.end()) -s.begin();
         }
         int c=0,p=-1;
