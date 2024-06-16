@@ -6,7 +6,6 @@ public:
         sort(p.begin(),p.end());
         vector<ll>dp(n,0),ma(n,0);
         map<int,int,greater<int>>mp;
-        ll ans=p[0];
         dp[0]=p[0];
         ma[0]=dp[0];
         mp[p[0]]=0;
@@ -28,10 +27,9 @@ public:
                     dp[i]=p[i];
                 }
             }
-            ans=max(dp[i],ans);
             ma[i]=max(dp[i],ma[i-1]);
             mp[p[i]]=i;
         }
-        return ans;
+        return *max_element(dp.begin(),dp.end());
     }
 };
