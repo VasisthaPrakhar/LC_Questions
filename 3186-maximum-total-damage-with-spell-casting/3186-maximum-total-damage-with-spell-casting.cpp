@@ -30,6 +30,6 @@ public:
             ma[i]=max(dp[i],ma[i-1]);
             mp[p[i]]=i;
         }
-        return *max_element(dp.begin(),dp.end());
+        return ma[n-1];
     }
 };
