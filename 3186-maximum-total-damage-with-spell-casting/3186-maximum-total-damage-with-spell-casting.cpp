@@ -29,7 +29,7 @@ public:
                 }
             }
             ans=max(dp[i],ans);
-            ma[i]=max(ans,ma[i-1]);
+            ma[i]=max(dp[i],ma[i-1]);
             mp[p[i]]=i;
         }
         return ans;
