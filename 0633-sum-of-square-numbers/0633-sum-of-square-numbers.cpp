@@ -12,7 +12,7 @@ public:
         for(ll i=0;i*i<=c;i++){
             long double a=c-(i*i);
             if(isPerfectSquare(a)){
-                cout<<a<<endl;
+                //cout<<a<<endl;
                 return true;
             }
         }
