@@ -12,6 +12,7 @@ public:
                 j+=z/k;
                 i--;
             }
+            if(j>=m){break;}
             i++;
         }
         return j>=m;
