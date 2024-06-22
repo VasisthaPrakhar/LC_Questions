@@ -38,8 +38,7 @@ public:
         //     j++;
         // }
         // return ans;
-        auto p = [&] (int z)
-        {
+        auto p = [&] (int z) -> int{
             int j=0,i=0,s=0,ans=0;
             while(j<n){
                 s+=(nums[j]%2);
