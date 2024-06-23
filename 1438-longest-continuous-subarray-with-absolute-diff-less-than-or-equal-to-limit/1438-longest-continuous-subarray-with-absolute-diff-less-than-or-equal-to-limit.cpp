@@ -1,10 +1,7 @@
 class Solution {
 public:
     int longestSubarray(vector<int>& nums, int limit) {
-        ios::sync_with_stdio(false);
-        cin.tie(0);
-        cout.tie(0);
-        int n = nums.size();
+        int n=nums.size();
         if(nums.size()==0)return 0;
         map<int,int>mi;
         map<int,int,greater<int>>ma;
