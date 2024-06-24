@@ -32,9 +32,6 @@ public:
                 a[i]=1;
                 flip=(flip+1)%2;
                 ans++;
-                //     isFlipped[i] = 1;
-                // flipped ^= 1;
-                // res++;
             }
         }
         return ans;
