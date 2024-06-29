@@ -13,7 +13,7 @@ public:
                 q.push(i);
             }
         }
-        map<int,set<int>>mp;
+        unordered_map<int,set<int>>mp;
         while(!q.empty()){
             int node=q.front();
             q.pop();
