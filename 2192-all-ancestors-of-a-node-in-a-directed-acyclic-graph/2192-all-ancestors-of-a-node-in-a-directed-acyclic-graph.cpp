@@ -18,14 +18,14 @@ public:
             int node=q.front();
             q.pop();
             for(auto x:adj[node]){
-                ind[x]--;
-                if(ind[x]==0){
-                    q.push(x);
-                }
                 for(auto y:mp[node]){
                     mp[x].insert(y);
                 }
                 mp[x].insert(node);
+                ind[x]--;
+                if(ind[x]==0){
+                    q.push(x);
+                }
             }
         }
         vector<vector<int>>ans;
