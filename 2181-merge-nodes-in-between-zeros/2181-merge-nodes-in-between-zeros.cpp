@@ -11,6 +11,9 @@
 class Solution {
 public:
     ListNode* mergeNodes(ListNode* head) {
+        if(head==nullptr){
+            return head;
+        }
         ListNode* ans=NULL,*res;
         int s=0;
         while(head){
