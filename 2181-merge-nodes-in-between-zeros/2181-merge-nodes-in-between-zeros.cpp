@@ -14,7 +14,7 @@ public:
         if(head==nullptr){
             return head;
         }
-        ListNode* ans=NULL,*res;
+        ListNode* ans=NULL,*res=nullptr;
         int s=0;
         while(head){
             if(head->val==0){
