@@ -12,7 +12,7 @@ class Solution {
 public:
     vector<int> nodesBetweenCriticalPoints(ListNode* head) {
         vector<int>a;
-        int i=0;
+        int i=0,n,mi=INT_MAX;
         ListNode *prev=NULL;
         while(head){
             if(prev!=NULL && head->next!=NULL){
@@ -27,7 +27,7 @@ public:
         if(a.size()<2){
             return {-1,-1};
         }
-        int n=a.size(),mi=INT_MAX;
+        n=a.size();
         for(int i=0;i<n-1;i++){
             mi=min(a[i+1]-a[i],mi);
         }
