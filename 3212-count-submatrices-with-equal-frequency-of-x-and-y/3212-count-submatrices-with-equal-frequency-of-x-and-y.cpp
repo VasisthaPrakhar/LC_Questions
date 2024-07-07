@@ -18,12 +18,6 @@ public:
                 dp[i][j]={cx,cy};
             }
         }
-        //  for(int i=0;i<n;i++){
-        //     for(int j=0;j<m;j++){
-        //         cout<<"{"<<dp[i][j].first<<", "<<dp[i][j].second<<"}"<<" ";
-        //     }
-        //     cout<<endl;
-        // }
         for(int j=0;j<m;j++){
             int cx=0,cy=0;
             for(int i=0;i<n;i++){
