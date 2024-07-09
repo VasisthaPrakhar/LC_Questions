@@ -8,7 +8,6 @@ public:
                 s=c[i][0]+c[i][1];
                 s1=s-c[i][0];
             }else{
-                //cout<<s<<endl;
                 if(s>c[i][0]){
                     s+=c[i][1];
                 }else{
@@ -16,7 +15,6 @@ public:
                 }
                 s1+=s-c[i][0];
             }
-            //cout<<s<<" "<<s1<<endl;
         }
         return s1/n;
     }
