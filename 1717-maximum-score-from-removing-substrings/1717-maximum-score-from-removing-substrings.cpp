@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int fun(string s,int x,int y){
+    int maximumGain(string &s, int x, int y) {
         int n=s.length(),ans=0;
         stack<char>st;
         int f=0;
@@ -58,8 +58,5 @@ public:
         if(f)
             return ans+maximumGain(t,x,y);
         return ans;
-    }
-    int maximumGain(string &s, int x, int y) {
-        return fun(s,x,y);
     }
 };
