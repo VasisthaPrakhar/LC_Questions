@@ -54,7 +54,6 @@ public:
             st.pop();
         }
         reverse(t.begin(),t.end());
-        //cout<<t<<endl;
         if(f)
             return ans+maximumGain(t,x,y);
         return ans;
