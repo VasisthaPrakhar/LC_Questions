@@ -7,20 +7,12 @@ public:
             v.push_back({pos[i],h[i],d[i]-'A'});
         }
         sort(v.begin(),v.end());
-        // for(auto x:v){
-        //     for(auto y:x){
-        //         cout<<y<<" ";
-        //     }
-        //     cout<<endl;
-        // }
         stack<vector<int>>st;
         for(int i=0;i<n;i++){
             if(!st.empty() && st.top()[2]=='R'-'A' && v[i][2]=='L'-'A'){
                 int x=v[i][0],y=v[i][1],z=v[i][2],f=1;
-                //cout<<x<<" "<<y<<" "<<z<<endl;
                 while(!st.empty() && st.top()[2]=='R'-'A' && z=='L'-'A'){
                     int y1=st.top()[1],z1=st.top()[2],x1=st.top()[0];
-                    //cout<<x1<<" "<<y1<<" "<<z1<<endl;
                     st.pop();
                     if(y1==y){
                         y=0,f=0;
@@ -28,7 +20,6 @@ public:
                     }else if(y1<y){
                         y--;
                     }else{
-                        //cout<<"ocnioanc"<<endl;
                         st.push({x1,y1-1,z1});
                         f=0;
                         break;
@@ -41,7 +32,7 @@ public:
                 st.push({v[i][0],v[i][1],v[i][2]});
             }
         }
-        map<int,int>mp;
+        unordered_map<int,int>mp;
         vector<int>ans;
         while(!st.empty()){
             mp[st.top()[0]]=st.top()[1];
