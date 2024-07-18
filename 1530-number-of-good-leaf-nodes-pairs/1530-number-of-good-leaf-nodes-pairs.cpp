@@ -27,7 +27,7 @@ public:
         }
     }
     int dfs(TreeNode* root,int d,unordered_set<TreeNode*>&vis,TreeNode* node){
-        if(d<0 || vis.find(root)!=vis.end()){
+        if(d<0){
             return 0;
         }
         vis.insert(root);
@@ -35,13 +35,13 @@ public:
             return 1;   
         }
         int res=0;
-        if(root->left){
+        if(root->left && vis.find(root->left)==vis.end()){
             res+=dfs(root->left,d-1,vis,node);
         }
-        if(root->right){
+        if(root->right && vis.find(root->right)==vis.end()){
             res+=dfs(root->right,d-1,vis,node);
         }
-        if(par.find(root)!=par.end()){
+        if(par.find(root)!=par.end() && vis.find(par[root])==vis.end()){
             res+=dfs(par[root],d-1,vis,node);
         }
         return res;
