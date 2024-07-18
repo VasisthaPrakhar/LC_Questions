@@ -11,8 +11,8 @@
  */
 class Solution {
 public:
-    set<TreeNode*> leaf;
-    map<TreeNode*, TreeNode*>par;
+    unordered_set<TreeNode*> leaf;
+    unordered_map<TreeNode*, TreeNode*>par;
     void fun(TreeNode* root){
         if(root->left==nullptr && root->right==nullptr){
             leaf.insert(root);
