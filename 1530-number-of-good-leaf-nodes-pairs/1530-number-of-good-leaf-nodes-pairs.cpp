@@ -26,7 +26,7 @@ public:
             fun(root->right);
         }
     }
-    int dfs(TreeNode* root,int d,set<TreeNode*>&vis,TreeNode* node){
+    int dfs(TreeNode* root,int d,unordered_set<TreeNode*>&vis,TreeNode* node){
         if(d<0 || vis.find(root)!=vis.end()){
             return 0;
         }
@@ -51,7 +51,7 @@ public:
         fun(root);
         int ans=0;
         for(auto x:leaf){
-            set<TreeNode*>vis;
+            unordered_set<TreeNode*>vis;
             ans+=dfs(x,d,vis,x);
         }
         return ans/2;
