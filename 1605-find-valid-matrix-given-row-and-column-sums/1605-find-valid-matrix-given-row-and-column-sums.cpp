@@ -5,7 +5,7 @@ public:
         vector<vector<int>>ans(n,vector<int>(m,0));
         for(int i=0;i<n;i++){
             for(int j=0;j<m;j++){
-                int k=min(r[i],c[j]);
+                int k=r[i]<c[j]?r[i]:c[j];
                 r[i]-=k;
                 c[j]-=k;
                 ans[i][j]=k;
