@@ -6,9 +6,7 @@ public:
         for(int i=0;i<n;i++){
             for(int j=0;j<m;j++){
                 k=r[i]<c[j]?r[i]:c[j];
-                r[i]-=k;
-                c[j]-=k;
-                ans[i][j]=k;
+                r[i]-=k,c[j]-=k,ans[i][j]=k;
             }
         }
         return ans;
