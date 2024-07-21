@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int maxOperations(string s) {
+    int maxOperations(string &s) {
         int n=s.length(),ans=0,c=0;
         for(int i=0;i<n;i++){
             if(s[i]=='0'){
