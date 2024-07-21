@@ -2,7 +2,7 @@ class Solution {
 public:
     int minChanges(vector<int>& nums, int k) {
         int n=nums.size();
-        unordered_map<int,int>mp,mp1;
+        map<int,int>mp,mp1;
         for(int i=0;i<n/2;i++){
             mp[abs(nums[i] - nums[n - i - 1])]++;
             int a=max(nums[i],nums[n - i - 1]);
