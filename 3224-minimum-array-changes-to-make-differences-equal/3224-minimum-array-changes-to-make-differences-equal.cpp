@@ -2,7 +2,7 @@ class Solution {
 public:
     int minChanges(vector<int>& nums, int k) {
         int n=nums.size();
-        map<int,int>mp,mp1;
+        unordered_map<int,int>mp,mp1;
         for(int i=0;i<n/2;i++){
             mp[abs(nums[i] - nums[n - i - 1])]++;
             int a=max(nums[i],nums[n - i - 1]);
@@ -21,7 +21,6 @@ public:
                 res=mp1[x.first]-x.second;
                 res+=(n/2-mp1[x.first])*2;
             }
-            cout<<x.first<<": "<<x.second<<" "<<res<<endl;
             ans=min(ans,res);
         }
         return ans;
