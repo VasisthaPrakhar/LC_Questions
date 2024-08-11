@@ -1,7 +1,7 @@
 class Solution {
 public:
     int fun(int root,vector<int>adj[],int &ans,int par){
-        set<int>s;
+        unordered_set<int>s;
         int res=0;
         for(auto x:adj[root]){
             if(x==par){
