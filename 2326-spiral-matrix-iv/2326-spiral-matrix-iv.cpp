@@ -12,8 +12,8 @@ class Solution {
 public:
     vector<vector<int>> spiralMatrix(int m, int n, ListNode* head) {
         vector<vector<int>>ans(m,vector<int>(n,-1));
-        int i=0,j=0,k=0,f=0;
-        map<int,pair<int,int>>mp;
+        int i=0,j=0,f=0;
+        unordered_map<int,pair<int,int>>mp;
         mp[0]={0,1};
         mp[1]={1,0};
         mp[2]={0,-1};
