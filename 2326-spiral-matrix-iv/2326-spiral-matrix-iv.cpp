@@ -23,12 +23,12 @@ public:
             ans[i][j]=head->val;
             int nr=i+mp[f][0];
             int nc=j+mp[f][1];
-            if(nr<0 || nr>=m || nc<0 || nc>=n || ans[nr][nc]!=-1){
+            if(nr>=0 && nr<m && nc>=0 && nc<n && ans[nr][nc]==-1){
+                i=nr,j=nc;
+            }else{
                 f=(f+1)%4;
                 i=i+mp[f][0];
                 j=j+mp[f][1];
-            }else{
-                i=nr,j=nc;
             }
             head=head->next;
         }
