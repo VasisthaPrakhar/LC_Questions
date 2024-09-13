@@ -13,7 +13,7 @@ public:
             a^=arr[i];
         }
         vector<int>ans;
-        for(auto x:q){
+        for(auto &x:q){
             ans.push_back((a^pre[x[0]])^suf[x[1]]);
         }
         return ans;
