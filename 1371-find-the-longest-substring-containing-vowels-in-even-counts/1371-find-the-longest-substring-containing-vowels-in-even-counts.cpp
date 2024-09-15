@@ -2,7 +2,7 @@ class Solution {
 public:
     int findTheLongestSubstring(string s) {
         int n=s.length();
-        map<char,int>mp;
+        unordered_map<char,int>mp;
         mp['a']=0;
         mp['e']=1;
         mp['i']=2;
@@ -17,13 +17,12 @@ public:
             }
         }
         pre[n]=k;
-        map<int,vector<int>>m;
+        unordered_map<int,vector<int>>m;
         for(int i=0;i<n+1;i++){
             m[pre[i]].push_back(i);
         }
         int ans=0;
-        for(auto x:m){
-            cout<< x.first<<":: "<<x.second.back()<<" "<<x.second[0]<<endl;
+        for(auto &x:m){
             ans=max(ans,(x.second.back()-x.second[0]));
         }
         return ans;
