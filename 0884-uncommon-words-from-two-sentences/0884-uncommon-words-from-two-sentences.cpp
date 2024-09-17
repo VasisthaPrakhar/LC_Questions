@@ -3,7 +3,7 @@ public:
     vector<string> uncommonFromSentences(string s1, string s2) {
         stringstream ss(s1);
         string token;
-        map<string,int>mp;
+        unordered_map<string,int>mp;
         vector<string>ans;
         while(getline(ss,token,' ')){
             mp[token]++;
