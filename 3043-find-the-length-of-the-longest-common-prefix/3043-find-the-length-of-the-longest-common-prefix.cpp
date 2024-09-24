@@ -26,12 +26,11 @@ public:
             }
         }
         sort(v.begin(),v.end(),[](int a,int b)->bool{
-            int c=0;
+            int c=0,c1=0;
             while(a){
                 c++;
                 a/=10;
             }
-            int c1=0;
             while(b){
                 c1++;
                 b/=10;
