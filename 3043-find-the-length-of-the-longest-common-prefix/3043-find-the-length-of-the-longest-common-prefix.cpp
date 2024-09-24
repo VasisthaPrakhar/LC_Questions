@@ -11,7 +11,7 @@ public:
     int longestCommonPrefix(vector<int>& arr1, vector<int>& arr2) {
         int n=arr1.size();
         int m=arr2.size();
-        set<int>s;
+        unordered_set<int>s;
         vector<int>v;
         for(int i=0;i<n;i++){
             while(arr1[i]){
