@@ -84,7 +84,7 @@ public:
 				return ans;
 			}
 			node = node->get(prefix[i]);
-            ans+=node->countSoFar;
+            ans+=node->getCount();
 		}
         return ans;
     }
