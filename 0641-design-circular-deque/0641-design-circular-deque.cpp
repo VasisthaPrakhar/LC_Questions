@@ -89,13 +89,13 @@ public:
     }
     
     int getFront() {
-        if(!isEmpty() && front!=NULL)
+        if(!isEmpty())
             return front->val;
         return -1;
     }
     
     int getRear() {
-        if(!isEmpty() && rear!=NULL)
+        if(!isEmpty())
             return rear->val;
         return -1;
     }
