@@ -55,7 +55,7 @@ public:
     }
     
     bool deleteFront() {
-        if(!isEmpty() && front!=nullptr){
+        if(!isEmpty()){
             Node *temp=front;
             if(rear==front){
                 rear=rear->next;
@@ -72,7 +72,7 @@ public:
     }
     
     bool deleteLast() {
-        if(!isEmpty() && rear != nullptr){
+        if(!isEmpty()){
             Node *temp=rear;
             if(rear==front){
                 front=front->prev;
