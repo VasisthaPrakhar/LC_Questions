@@ -14,7 +14,7 @@ public:
                 p=i;
             }
         }
-        map<char,int>mp;
+        unordered_map<char,int>mp;
         while(j<n){
             if(check(w[j])){
                 mp[w[j]]++;
@@ -24,7 +24,6 @@ public:
             while(i<=j && mp.size()==5 && k<=0){
                 if(k==0)
                     ans+=pos[j]-j;
-                //cout<<j<<" "<<pos[j]<<endl;
                 if(check(w[i])){
                     mp[w[i]]--;
                     if(mp[w[i]]==0){
