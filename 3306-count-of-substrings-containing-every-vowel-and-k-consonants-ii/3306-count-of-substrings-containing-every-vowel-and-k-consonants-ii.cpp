@@ -4,7 +4,7 @@ public:
     bool check(char ch){
         return (ch=='a')||(ch=='e')||(ch=='i')||(ch=='o')||(ch=='u');
     }
-    long long countOfSubstrings(string w, int k) {
+    long long countOfSubstrings(string &w, int k) {
         int n=w.length();
         ll j=0,i=0,ans=0,p=n;
         vector<int>pos(n);
