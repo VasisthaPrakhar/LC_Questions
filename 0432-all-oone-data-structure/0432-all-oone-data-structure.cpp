@@ -1,6 +1,6 @@
 class AllOne {
 private:
-    map<string,int>a;
+    unordered_map<string,int>a;
     map<int,set<string>>b;
 public:
     AllOne() {
