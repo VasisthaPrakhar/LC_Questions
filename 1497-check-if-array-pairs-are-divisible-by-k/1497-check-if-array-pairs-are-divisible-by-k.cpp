@@ -5,7 +5,7 @@ public:
         unordered_map<int,int>mp;
         for(int i=0;i<n;i++){
             if(arr[i]<0){
-                arr[i]=arr[i]%k;
+                arr[i]=k-(abs(arr[i])%k);
             }
             mp[(arr[i]+k)%k]++;
         }
