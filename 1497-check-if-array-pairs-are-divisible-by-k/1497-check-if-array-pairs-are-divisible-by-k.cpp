@@ -7,7 +7,7 @@ public:
             if(arr[i]<0){
                 arr[i]=k-(abs(arr[i])%k);
             }
-            mp[(arr[i]+k)%k]++;
+            mp[arr[i]%k]++;
         }
         for(int i=0;i<k;i++){
             if(i==0){
