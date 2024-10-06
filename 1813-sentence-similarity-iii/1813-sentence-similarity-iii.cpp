@@ -1,13 +1,6 @@
 class Solution {
 public:
     bool fun(vector<string>&a,vector<string>&b){
-        for(auto x:a){
-            cout<<x<<" ";
-        }
-        cout<<endl;
-        for(auto x:b){
-            cout<<x<<" ";
-        }
         int n=a.size(),m=b.size();
         int i=0,j=n-1,x=0,y=m-1;
         while(i<=j){
@@ -24,7 +17,7 @@ public:
         }
         return true;
     }
-    bool areSentencesSimilar(string s1, string s2) {
+    bool areSentencesSimilar(string &s1, string &s2) {
         stringstream ss(s1);
         stringstream ss1(s2);
         vector<string>a,b;
