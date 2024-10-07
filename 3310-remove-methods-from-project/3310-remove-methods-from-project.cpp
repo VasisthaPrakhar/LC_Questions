@@ -26,15 +26,13 @@ public:
         int flag=0;
         for(int i=0;i<n;i++){
             if(vis[i]==0){
-                int f=0;
                 for(auto x:adj[i]){
                     if(s.find(x)!=s.end()){
-                        f=1;
                         flag=1;
                         break;
                     }
                 }
-                if(f==0){
+                if(flag==0){
                     ans.push_back(i);
                 }
             }
