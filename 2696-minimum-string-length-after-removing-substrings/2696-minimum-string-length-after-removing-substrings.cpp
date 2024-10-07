@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int minLength(string s) {
+    int minLength(string &s) {
         int n=s.length();
         stack<char>st;
         for(int i=0;i<n;i++){
