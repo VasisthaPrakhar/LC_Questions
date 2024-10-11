@@ -17,7 +17,7 @@ public:
             int seat=*s.begin();
             pq.push({t[x.second][1],seat});
             s.erase(seat);
-            cout<<x.first<<" "<<t[x.second][1]<<" "<<seat<<"\t"<<x.second<<endl;
+            //cout<<x.first<<" "<<t[x.second][1]<<" "<<seat<<"\t"<<x.second<<endl;
             if(x.second==target){
                 return seat;
             }
