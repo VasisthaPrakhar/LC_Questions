@@ -7,7 +7,6 @@ public:
         if(idx>0){
             i=arr[idx-1]+1;
         }
-        if(i>=n){return INT_MIN;}
         while(i<n && j<m){
             if(idx<sz &&  i==arr[idx]){
                 break;
