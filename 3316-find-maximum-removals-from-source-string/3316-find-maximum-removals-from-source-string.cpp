@@ -24,7 +24,7 @@ public:
         if(dp[i][j]!=-1){
             return dp[i][j];
         }
-        int res=INT_MIN;
+        int res=INT_MIN,f=0;
         res=max(res,1+fun(idx+1,i+1,j,arr,s,t,n,m,sz));
         res=max(res,fun(idx+1,i,j,arr,s,t,n,m,sz));
         return dp[i][j]=res;        
