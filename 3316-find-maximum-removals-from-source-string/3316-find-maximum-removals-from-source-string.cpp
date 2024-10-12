@@ -30,10 +30,8 @@ public:
         int res=INT_MIN;
         if(s[i]==t[j]){
             res=max(res,fun(idx+1,j+1,arr,s,t,n,m,sz));
-            res=max(res,1+fun(idx+1,j,arr,s,t,n,m,sz));
-        }else{
-            res=max(res,1+fun(idx+1,j,arr,s,t,n,m,sz));
         }
+        res=max(res,1+fun(idx+1,j,arr,s,t,n,m,sz));
         
         return dp[idx][j]=res;        
     }
