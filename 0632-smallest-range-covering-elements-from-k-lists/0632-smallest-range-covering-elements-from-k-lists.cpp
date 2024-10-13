@@ -2,7 +2,7 @@ class Solution {
 public:
     vector<int> smallestRange(vector<vector<int>>& nums) {
         int k=nums.size();
-        map<int,set<int>>mp;
+        unordered_map<int,set<int>>mp;
         int z=0;
         for(auto x:nums){
             z++;
@@ -15,6 +15,7 @@ public:
         for(auto x:mp){
             v.push_back(x.first);
         }
+        sort(v.begin(),v.end());
         int n=v.size();
         int j=0,i=0,ans=INT_MAX,low=-1,high=-1;
         while(j<n){
