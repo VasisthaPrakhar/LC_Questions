@@ -10,7 +10,7 @@ public:
                 mp[y].insert(z);
             }
         }
-        map<int,int>m;
+        unordered_map<int,int>m;
         vector<int>v;
         for(auto x:mp){
             v.push_back(x.first);
