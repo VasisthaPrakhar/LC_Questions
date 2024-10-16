@@ -20,7 +20,6 @@ public:
             auto it=pq.top();
             pq.pop();
             if(ans.length()>=2 && check(ans,it.second)){
-               // cout<<"bcaijkubs"<<endl;
                 if(pq.size()==0){
                     break;
                 }
