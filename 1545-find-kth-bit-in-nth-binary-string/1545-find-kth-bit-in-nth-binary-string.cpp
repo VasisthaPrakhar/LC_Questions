@@ -26,17 +26,9 @@ public:
         int z=0,x=0;
         fun(n,k,a,z,x);
         if(z%2){
-            if(x==0){
-                return '1';
-            }else{
-                return '0';
-            }
+            return '0'+((x+1)%2);
         }else{
             return '0'+x;
         }
-        for(auto x:a){
-            cout<<x<<" ";
-        }
-        return '0';
     }
 };
