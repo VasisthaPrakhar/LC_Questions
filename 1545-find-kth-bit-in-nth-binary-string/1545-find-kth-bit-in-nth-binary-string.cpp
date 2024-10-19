@@ -17,13 +17,12 @@ public:
         }
     }
     char findKthBit(int n, int k) {
-        int c=1;
-        vector<int>a;
-        for(int i=0;i<=20;i++){
-            a.push_back(c);
+        int c=1,z=0,x=0;
+        vector<int>a(n+1);
+        for(int i=0;i<=n;i++){
+            a[i]=c;
             c=(2*c)+1;
         }
-        int z=0,x=0;
         fun(n,k,a,z,x);
         if(z%2){
             return '0'+((x+1)%2);
