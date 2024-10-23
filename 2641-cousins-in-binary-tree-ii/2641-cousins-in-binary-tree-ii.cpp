@@ -15,9 +15,9 @@ public:
         TreeNode* t=new TreeNode(-1);
         queue<pair<TreeNode*,TreeNode*>>q;
         q.push({root,t});
-        map<TreeNode*,int>m;
+        unordered_map<TreeNode*,int>m;
         m[t]=root->val;
-        map<int,int>mp;
+        unordered_map<int,int>mp;
         int lvl=0;
         while(!q.empty()){
             int sz=q.size();
