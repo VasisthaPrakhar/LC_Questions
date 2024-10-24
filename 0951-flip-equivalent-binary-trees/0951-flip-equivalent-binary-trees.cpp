@@ -1,0 +1,40 @@
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+    bool flipEquiv(TreeNode* r1, TreeNode* r2) {
+        if(r1==nullptr && r2==nullptr){
+            return true;
+        }else if(r1 && r2){
+            if(r1->val==r2->val){
+                return (flipEquiv(r1->left,r2->left) && flipEquiv(r1->right,r2->right))||(flipEquiv(r1->left,r2->right) && flipEquiv(r1->right,r2->left));
+            }else{
+                return false;
+            }
+        }else{
+            return false;
+        }
+//         if(root1 == root2 && root1==nullptr){
+//             return true;
+//         }
+//         bool res=false;
+//         if(root1 && root2){
+            
+//             if((root1->left->val == root2->left->val) && (root1->right->val == root2->right->val)){
+//                 res|=flipEquiv(root1->left,root2->left) | flipEquiv(root1->right,root2->right);
+//             }else if((root1->left->val == root2->right->val) && (root1->right->val == root2->left->val)){
+//                 res|=flipEquiv(root1->left,root2->right) | flipEquiv(root1->right,root2->left);
+//             }
+//         }
+//         return res;
+    }
+};
