@@ -23,18 +23,5 @@ public:
         }else{
             return false;
         }
-//         if(root1 == root2 && root1==nullptr){
-//             return true;
-//         }
-//         bool res=false;
-//         if(root1 && root2){
-            
-//             if((root1->left->val == root2->left->val) && (root1->right->val == root2->right->val)){
-//                 res|=flipEquiv(root1->left,root2->left) | flipEquiv(root1->right,root2->right);
-//             }else if((root1->left->val == root2->right->val) && (root1->right->val == root2->left->val)){
-//                 res|=flipEquiv(root1->left,root2->right) | flipEquiv(root1->right,root2->left);
-//             }
-//         }
-//         return res;
     }
 };
