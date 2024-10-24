@@ -12,14 +12,10 @@
 class Solution {
 public:
     bool flipEquiv(TreeNode* r1, TreeNode* r2) {
-        if(r1==nullptr && r2==nullptr){
+        if(!r1 && !r2){
             return true;
-        }else if(r1 && r2){
-            if(r1->val==r2->val){
-                return (flipEquiv(r1->left,r2->left) && flipEquiv(r1->right,r2->right))||(flipEquiv(r1->left,r2->right) && flipEquiv(r1->right,r2->left));
-            }else{
-                return false;
-            }
+        }else if((r1 && r2) && (r1->val==r2->val)){
+            return (flipEquiv(r1->left,r2->left) && flipEquiv(r1->right,r2->right))||(flipEquiv(r1->left,r2->right) && flipEquiv(r1->right,r2->left));
         }else{
             return false;
         }
