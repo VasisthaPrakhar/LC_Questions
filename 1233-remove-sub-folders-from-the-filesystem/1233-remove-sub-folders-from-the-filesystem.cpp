@@ -1,5 +1,5 @@
 struct Node {
-	map<string,Node*>links;
+	unordered_map<string,Node*>links;
 	bool flag = false;
 	bool containKey(string ch) {
 		return (links[ch] != NULL);
