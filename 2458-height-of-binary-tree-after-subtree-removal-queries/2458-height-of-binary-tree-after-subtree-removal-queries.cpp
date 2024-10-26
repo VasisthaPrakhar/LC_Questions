@@ -22,13 +22,12 @@ public:
     }
     vector<int> treeQueries(TreeNode* root, vector<int>& qu) {
         vector<int>ans;
-        mp.clear();
         mp[root->val]=0;
         fun(root);
         int h=0;
         queue<TreeNode*>q;
         q.push(root);
-        map<int,int>pre;
+        unordered_map<int,int>pre;
         while(!q.empty()){
             int sz=q.size();
             vector<int>a;
@@ -64,7 +63,6 @@ public:
         }
         for(auto x:qu){
             ans.push_back(pre[x]);
-            //cout<<pre[x]<<endl;
         }
         return ans;
     }
