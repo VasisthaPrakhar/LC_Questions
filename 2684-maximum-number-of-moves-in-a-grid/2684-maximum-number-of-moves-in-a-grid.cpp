@@ -3,8 +3,8 @@ public:
     int maxMoves(vector<vector<int>>& grid) {
         int n=grid.size();
         int m=grid[0].size(),ans=0;
-        vector<vector<int>>dp(n,vector<int>(m,0));
-        
+        int dp[n][m];
+        memset(dp,0,sizeof(dp));
         for(int j=m-2;j>=0;j--){
             int res=0;
             for(int i=0;i<n;i++){
