@@ -28,7 +28,15 @@ public:
             }
         }
         int n=r.size(),m=pos.size();
-        dp.resize(n,vector<ll>(m,-1));
-        return fun(n-1,m-1,r,pos);
+        dp.resize(n+1,vector<ll>(m+1,0));
+        for(int i=1;i<=n;i++){
+            dp[i][0]=1e12;
+        }
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=m;j++){
+                dp[i][j]=min(abs(r[i-1]-pos[j-1])+dp[i-1][j-1],dp[i][j-1]);
+            }
+        }
+        return dp[n][m];
     }
 };
