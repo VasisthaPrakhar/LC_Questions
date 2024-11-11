@@ -22,7 +22,7 @@ public:
 
     bool primeSubOperation(vector<int>& nums) {
         int n=nums.size();
-        set<ll>s=fun(*max_element(nums.begin(),nums.end()) + 100);
+        set<ll>s=fun(*max_element(nums.begin(),nums.end()) + 10);
         for(int i=n-2;i>=0;i--){
             if(nums[i+1]==1){
                 return false;
