@@ -34,15 +34,10 @@ public:
                     ans=max(ans,pre[i]+suf[f->second]);
                 }
             }
-            if(m.count(nums[i])){
-                if(suf[i]==n-i){
-                    m[nums[i]]=i;
-                }
-            }else{
-                if(suf[i]==n-i){
-                    m[nums[i]]=i;
-                }
+            if(suf[i]==n-i){
+                m[nums[i]]=i;
             }
+           
         }
         return n-ans;
     }
