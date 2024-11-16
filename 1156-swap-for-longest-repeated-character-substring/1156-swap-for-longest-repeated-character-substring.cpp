@@ -1,53 +1,41 @@
 class Solution {
 public:
-    char ma(map<char,int>&m){
-        int mama=INT_MIN;
+    bool check(unordered_map<char,int>&m1, unordered_map<char,int>&m2, int tot,int k){
+        int ma=0;
         char ch;
-        for(auto &x:m){
-            if(mama<x.second){
-                mama=x.second;
+        for(auto x:m2){
+            if(x.second>ma){
+                ma=x.second;
                 ch=x.first;
             }
         }
-        return ch;
-    }
-    bool check(map<char,int>&m){
-        if(m.size()>2){
+        int rem=tot-ma;
+        if(rem>k){return false;}
+        if(m1[ch]<tot){
             return false;
         }
-        int mi=INT_MAX;
-        for(auto &x:m){
-            mi=min(mi,x.second);
-        }
-        return mi<=1;
+        return true;
+        
     }
-    int maxRepOpt1(string text) {
-        int ans=0,n=text.length();
-        map<char,int>m,m1;
-        char ch;
-        for(auto x:text){
+    int maxRepOpt1(string &s) {
+        int n=s.length();
+        unordered_map<char,int>m1,m2;
+        for(auto x:s){
             m1[x]++;
         }
-        int i=0,j=0;
+        int i=0,j=0,ans=0;
         while(j<n){
-            m[text[j]]++;
-            if(m.size()==1 || check(m)){
-                ans=max(ans,j-i+1);
-                ch=ma(m);
-            }else{
-                while(i<=j && !check(m)){
-                    m[text[i]]--;
-                    if(m[text[i]]==0){
-                        m.erase(text[i]);
-                    }
-                    i++;
+            m2[s[j]]++;
+            while(i<=j && !check(m1,m2,j-i+1,1)){
+                m2[s[i]]--;
+                if(m2[s[i]]==0){
+                    m2.erase(s[i]);
                 }
+                i++;
             }
+            ans=max(j-i+1,ans);
             j++;
         }
-        if(m1[ch]>=ans)
-            return ans;
-        else
-            return ans-1;
+        return ans;
     }
 };
