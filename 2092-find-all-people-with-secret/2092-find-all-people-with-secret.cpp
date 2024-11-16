@@ -35,7 +35,7 @@ public:
                 unionn(y.first,y.second,par,rank);
             }
             for(auto y:x.second){
-                if(findpar(y.first,par)!=par[0] && findpar(y.first,par)!=par[0]){
+                if(findpar(y.first,par)!=par[0] && findpar(y.second,par)!=par[0]){
                     par[y.first]=y.first;
                     rank[y.first]=0;
                     par[y.second]=y.second;
