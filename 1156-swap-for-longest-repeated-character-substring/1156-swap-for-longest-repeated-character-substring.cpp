@@ -3,7 +3,7 @@ public:
     bool check(unordered_map<char,int>&m1, unordered_map<char,int>&m2, int tot,int k){
         int ma=0;
         char ch;
-        for(auto x:m2){
+        for(auto &x:m2){
             if(x.second>ma){
                 ma=x.second;
                 ch=x.first;
@@ -20,7 +20,7 @@ public:
     int maxRepOpt1(string &s) {
         int n=s.length();
         unordered_map<char,int>m1,m2;
-        for(auto x:s){
+        for(auto &x:s){
             m1[x]++;
         }
         int i=0,j=0,ans=0;
