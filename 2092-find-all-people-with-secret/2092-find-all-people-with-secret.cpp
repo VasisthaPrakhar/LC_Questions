@@ -35,7 +35,7 @@ public:
                 unionn(y.first,y.second,par,rank);
             }
             for(auto y:x.second){
-                if(findpar(y.second,par)!=par[0]){
+                if(findpar(y.first,par)!=par[0] && findpar(y.second,par)!=par[0]){
                     par[y.first]=y.first;
                     rank[y.first]=0;
                     par[y.second]=y.second;
@@ -47,7 +47,7 @@ public:
         vector<int>ans;
         ans.push_back(0);
         for(int i=1;i<n;i++){
-            if(findpar(i,par)==findpar(0,par)){
+            if(findpar(i,par)==par[0]){
                 ans.push_back(i);
             }
         }
