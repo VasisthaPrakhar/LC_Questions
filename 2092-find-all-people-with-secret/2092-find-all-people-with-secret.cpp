@@ -23,16 +23,16 @@ public:
         for(int i=0;i<n;i++){
             par[i]=i;
         }
-        //rank[0]=100001;
+        rank[0]=100001;
         map<int,vector<pair<int,int>>>adj;
         for(auto x:me){
             adj[x[2]].push_back({x[0],x[1]});
         }
-        unionn(0,f,par,rank);
+        adj[0].push_back({0,f});
         for(auto x:adj){
+            int f=0;
             for(auto y:x.second){
-                //if(findpar(y.first,par)==0 || findpar(y.second,par)==0)
-                    unionn(y.first,y.second,par,rank);
+                unionn(y.first,y.second,par,rank);
             }
             for(auto y:x.second){
                 if(findpar(y.first,par)!=par[0]){
@@ -42,6 +42,7 @@ public:
                     rank[y.second]=0;
                 }
             }
+            
         }
         vector<int>ans;
         ans.push_back(0);
