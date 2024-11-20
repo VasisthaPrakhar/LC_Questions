@@ -10,41 +10,37 @@
  */
 class Solution {
 public:
-    pair<ListNode*,ListNode*> reverse(ListNode* root){
-        ListNode *prev=nullptr,*ans=root;
-        while(root){
-            auto temp=root->next;
-            root->next=prev;
-            prev=root;
-            root=temp;
+    ListNode* fun(ListNode* head,int k){
+        ListNode* prev=NULL,*temp=nullptr,*t=head;
+        while(head && k--){
+            temp=head->next;
+            head->next=prev;
+            prev=head;
+            head=temp;
         }
-        return {prev,ans};
+        t->next=head;
+        return prev;
     }
     ListNode* reverseKGroup(ListNode* head, int k) {
-        ListNode* root=head,*ans=nullptr,*prev=nullptr,*temp1=nullptr;
-        int n=0,f=1;
-        while(root){
-            n++;
-            auto temp=root->next;
-            if(n%k==0){
-                temp1=root->next;
-                if(f){
-                    root->next=nullptr;
-                    auto t=reverse(head);
-                    ans=t.first;
-                    prev=t.second;
-                    f--;
-                }else{
-                    root->next=nullptr;
-                    auto t=reverse(head);
-                    prev->next=t.first;
-                    prev=t.second;
-                }
-                head=temp;
-            }
-            root=temp;
+        ListNode* ans=NULL,*prev=NULL,*t=head;
+        int c=0;
+        while(t){
+            c++;
+            t=t->next;
         }
-        prev->next=temp1;
+        int z=c/k;
+        while(head && z--){
+            if(ans==NULL){
+                auto temp=head;
+                ans=fun(head,k);
+                prev=temp;
+            }else{
+                auto temp=head;
+                prev->next=fun(head,k);
+                prev=temp;
+            }
+            head=head->next;
+        }
         return ans;
     }
 };
