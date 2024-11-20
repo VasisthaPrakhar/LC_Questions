@@ -14,7 +14,6 @@ public:
             m[t[j]]++;
             while(i<=j && check(m,k)){
                 ans=min(ans,j-i+1);
-                cout<<ans<<endl;
                 m[t[i]]--;
                 i++;
             }
