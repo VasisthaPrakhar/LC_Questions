@@ -1,14 +1,17 @@
 class Solution {
 public:
     int countUnguarded(int m, int n, vector<vector<int>>& g, vector<vector<int>>& w) {
-        vector<vector<int>>a(m,vector<int>(n,0));
+        int a[m][n],b[m][n];
+        memset(a,0,sizeof(a));
+        memset(b,0,sizeof(b));
         for(auto &x:g){
             a[x[0]][x[1]]=1;
+            b[x[0]][x[1]]=1;
         }
         for(auto &x:w){
             a[x[0]][x[1]]=2;
+            b[x[0]][x[1]]=2;
         }
-        vector<vector<int>>b=a;
         for(int i=0;i<m;i++){
             for(int j=1;j<n;j++){
                 if(a[i][j-1]==1 && a[i][j]==0){
