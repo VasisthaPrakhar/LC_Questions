@@ -2,10 +2,10 @@ class Solution {
 public:
     int countUnguarded(int m, int n, vector<vector<int>>& g, vector<vector<int>>& w) {
         vector<vector<int>>a(m,vector<int>(n,0));
-        for(auto x:g){
+        for(auto &x:g){
             a[x[0]][x[1]]=1;
         }
-        for(auto x:w){
+        for(auto &x:w){
             a[x[0]][x[1]]=2;
         }
         vector<vector<int>>b=a;
