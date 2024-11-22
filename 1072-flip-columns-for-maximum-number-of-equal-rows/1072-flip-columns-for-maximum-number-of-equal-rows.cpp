@@ -3,7 +3,7 @@ public:
     int maxEqualRowsAfterFlips(vector<vector<int>>& mat) {
         int n=mat.size();
         int m=mat[0].size(),ans=1;
-        map<string,int>mp;
+        unordered_map<string,int>mp;
         for(int i=0;i<n;i++){
             string a="",b="";
             for(int j=0;j<m;j++){
