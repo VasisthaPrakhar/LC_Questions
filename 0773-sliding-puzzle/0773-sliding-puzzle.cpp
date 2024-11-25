@@ -35,7 +35,7 @@ public:
             }
         }
         vector<vector<int>>v={{1,3},{0,2,4},{1,5},{0,4},{1,3,5},{2,4}};
-        set<string>vis;
+        unordered_set<string>vis;
         int ans=0;
         vis.insert(s);
         queue<pair<int,string>>q;
