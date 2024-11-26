@@ -17,12 +17,12 @@ public:
         if(q.size()>1){
             return -1;
         }
-        int c=0;
+        //int c=0;
         while(!q.empty()){
             int node =q.front();
             q.pop();
             a.push_back(node);
-            c++;
+            //c++;
             for(auto it:adj[node]){
                 ind[it]--;
                 if(ind[it]==0){
