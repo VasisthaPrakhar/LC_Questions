@@ -13,6 +13,9 @@ public:
         while(!q.empty()){
             auto node=q.top();
             q.pop();
+            if(node[1]==n-1 && node[2]==m-1){
+                return mp[{n-1,m-1}];
+            }
             for(int i=0;i<4;i++){
                 int nr=node[1] + dr[i];
                 int nc=node[2] +dc[i];
