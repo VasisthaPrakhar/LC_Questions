@@ -8,8 +8,8 @@ public:
         if(grid[1][0]>1 && grid[0][1]>1){return -1;}
         priority_queue<vector<int>,vector<vector<int>>,greater<vector<int>>>q;
         q.push({0,0,0});
-        map<pair<int,int>,int>mp;
-        mp[{0,0}]=0;
+        // map<pair<int,int>,int>mp;
+        // mp[{0,0}]=0;
         while(!q.empty()){
             auto node=q.top();
             q.pop();
@@ -20,12 +20,12 @@ public:
             for(int i=0;i<4;i++){
                 int nr=node[1] + dr[i];
                 int nc=node[2] +dc[i];
-                if(nr<0 || nr>=n || nc<0 || nc>=m){continue;}
-                if(mp.find({nr,nc})!=mp.end()){
-                    // if(mp[{node[1],node[2]}]+1>=grid[nr][nc])
-                    //     mp[{nr,nc}]=min(mp[{node[1],node[2]}]+1,mp[{nr,nc}]);
-                    continue;
-                }
+                if(nr<0 || nr>=n || nc<0 || nc>=m || grid[nr][nc]==-1){continue;}
+                // if(mp.find({nr,nc})!=mp.end()){
+                //     // if(mp[{node[1],node[2]}]+1>=grid[nr][nc])
+                //     //     mp[{nr,nc}]=min(mp[{node[1],node[2]}]+1,mp[{nr,nc}]);
+                //     continue;
+                // }
                 //int z=0,c=mp[{node[1],node[2]}];
                 int z=0,c=node[0];
                 if(c < grid[nr][nc]){
@@ -36,8 +36,9 @@ public:
                 }
                 //mp[{nr,nc}]=max(c+1,grid[nr][nc]+z);
                 //q.push({ mp[{nr,nc}],nr,nc});
-                mp[{nr,nc}]++;
+                //mp[{nr,nc}]++;
                 q.push({max(c+1,grid[nr][nc]+z),nr,nc});
+                grid[nr][nc]=-1;
             }
         }
         // for(auto x:mp){
