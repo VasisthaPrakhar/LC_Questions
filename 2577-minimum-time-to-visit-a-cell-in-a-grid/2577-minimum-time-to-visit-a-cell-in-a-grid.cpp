@@ -14,32 +14,37 @@ public:
             auto node=q.top();
             q.pop();
             if(node[1]==n-1 && node[2]==m-1){
-                return mp[{n-1,m-1}];
+                //return mp[{n-1,m-1}];
+                return node[0];
             }
             for(int i=0;i<4;i++){
                 int nr=node[1] + dr[i];
                 int nc=node[2] +dc[i];
                 if(nr<0 || nr>=n || nc<0 || nc>=m){continue;}
                 if(mp.find({nr,nc})!=mp.end()){
-                    if(mp[{node[1],node[2]}]+1>=grid[nr][nc])
-                        mp[{nr,nc}]=min(mp[{node[1],node[2]}]+1,mp[{nr,nc}]);
+                    // if(mp[{node[1],node[2]}]+1>=grid[nr][nc])
+                    //     mp[{nr,nc}]=min(mp[{node[1],node[2]}]+1,mp[{nr,nc}]);
                     continue;
                 }
-                int z=0,c=mp[{node[1],node[2]}];
+                //int z=0,c=mp[{node[1],node[2]}];
+                int z=0,c=node[0];
                 if(c < grid[nr][nc]){
                     if((c-grid[nr][nc])%2==0){
                         //cout<<nr<<" "<<nc<<endl;
                         z++;
                     }
                 }
-                mp[{nr,nc}]=max(c+1,grid[nr][nc]+z);
-                q.push({ mp[{nr,nc}],nr,nc});
+                //mp[{nr,nc}]=max(c+1,grid[nr][nc]+z);
+                //q.push({ mp[{nr,nc}],nr,nc});
+                mp[{nr,nc}]++;
+                q.push({max(c+1,grid[nr][nc]+z),nr,nc});
             }
         }
         // for(auto x:mp){
         //     cout<<"{"<<x.first.first<<", "<<x.first.second<<"}"<<" == "<<x.second<<endl;
         // }
         // cout<<endl;
-        return mp[{n-1,m-1}];
+        //return mp[{n-1,m-1}];
+        return -1;
     }
 };
