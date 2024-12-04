@@ -4,7 +4,7 @@ public:
         int n=str1.length(),m=str2.length();
         int i=0,j=0;
         while(i<n && j<m){
-            if((str1[i]-'a')%26 ==(str2[j]-'a') || ((str1[i]-'a') + 1)%26==(str2[j]-'a')){
+            if((str1[i]-'a')%26 ==str2[j]-'a' || ((str1[i]-'a') + 1)%26==str2[j]-'a'){
                 i++,j++;
             }else{
                 i++;
